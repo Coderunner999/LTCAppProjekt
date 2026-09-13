@@ -11073,37 +11073,37 @@ class Info_Python1_Screen(Screen):
         e1 = Label(
             text="Willkommen bei meiner App!",
             pos_hint={'center_x': 0.5, 'center_y': 0.8},
-            font_size='14sp'
+            font_size='12sp'
         )
 
         e2 = Label(
             text="Dieses Projekt wurde von mir als Solo-Entwickler komplett alleine aufgebaut.",
             pos_hint={'center_x': 0.5, 'center_y': 0.75},
-            font_size='14sp'
+            font_size='12sp'
         )
 
         e3 = Label(
             text="Ich arbeite kontinuierlich an Verbesserungen und veröffentliche regelmäßig neue Updates.",
             pos_hint={'center_x': 0.5, 'center_y': 0.7},
-            font_size='14sp'
+            font_size='12sp'
         )
 
         e4 = Label(
             text="Um die App weiterzuentwickeln, bin ich auf deine Unterstützung angewiesen.",
             pos_hint={'center_x': 0.5, 'center_y': 0.65},
-            font_size='14sp'
+            font_size='12sp'
         )
 
         e5 = Label(
             text="Bitte nimm dir kurz Zeit für eine ehrliche Rezension im Play Store.",
             pos_hint={'center_x': 0.5, 'center_y': 0.6},
-            font_size='14sp'
+            font_size='12sp'
         )
 
         e6 = Label(
             text="Jede einzelne Bewertung hilft mir als Einzelkämpfer unglaublich weiter!",
             pos_hint={'center_x': 0.5, 'center_y': 0.55},
-            font_size='14sp'
+            font_size='12sp'
         )
         
         layout.add_widget(title)
@@ -11142,37 +11142,37 @@ class Info_Python2_Screen(Screen):
         e1 = Label(
             text="Willkommen bei meiner App!",
             pos_hint={'center_x': 0.5, 'center_y': 0.8},
-            font_size='14sp'
+            font_size='12sp'
         )
        
         e2 = Label(
             text="Dieses Projekt wurde von mir als Solo-Entwickler komplett alleine aufgebaut.",
             pos_hint={'center_x': 0.5, 'center_y': 0.75},
-            font_size='14sp'
+            font_size='12sp'
         )
        
         e3 = Label(
             text="Ich arbeite kontinuierlich an Verbesserungen und veröffentliche regelmäßig neue Updates.",
             pos_hint={'center_x': 0.5, 'center_y': 0.7},
-            font_size='14sp'
+            font_size='12sp'
         )
        
         e4 = Label(
             text="Um die App weiterzuentwickeln, bin ich auf deine Unterstützung angewiesen.",
             pos_hint={'center_x': 0.5, 'center_y': 0.65},
-            font_size='14sp'
+            font_size='12sp'
         )
        
         e5 = Label(
             text="Bitte nimm dir kurz Zeit für eine ehrliche Rezension im Play Store.",
             pos_hint={'center_x': 0.5, 'center_y': 0.6},
-            font_size='14sp'
+            font_size='12sp'
         )
        
         e6 = Label(
             text="Jede einzelne Bewertung hilft mir als Einzelkämpfer unglaublich weiter!",
             pos_hint={'center_x': 0.5, 'center_y': 0.55},
-            font_size='14sp'
+            font_size='12sp'
         )
                
         layout.add_widget(title)
@@ -11211,37 +11211,37 @@ class Info_Web1_Screen(Screen):
         e1 = Label(
             text="Willkommen bei meiner App!",
             pos_hint={'center_x': 0.5, 'center_y': 0.8},
-            font_size='14sp'
+            font_size='12sp'
         )
         
         e2 = Label(
             text="Dieses Projekt wurde von mir als Solo-Entwickler komplett alleine aufgebaut.",
             pos_hint={'center_x': 0.5, 'center_y': 0.75},
-            font_size='14sp'
+            font_size='12sp'
         )
         
         e3 = Label(
             text="Ich arbeite kontinuierlich an Verbesserungen und veröffentliche regelmäßig neue Updates.",
             pos_hint={'center_x': 0.5, 'center_y': 0.7},
-            font_size='14sp'
+            font_size='12sp'
         )
         
         e4 = Label(
             text="Um die App weiterzuentwickeln, bin ich auf deine Unterstützung angewiesen.",
             pos_hint={'center_x': 0.5, 'center_y': 0.65},
-            font_size='14sp'
+            font_size='12sp'
         )
         
         e5 = Label(
             text="Bitte nimm dir kurz Zeit für eine ehrliche Rezension im Play Store.",
             pos_hint={'center_x': 0.5, 'center_y': 0.6},
-            font_size='14sp'
+            font_size='12sp'
         )
         
         e6 = Label(
             text="Jede einzelne Bewertung hilft mir als Einzelkämpfer unglaublich weiter!",
             pos_hint={'center_x': 0.5, 'center_y': 0.55},
-            font_size='14sp'
+            font_size='12sp'
         )
                 
         layout.add_widget(title)

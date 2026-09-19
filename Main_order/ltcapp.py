@@ -1,5 +1,6 @@
 
 
+
 # ==============================================================================================================================
 # IMPORTIEREN DER NÖTIGEN PAKETE
 # ==============================================================================================================================
@@ -327,6 +328,61 @@ class WidgetButton(Button):
         # Diese Funktion zieht die Grafiken NUR auf die Größe, die das Layout vorgibt!
         self.bg_rect.pos = self.pos
         self.bg_rect.size = self.size
+
+        self.custom_border.rounded_rectangle = (
+            self.x,
+            self.y,
+            self.width,
+            self.height,
+            dp(15)
+        )
+
+class RoundedCodeInput(CodeInput):
+    def __init__(self, **kwargs):
+        # Wir erzwingen hier in der Klasse direkt, dass size_hint_y immer None ist!
+        kwargs['size_hint_y'] = None
+        super().__init__(**kwargs)
+        
+        # 1. Kivy-Standardhintergrund komplett abschalten
+        self.background_normal = ''
+        self.background_active = ''
+        self.background_color = (0, 0, 0, 0) # 100% transparent innen
+
+        # 2. Dein gewünschtes Padding für den Abstand zum Rand
+        self.padding = [dp(15), dp(15), dp(15), dp(15)]
+
+        # 3. Schablone (Stencil) für den Text-Anschnitt im canvas.before
+        with self.canvas.before:
+            StencilPush()
+            self.stencil = RoundedRectangle(pos=self.pos, size=self.size, radius=[dp(15)])
+            StencilUse()
+
+        # 4. Der weiße, 2dp dicke Rahmen im canvas.after
+        with self.canvas.after:
+            StencilUnUse()
+            StencilPop()
+
+            Color(1, 1, 1, 1) # Weißer Rand
+            self.custom_border = Line(
+                rounded_rectangle=(self.x, self.y, self.width, self.height, dp(15)),
+                width=dp(2) # 2dp Dicke
+            )
+
+        # 5. Automatische Event-Bindungen für Layout und Textänderungen
+        self.bind(pos=self._update_layout, size=self._update_layout)
+        self.bind(minimum_height=self._adjust_height)
+        
+        # Einmalige Initialisierung der Höhe beim Start
+        self.height = self.minimum_height
+
+    def _adjust_height(self, instance, value):
+        # Setzt die Höhe des Widgets atomar auf den exakt benötigten Textplatz
+        self.height = value
+
+    def _update_layout(self, *args):
+        # Hält die Grafik-Elemente synchron mit der berechneten Größe
+        self.stencil.pos = self.pos
+        self.stencil.size = self.size
 
         self.custom_border.rounded_rectangle = (
             self.x,
@@ -778,7 +834,7 @@ class PythonLektion1_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="number = 14\ngreet = 'Hallo'", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -965,7 +1021,7 @@ class PythonLektion1_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="a = 6,7\nb = 'hi, guys'",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -1224,7 +1280,7 @@ class PythonLektion2_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="number = 1\nnumber = 3", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -1407,7 +1463,7 @@ class PythonLektion2_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="status = 'offline'\nstatus = online",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -1665,7 +1721,7 @@ class PythonLektion3_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="num_1 = 15\nnum_2 = 17\nsolution = num_1 + num_2", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -1847,7 +1903,7 @@ class PythonLektion3_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="user = 130\ninstalls = 160\ntotal = user + installs",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -2109,7 +2165,7 @@ class PythonLektion4_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="print('Hello World!')", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -2291,7 +2347,7 @@ class PythonLektion4_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="print('3..')\nPrint('2...')\nprint('1...')",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -2549,7 +2605,7 @@ class PythonLektion5_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="name = 'Karl'\nprint(name)", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -2731,7 +2787,7 @@ class PythonLektion5_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="alter = 16\nprint(alter)",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -2993,7 +3049,7 @@ class PythonLektion6_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="name = 'Selcia' # Ein String\ndata = True # Ein Boolean\nnumber = 67 # Ein Integer\nex_n = 12.5 # Ein Float", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -3171,7 +3227,7 @@ class PythonLektion6_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="name = Todd\nprint(name)",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -3615,7 +3671,7 @@ class PythonLektion7_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="name_text = 'Sepp'\nname_status = bool(name_text)",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -3873,7 +3929,7 @@ class PythonLektion8_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="number = 4.5\nprint(bool(number))\n# Ein Befehl IM anderen drin!", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),

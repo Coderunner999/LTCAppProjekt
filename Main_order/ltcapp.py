@@ -5583,7 +5583,7 @@ class PythonLektion12_Screen2(Screen):
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
         code_source_gesamt = CodeInput(
-            text="wert_1 = 5\nwert_2 = 5\nif wert_1 == wert_2:\n    print('Gleicher Inhalt!)", # \n macht den Zeilenumbruch!
+            text="wert_1 = 5\nwert_2 = 5\nif wert_1 == wert_2:\n    print('Gleicher Inhalt!')", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
             font_size=32,
@@ -5779,7 +5779,7 @@ class PythonLektion12_Screen5(Screen):
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.32}
         )
-        self.option1.bind(on_press=self.antwort_richtig)
+        self.option1.bind(on_press=self.antwort_falsch_option1)
         
         self.option2 = Button(
             text="Kein Gleichheitsoperator",

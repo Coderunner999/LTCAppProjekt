@@ -10769,6 +10769,7 @@ class PythonDashboard(Screen):
             self.widget1 = Button(
                 text="",
                 size_hint=(0.6, 0.3),
+                background_color=(0.21, 0.26, 0.39, 1),
                 pos_hint={'center_x': 0.5, 'center_y': 0.5}
             )
                        
@@ -11062,6 +11063,7 @@ class PythonDashboard2(Screen):
             self.widget1 = Button(
                 text="",
                 size_hint=(0.6, 0.3),
+                background_color=(0.21, 0.26, 0.39, 1),
                 pos_hint={'center_x': 0.5, 'center_y': 0.5}
             )
                         
@@ -11314,6 +11316,7 @@ class WebDashboard(Screen):
             self.widget1 = Button(
                 text="",
                 size_hint=(0.6, 0.3),
+                background_color=(0.21, 0.26, 0.39, 1),
                 pos_hint={'center_x': 0.5, 'center_y': 0.5}
             )
                 

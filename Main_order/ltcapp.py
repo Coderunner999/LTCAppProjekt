@@ -26,6 +26,7 @@ from kivy.metrics import dp
 from kivy.animation import Animation
 from kivy.properties import ListProperty
 from kivy.graphics.texture import Texture
+from kivy.graphics import Line
 
 
 # ==============================================================================================================================
@@ -284,6 +285,56 @@ class WeiterPulseButton(Button):
         puls_loop = to_light + to_dark
         puls_loop.repeat = True
         puls_loop.start(self)
+
+class WidgetButton(Button):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        
+        # Wir schalten die eckigen Kivy-Standardbilder ab,
+        # damit sie nicht unter unserem abgerundeten Button hervorgucken
+        self.background_normal = ''
+        self.background_down = ''
+        self.background_color = (0, 0, 0, 0) # Macht den alten Hintergrund unsichtbar
+
+        # Wir zeichnen den Button komplett eigenständig und sauber im canvas.before
+        with self.canvas.before:
+            # Das ist die normale, dunkelblaue/graue Kivy-Standardfarbe des Buttons
+            # (Ändere die Werte, falls dein Button eine andere Farbe haben soll)
+            self.bg_color = Color(0.12, 0.16, 0.22, 1) 
+            self.bg_rect = RoundedRectangle(pos=self.pos, size=self.size, radius=[dp(15)])
+
+        # Den weißen Rand zeichnen wir in canvas.after, damit er sauber oben liegt
+        with self.canvas.after:
+            self.border_color = Color(1, 1, 1, 1) # Weißer Rand
+            self.custom_border = Line(
+                rounded_rectangle=(self.x, self.y, self.width, self.height, dp(15)),
+                width=dp(2)
+            )
+
+        # Das hier sorgt für die visuelle Reaktion, wenn man den Button drückt
+        self.bind(state=self._update_pressed_color)
+        # Und das hier hält das Layout synchron
+        self.bind(pos=self._update_layout, size=self._update_layout)
+
+    def _update_pressed_color(self, instance, value):
+        # Wenn gedrückt, wird der Button etwas heller/bläulicher (wie der Kivy-Standard)
+        if value == 'down':
+            self.bg_color.rgba = (0.18, 0.24, 0.35, 1)
+        else:
+            self.bg_color.rgba = (0.12, 0.16, 0.22, 1)
+
+    def _update_layout(self, *args):
+        # Diese Funktion zieht die Grafiken NUR auf die Größe, die das Layout vorgibt!
+        self.bg_rect.pos = self.pos
+        self.bg_rect.size = self.size
+
+        self.custom_border.rounded_rectangle = (
+            self.x,
+            self.y,
+            self.width,
+            self.height,
+            dp(15)
+        )
 
 # ==============================================================================================================================
 # ERSTELLEN DER EINFÜHRUNGSSCREENS
@@ -13370,7 +13421,7 @@ class PythonDashboard2(Screen):
             return
         elif status == "erledigt":
             # hier kommt jetzt die neuen widgets:
-            self.widget1 = Button(
+            self.widget1 = WidgetButton(
                 text="",
                 size_hint=(0.6, 0.3),
                 background_color=(0.21, 0.26, 0.39, 1),
@@ -13623,7 +13674,7 @@ class WebDashboard(Screen):
             return
         elif status == "erledigt":
             # hier kommt jetzt die neuen widgets:
-            self.widget1 = Button(
+            self.widget1 = WidgetButton(
                 text="",
                 size_hint=(0.6, 0.3),
                 background_color=(0.21, 0.26, 0.39, 1),

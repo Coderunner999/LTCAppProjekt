@@ -10761,31 +10761,31 @@ class PythonDashboard(Screen):
         nummer = instance_des_buttons.lektions_id
         status = instance_des_buttons.status
 
-        # erledigt und gesperrt
+       # erledigt und gesperrt
         if status == "gesperrt": # if status == "erledigt" or...
             return
         elif status == "erledigt":
             # hier kommt jetzt die neuen widgets:
             self.widget1 = Button(
                 text="",
-                size_hint=(0.6, 0.6),
+                size_hint=(0.6, 0.3),
                 pos_hint={'center_x': 0.5, 'center_y': 0.5}
             )
-
+                       
             self.widget2 = Button(
                 text="Zurück",
                 size_hint=(0.3, 0.1),
-                pos_hint={'center_x': 0.5, 'center_y': 0.35},
+                pos_hint={'center_x': 0.5, 'center_y': 0.45},
                 on_press=self.back
             )
-            
+                                   
             self.widget3 = Label(
                 text="Bereits erledigt!",
                 font_name="Roboto-Bold",
                 font_size='24sp',
-                pos_hint={'center_y': 0.5, 'center_y': 0.7}
+                pos_hint={'center_y': 0.5, 'center_y': 0.6}
             )
-
+                       
             self.layout.add_widget(self.widget1)
             self.layout.add_widget(self.widget2)
             self.layout.add_widget(self.widget3)
@@ -11061,24 +11061,24 @@ class PythonDashboard2(Screen):
             # hier kommt jetzt die neuen widgets:
             self.widget1 = Button(
                 text="",
-                size_hint=(0.6, 0.6),
+                size_hint=(0.6, 0.3),
                 pos_hint={'center_x': 0.5, 'center_y': 0.5}
             )
-        
+                        
             self.widget2 = Button(
                 text="Zurück",
                 size_hint=(0.3, 0.1),
-                pos_hint={'center_x': 0.5, 'center_y': 0.35},
+                pos_hint={'center_x': 0.5, 'center_y': 0.45},
                 on_press=self.back
             )
-                    
+                                    
             self.widget3 = Label(
                 text="Bereits erledigt!",
                 font_name="Roboto-Bold",
                 font_size='24sp',
-                pos_hint={'center_y': 0.5, 'center_y': 0.7}
+                pos_hint={'center_y': 0.5, 'center_y': 0.6}
             )
-        
+                        
             self.layout.add_widget(self.widget1)
             self.layout.add_widget(self.widget2)
             self.layout.add_widget(self.widget3)
@@ -11313,14 +11313,14 @@ class WebDashboard(Screen):
             # hier kommt jetzt die neuen widgets:
             self.widget1 = Button(
                 text="",
-                size_hint=(0.6, 0.6),
+                size_hint=(0.6, 0.3),
                 pos_hint={'center_x': 0.5, 'center_y': 0.5}
             )
                 
             self.widget2 = Button(
                 text="Zurück",
                 size_hint=(0.3, 0.1),
-                pos_hint={'center_x': 0.5, 'center_y': 0.35},
+                pos_hint={'center_x': 0.5, 'center_y': 0.45},
                 on_press=self.back
             )
                             
@@ -11328,7 +11328,7 @@ class WebDashboard(Screen):
                 text="Bereits erledigt!",
                 font_name="Roboto-Bold",
                 font_size='24sp',
-                pos_hint={'center_y': 0.5, 'center_y': 0.7}
+                pos_hint={'center_y': 0.5, 'center_y': 0.6}
             )
                 
             self.layout.add_widget(self.widget1)

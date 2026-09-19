@@ -1797,7 +1797,7 @@ class PythonLektion3_Screen5(Screen):
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
         code_source_gesamt = CodeInput(
-            text="user_yesterday = 130\nuser_today = 160\nuser_gesamt = user_yesterday + user_morning",        # Der Quiz-Code zweizeilig untereinander
+            text="user = 130\ninstalls = 160\ntotal = user + installs",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
             font_size=32,
@@ -1811,7 +1811,7 @@ class PythonLektion3_Screen5(Screen):
 
         # Deine originalen Optionen (Abstände für die Buttons)
         self.option1 = Button(
-            text="Es gibt kein user_morning",
+            text="Kein Fehler.",
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.32}
         )
@@ -2702,7 +2702,7 @@ class PythonLektion5_Screen5(Screen):
         self.option1.bind(on_press=self.antwort_falsch_option1)
         
         self.option2 = Button(
-            text="Der Code ist fehlerfrei.",
+            text="Der Code ist alt.",
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.20}
         )
@@ -3135,7 +3135,7 @@ class PythonLektion6_Screen5(Screen):
 
         # Deine originalen Optionen (Abstände für die Buttons)
         self.option1 = Button(
-            text="Todd ist kein Typ!",
+            text="Todd ist kein Typ, und kein Wert!",
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.32}
         )

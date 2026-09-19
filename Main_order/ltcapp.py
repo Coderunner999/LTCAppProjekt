@@ -602,7 +602,6 @@ class einführung_pfad_ltc(Screen):
 # UNIVERSELLER AMPEL-BUTTON
 # =============================================================================================================================
 
-
 class FarbigerLektionsButton(Button):
     def __init__(self, lektions_id, status="gesperrt", **kwargs):
         super().__init__(**kwargs)
@@ -644,7 +643,6 @@ class FarbigerLektionsButton(Button):
 
         else:
             self.background_color = (0.4, 0.4, 0.4, 1) # Grau
-
 
 # =============================================================================================================================
 # PYTHON LEKTION 1: DIE LERN-SCREENS
@@ -8520,7 +8518,15 @@ class PythonLektion18_Screen7(Screen):
         self.xp_anzeige_label = Label(
             text="",
             font_size=45,
+            font_name="Roboto-Bold",
             pos_hint={'center_x': 0.5, 'center_y': 0.45}
+        )
+        
+        self.coins_anzeige_label = Label(
+            text="",
+            font_size=45,
+            font_name="Roboto-Bold",
+            pos_hint={'center_x': 0.5, 'center_y': 0.4}
         )
 
         grafik = Image(
@@ -8543,17 +8549,22 @@ class PythonLektion18_Screen7(Screen):
         layout.add_widget(fertig_button)
         layout.add_widget(motivation)
         layout.add_widget(self.xp_anzeige_label)
+        layout.add_widget(self.coins_anzeige_label)
         layout.add_widget(grafik)
 
         # Startet bei 0 und nimmt die Punkte der Quiz-Screens auf
         self.lektions_xp = 0
+        self.lektions_coins = 0
 
         # Ausführen:
         self.add_widget(layout)
     
     # *args hinzugefügt für stabile Kivy-Event-Verarbeitung
     def on_pre_enter(self, *args):
-        self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
+        self.lektions_coins = 50
+        self.lektions_xp = 150
+        self.xp_anzeige_label.text = f"Wegen Praxislektion hast du {self.lektions_xp} XP verdient!"
+        self.coins_anzeige_label.text = f"Wegen Praxislektion hast du {self.lektions_coins} Münzen verdient!"
         
     def lektion_beenden(self, instance):
         app_ordner = App.get_running_app().user_data_dir
@@ -8570,7 +8581,7 @@ class PythonLektion18_Screen7(Screen):
                 except:
                     aktuelle_xp = 0
 
-        gesamte_xp = aktuelle_xp + self.lektions_xp
+        gesamte_xp = aktuelle_xp + 150 # Ausnahme wegen Praxis.
         with open(xp_datei, "w", encoding="utf-8") as datei:
             datei.write(str(gesamte_xp))
             
@@ -8588,7 +8599,7 @@ class PythonLektion18_Screen7(Screen):
                 except:
                     aktuelle_coins = 0
 
-        gesamte_coins = aktuelle_coins + 10 # Unabhängig von Fehlern immer +10
+        gesamte_coins = aktuelle_coins + 50 # Ausnahmnsweise 50 wegen Praxis.
         with open(coins_datei, "w", encoding="utf-8") as datei:
             datei.write(str(gesamte_coins))
             
@@ -8599,6 +8610,7 @@ class PythonLektion18_Screen7(Screen):
         python_dashboard.lektion_erfolgreich(18) # Bei Screen L2_S6 hier eine 2, bei L3_S6 eine 3 eintragen!
 
         self.lektions_xp = 0
+        self.lektions_coins = 0
         self.manager.current = 'python_dashboard_2'
 
 # =============================================================================================================================
@@ -9481,6 +9493,452 @@ class WebLektion2_Screen6(Screen):
         # ---------------------------------------------------------------------------------------------------------------------
         web_dashboard = self.manager.get_screen('web_dashboard') # Holt das korrekte Web-Dashboard
         web_dashboard.lektion_erfolgreich(2) # Übergibt die 1, da es Web-Lektion 1 ist
+
+        self.lektions_xp = 0
+        self.manager.current = 'web_dashboard' # Wechselt zum Web-Dashboard
+
+# =============================================================================================================================
+# WEB LEKTION 3: DIE LERN SCREENS
+# =============================================================================================================================
+
+class WebLektion3_Screen1(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        layout = FloatLayout()
+
+        welcome_label = Label(
+            text="Paragraphen",
+            font_size=80,
+            pos_hint={'center_x': 0.5, 'center_y': 0.85}
+        )
+        
+
+        erklährung_label1 = Label(
+            text="Lerne über die besonders gebräuchlichen Paragraphen",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.7}
+        )
+
+        erklährung_label2 = Label(
+            text="in der Web-Technologie HTML!",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.65}
+        )
+
+        erklährung_label3 = Label(
+            text="Starten wir!",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.55}
+        )
+
+        weiter_button = Button(
+            text="Weiter",
+            font_size=40,
+            size_hint=(0.3, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.2}
+        )
+        weiter_button.bind(on_press=self.weiter)
+
+        layout.add_widget(welcome_label)
+        layout.add_widget(erklährung_label1)
+        layout.add_widget(erklährung_label2)
+        layout.add_widget(erklährung_label3)
+        layout.add_widget(weiter_button)
+
+        # Ausführen:
+        self.add_widget(layout)
+
+    def weiter(self, instance):
+        self.manager.current = 'web_l3_s2'
+
+class WebLektion3_Screen2(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        layout = FloatLayout()
+        
+        erklährung_label1 = Label(
+            text="Was ist ein Paragraph in HTML? Ein Paragraph ist nichts",
+            font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.8}
+        )
+        
+        erklährung_label2 = Label(
+            text="anderes, als ein weiterer Tag mit dem wir Text anzeigen.",
+            font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
+        )
+
+        erklährung_label3 = Label(
+            text="Der Paragraph verwendet dazu den P-Tag. Du denkst dir schon wie",
+            font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
+        )
+
+        erklährung_label4 = Label(
+            text="man ihn erstellt, oder? Schau mal:",
+            font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
+        )
+
+        #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
+        code_source_gesamt = CodeInput(
+            text="<html>\n    <h1>Paragraph is under me</h1>\n    <p>ICH BIN DER TEXT!!!</p>\n</html>", # \n macht den Zeilenumbruch!
+            lexer=HtmlLexer(),
+            style=get_style_by_name('monokai'),
+            font_size=32,
+            size_hint=(0.6, 0.25),               # Höhe angepasst für 2 Zeilen
+            pos_hint={'center_x': 0.5, 'center_y': 0.4}, # Perfekt zentriert im Bereich
+            readonly=True,
+            use_bubble=True,
+            background_normal='',
+            background_color=(0, 0, 0, 0)
+        )
+
+        weiter_button = Button(
+            text="Weiter",
+            font_size=40,
+            size_hint=(0.3, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.2}
+        )
+        weiter_button.bind(on_press=self.weiter)
+
+        # Objekte hinzufügen
+        layout.add_widget(weiter_button)
+        layout.add_widget(erklährung_label1)
+        layout.add_widget(erklährung_label2)
+        layout.add_widget(erklährung_label3)
+        layout.add_widget(erklährung_label4)
+        layout.add_widget(code_source_gesamt) # Das kombinierte Widget hinzufügen
+
+        self.add_widget(layout)
+
+    def weiter(self, instance):
+        self.manager.current = 'web_l3_s3'
+
+class WebLektion3_Screen3(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        layout = FloatLayout()
+
+        frage1 = Label(
+            text="Welcher Tag erstellt einen Text?",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.8}
+        )
+
+        self.option1 = Button(
+            text="<h1>",
+            size_hint=(0.5, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.5}
+        )
+        self.option1.bind(on_press=self.antwort_falsch)
+
+        self.option2 = Button(
+            text="<p>",
+            size_hint=(0.5, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.35}
+        )
+        self.option2.bind(on_press=self.antwort_richtig)
+
+        layout.add_widget(frage1)
+        layout.add_widget(self.option1)
+        layout.add_widget(self.option2)
+
+        self.fehler_gemacht = False
+        
+        # Ausführen:
+        self.add_widget(layout)
+
+    def antwort_falsch(self, instance):
+        self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.fehler_gemacht = True
+
+    def antwort_richtig(self, instance):
+            # 1. Klick-Prüfung: Ist der Button noch nicht im edlen Marineblau?
+            if instance.background_color != [0.25, 0.55, 0.95, 1]:
+                self.option1.background_color = (1, 1, 1, 1)
+                if hasattr(self, 'option3'):
+                    self.option3.background_color = (1, 1, 1, 1)
+                
+                # Button wird beim 1. Klick marineblau gefärbt
+                instance.background_color = (0.25, 0.55, 0.95, 1)
+                
+                # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
+                if not self.fehler_gemacht:
+                    abschluss = self.manager.get_screen('web_l3_s6')
+                    abschluss.lektions_xp += 10
+                    
+                return  # Auf den zweiten Klick warten
+    
+            # 2. Klick: Farbe zurücksetzen und zum nächsten Screen springen
+            instance.background_color = (1, 1, 1, 1)
+            self.manager.current = 'web_l3_s4'
+
+class WebLektion3_Screen4(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        layout = FloatLayout()
+
+        frage = Label(
+            text="Ein Paragraph ist eigentlich ein?",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.8}
+        )
+
+        self.option1 = Button(
+            text="Text im Web",
+            size_hint=(0.5, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.5}
+        )
+        self.option1.bind(on_press=self.antwort_richtig)
+
+        self.option2 = Button(
+            text="Para im Web",
+            size_hint=(0.5, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.35}
+        )
+        self.option2.bind(on_press=self.antwort_falsch_option2)
+
+        self.option3 = Button(
+            text="Ein schlechter Tag.",
+            size_hint=(0.5, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.2}
+        )
+        self.option3.bind(on_press=self.antwort_falsch_option3)
+
+        # Adden der Objekte:
+        layout.add_widget(frage)
+        layout.add_widget(self.option1)
+        layout.add_widget(self.option2)
+        layout.add_widget(self.option3)
+
+        self.fehler_gemacht = False
+        
+        # Ausführen:
+        self.add_widget(layout)
+
+    def antwort_richtig(self, instance):
+                # 1. Klick-Prüfung: Ist der Button noch nicht im edlen Marineblau?
+                if instance.background_color != [0.25, 0.55, 0.95, 1]:
+                    self.option1.background_color = (1, 1, 1, 1)
+                    if hasattr(self, 'option3'):
+                        self.option3.background_color = (1, 1, 1, 1)
+                    
+                    # Button wird beim 1. Klick marineblau gefärbt
+                    instance.background_color = (0.25, 0.55, 0.95, 1)
+                    
+                    # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
+                    if not self.fehler_gemacht:
+                        abschluss = self.manager.get_screen('web_l3_s6')
+                        abschluss.lektions_xp += 10
+                        
+                    return  # Auf den zweiten Klick warten
+        
+                # 2. Klick: Farbe zurücksetzen und zum nächsten Screen springen
+                instance.background_color = (1, 1, 1, 1)
+                self.manager.current = 'web_l3_s5'
+
+    def antwort_falsch_option2(self, instance):
+        self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.fehler_gemacht = True
+
+    def antwort_falsch_option1(self, instance):
+        self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.fehler_gemacht = True
+
+    def antwort_falsch_option3(self, instance):
+        self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.fehler_gemacht = True
+
+class WebLektion3_Screen5(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        layout = FloatLayout()
+
+        # 1. Die Frage
+        frage = Label(
+            text="Was fehlt in diesem Code?",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.8}
+        )
+
+        #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
+        code_source_gesamt = CodeInput(
+            text="<html>\n    <h1>Welcome to my Website!<h1>\n</html>",        # Der Quiz-Code zweizeilig untereinander
+            lexer=HtmlLexer(),
+            style=get_style_by_name('monokai'),
+            font_size=32,
+            size_hint=(0.6, 0.25),               # Exakt die gleichen Maße wie auf Screen 2
+            pos_hint={'center_x': 0.5, 'center_y': 0.5}, # Perfekt zentriert an derselben Stelle
+            readonly=True,
+            use_bubble=True,
+            background_normal='',
+            background_color=(0, 0, 0, 0)
+        )
+
+        # Deine originalen Optionen (Abstände für die Buttons)
+        self.option1 = Button(
+            text="Hier fehlt nichts.",
+            size_hint=(0.6, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.32}
+        )
+        self.option1.bind(on_press=self.antwort_falsch_option1)
+        
+        self.option2 = Button(
+            text="Ein Paragraph (P-Tag)",
+            size_hint=(0.6, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.20}
+        )
+        self.option2.bind(on_press=self.antwort_richtig)
+        
+        self.option3 = Button(
+            text="Ein Text (T-Tag)",
+            size_hint=(0.6, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.08}
+        )
+        self.option3.bind(on_press=self.antwort_falsch_option3)
+
+        # Adden der Objekte:
+        layout.add_widget(frage)
+        layout.add_widget(code_source_gesamt)    # Das identische Editor-Widget
+        layout.add_widget(self.option1)
+        layout.add_widget(self.option2)
+        layout.add_widget(self.option3)
+        
+        self.fehler_gemacht = False
+        
+        # Ausführen:
+        self.add_widget(layout)
+    
+    def antwort_richtig(self, instance):
+            # 1. Klick-Prüfung: Ist der Button noch nicht im edlen Marineblau?
+            if instance.background_color != [0.25, 0.55, 0.95, 1]:
+                self.option1.background_color = (1, 1, 1, 1)
+                if hasattr(self, 'option3'):
+                    self.option3.background_color = (1, 1, 1, 1)
+                
+                # Button wird beim 1. Klick marineblau gefärbt
+                instance.background_color = (0.25, 0.55, 0.95, 1)
+                
+                # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
+                if not self.fehler_gemacht:
+                    abschluss = self.manager.get_screen('web_l3_s6')
+                    abschluss.lektions_xp += 10
+                    
+                return  # Auf den zweiten Klick warten
+    
+            # 2. Klick: Farbe zurücksetzen und zum nächsten Screen springen
+            instance.background_color = (1, 1, 1, 1)
+            self.manager.current = 'web_l3_s6'
+
+    def antwort_falsch_option1(self, instance):
+        self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.fehler_gemacht = True
+
+    def antwort_falsch_option3(self, instance):
+        self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.fehler_gemacht = True
+
+    def antwort_falsch_option2(self, instance):
+        self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.fehler_gemacht = True
+
+class WebLektion3_Screen6(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        layout = FloatLayout()
+
+        erfolg_label1 = Label(
+            text="Lektion abgeschlossen!",
+            font_size=80,
+            font_name="Roboto-Bold",
+            pos_hint={'center_x': 0.5, 'center_y': 0.9}
+        )
+
+        motivation = Label(
+            text="Der Paragraph ist ein starker Text!",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.5}
+        )
+
+        self.xp_anzeige_label = Label(
+            text="",
+            font_size=45,
+            pos_hint={'center_x': 0.5, 'center_y': 0.45}
+        )
+
+        grafik = Image(
+            source='AbzeichenLTCnew.png',
+            size_hint=(0.4, 0.4),
+            pos_hint={'center_x': 0.5, 'center_y': 0.7}
+        )
+
+        # Der finale Fertig-Button
+        fertig_button = FertigPulseButton(
+            text="Fertig",
+            font_size=40,
+            size_hint=(0.3, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.2},
+        )
+        fertig_button.bind(on_press=self.lektion_beenden)
+
+        # Adden der Objekte:
+        layout.add_widget(erfolg_label1)
+        layout.add_widget(fertig_button)
+        layout.add_widget(motivation)
+        layout.add_widget(self.xp_anzeige_label)
+        layout.add_widget(grafik)
+
+        # Startet bei 0 und nimmt die Punkte der Quiz-Screens auf
+        self.lektions_xp = 0
+
+        # Ausführen:
+        self.add_widget(layout)
+    
+    # *args hinzugefügt für stabile Kivy-Event-Verarbeitung
+    def on_pre_enter(self, *args):
+        self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
+        
+    def lektion_beenden(self, instance):
+        app_ordner = App.get_running_app().user_data_dir
+        
+        # ---------------------------------------------------------------------------------------------------------------------
+        # XP SPEICHERN (Dein Original-Code)
+        # ---------------------------------------------------------------------------------------------------------------------
+        xp_datei = os.path.join(app_ordner, "xp.txt")
+        aktuelle_xp = 0
+        if os.path.exists(xp_datei):
+            with open(xp_datei, "r", encoding="utf-8") as datei:
+                try:
+                    aktuelle_xp = int(datei.read().strip())
+                except:
+                    aktuelle_xp = 0
+
+        gesamte_xp = aktuelle_xp + self.lektions_xp
+        with open(xp_datei, "w", encoding="utf-8") as datei:
+            datei.write(str(gesamte_xp))
+            
+        print(f"XP erfolgreich aktualisiert! Gesamt: {gesamte_xp} XP")
+
+        # ---------------------------------------------------------------------------------------------------------------------
+        # NEU: MÜNZEN IM HINTERGRUND SPEICHERN (10 Münzen fix - JETZT AUCH FÜR WEB!)
+        # ---------------------------------------------------------------------------------------------------------------------
+        coins_datei = os.path.join(app_ordner, "coins.txt")
+        aktuelle_coins = 0
+        if os.path.exists(coins_datei):
+            with open(coins_datei, "r", encoding="utf-8") as datei:
+                try:
+                    aktuelle_coins = int(datei.read().strip())
+                except:
+                    aktuelle_coins = 0
+
+        gesamte_coins = aktuelle_coins + 10 # Unabhängig von Fehlern immer +10
+        with open(coins_datei, "w", encoding="utf-8") as datei:
+            datei.write(str(gesamte_coins))
+            
+        print(f"Münzen erfolgreich im Hintergrund aktualisiert! Gesamt: {gesamte_coins}")
+            
+        # ---------------------------------------------------------------------------------------------------------------------
+        # WEB FORTSCHRITT AKTUALISIEREN & WECHSELN
+        # ---------------------------------------------------------------------------------------------------------------------
+        web_dashboard = self.manager.get_screen('web_dashboard') # Holt das korrekte Web-Dashboard
+        web_dashboard.lektion_erfolgreich(3) # Übergibt die 1, da es Web-Lektion 1 ist
 
         self.lektions_xp = 0
         self.manager.current = 'web_dashboard' # Wechselt zum Web-Dashboard
@@ -11406,6 +11864,12 @@ class LTC(App):
         sm.add_widget(WebLektion2_Screen4(name='web_l2_s4'))
         sm.add_widget(WebLektion2_Screen5(name='web_l2_s5'))
         sm.add_widget(WebLektion2_Screen6(name='web_l2_s6'))
+        sm.add_widget(WebLektion3_Screen1(name='web_l3_s1'))
+        sm.add_widget(WebLektion3_Screen2(name='web_l3_s2'))
+        sm.add_widget(WebLektion3_Screen3(name='web_l3_s3'))
+        sm.add_widget(WebLektion3_Screen4(name='web_l3_s4'))
+        sm.add_widget(WebLektion3_Screen5(name='web_l3_s5'))
+        sm.add_widget(WebLektion3_Screen6(name='web_l3_s6'))
 
         # Pfade für Auto-Skip definieren
         pfad_datei = os.path.join(self.user_data_dir, "pfad.txt")

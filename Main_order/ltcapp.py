@@ -10581,7 +10581,7 @@ class PythonDashboard(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         
-        layout = FloatLayout()
+        self.layout = FloatLayout()
         self.alle_buttons = {}
 
         # Erstellen der Objekte:
@@ -10708,22 +10708,22 @@ class PythonDashboard(Screen):
             btn.bind(on_press=self.lektion_geklickt)
             
             self.alle_buttons[nummer] = btn
-            layout.add_widget(btn)
+            self.layout.add_widget(btn)
         
         # Adden der Objekte:
-        layout.add_widget(title_label)
-        layout.add_widget(card_menu_oben)
-        layout.add_widget(card_menu_unten)
-        layout.add_widget(lernen_button_menu)
-        layout.add_widget(profil_button_menu)
-        layout.add_widget(self.coins_display_button)
-        layout.add_widget(kurs_wechsel_btn)
-        layout.add_widget(next_abschnitt_button)
-        layout.add_widget(info_dev_button)
-        layout.add_widget(üben_button_menu)
+        self.layout.add_widget(title_label)
+        self.layout.add_widget(card_menu_oben)
+        self.layout.add_widget(card_menu_unten)
+        self.layout.add_widget(lernen_button_menu)
+        self.layout.add_widget(profil_button_menu)
+        self.layout.add_widget(self.coins_display_button)
+        self.layout.add_widget(kurs_wechsel_btn)
+        self.layout.add_widget(next_abschnitt_button)
+        self.layout.add_widget(info_dev_button)
+        self.layout.add_widget(üben_button_menu)
         
         # Ausführen:
-        self.add_widget(layout)
+        self.add_widget(self.layout)
 
     def on_enter(self, *args):
         # 1. Münzen aktualisieren
@@ -10760,9 +10760,38 @@ class PythonDashboard(Screen):
     def lektion_geklickt(self, instance_des_buttons):
         nummer = instance_des_buttons.lektions_id
         status = instance_des_buttons.status
-        
-        if status == "gesperrt" or status == "erledigt": # if status == "erledigt" or...
+
+        # erledigt und gesperrt
+        if status == "gesperrt": # if status == "erledigt" or...
             return
+        elif status == "erledigt":
+            # hier kommt jetzt die neuen widgets:
+            self.widget1 = Button(
+                text="",
+                size_hint=(0.6, 0.6),
+                pos_hint={'center_x': 0.5, 'center_y': 0.5}
+            )
+
+            self.widget2 = Button(
+                text="Zurück",
+                size_hint=(0.3, 0.1),
+                pos_hint={'center_x': 0.5, 'center_y': 0.35},
+                on_press=self.back
+            )
+            
+            self.widget3 = Label(
+                text="Bereits erledigt!",
+                font_name="Roboto-Bold",
+                font_size='24sp',
+                pos_hint={'center_y': 0.5, 'center_y': 0.7}
+            )
+
+            self.layout.add_widget(self.widget1)
+            self.layout.add_widget(self.widget2)
+            self.layout.add_widget(self.widget3)
+            return
+
+        
             
         #  Ab hier wird der Code überwacht
         try:
@@ -10836,11 +10865,16 @@ class PythonDashboard(Screen):
 
     def trainingfunc(self, instance):
         self.manager.current = 'training_python'
-  
+
+    def back(self, instance):
+        self.layout.remove_widget(self.widget1)
+        self.layout.remove_widget(self.widget2)
+        self.layout.remove_widget(self.widget3)
+
 class PythonDashboard2(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        layout = FloatLayout()
+        self.layout = FloatLayout()
         self.alle_buttons = {}
 
         # UI-Elemente initialisieren
@@ -10969,21 +11003,21 @@ class PythonDashboard2(Screen):
             )
             btn.bind(on_press=self.lektion_geklickt)
             self.alle_buttons[nummer] = btn
-            layout.add_widget(btn)
+            self.layout.add_widget(btn)
         
         # Widgets zum Layout hinzufügen
-        layout.add_widget(title_label)
-        layout.add_widget(card_menu_oben)
-        layout.add_widget(card_menu_unten)
-        layout.add_widget(lernen_button_menu)
-        layout.add_widget(profil_button_menu)
-        layout.add_widget(self.coins_display_button)
-        layout.add_widget(kurs_wechsel_btn)
-        layout.add_widget(prev_abschnitt_button)
-        layout.add_widget(info_dev_button)
-        layout.add_widget(üben_button_menu)
-        layout.add_widget(next_abschnitt_button)
-        self.add_widget(layout)
+        self.layout.add_widget(title_label)
+        self.layout.add_widget(card_menu_oben)
+        self.layout.add_widget(card_menu_unten)
+        self.layout.add_widget(lernen_button_menu)
+        self.layout.add_widget(profil_button_menu)
+        self.layout.add_widget(self.coins_display_button)
+        self.layout.add_widget(kurs_wechsel_btn)
+        self.layout.add_widget(prev_abschnitt_button)
+        self.layout.add_widget(info_dev_button)
+        self.layout.add_widget(üben_button_menu)
+        self.layout.add_widget(next_abschnitt_button)
+        self.add_widget(self.layout)
 
     def on_enter(self, *args):
         # 1. Münzen aktualisieren
@@ -11020,7 +11054,34 @@ class PythonDashboard2(Screen):
         nummer = instance_des_buttons.lektions_id
         status = instance_des_buttons.status
         
-        if status == "gesperrt" or status == "erledigt":
+        # erledigt und gesperrt
+        if status == "gesperrt": # if status == "erledigt" or...
+            return
+        elif status == "erledigt":
+            # hier kommt jetzt die neuen widgets:
+            self.widget1 = Button(
+                text="",
+                size_hint=(0.6, 0.6),
+                pos_hint={'center_x': 0.5, 'center_y': 0.5}
+            )
+        
+            self.widget2 = Button(
+                text="Zurück",
+                size_hint=(0.3, 0.1),
+                pos_hint={'center_x': 0.5, 'center_y': 0.35},
+                on_press=self.back
+            )
+                    
+            self.widget3 = Label(
+                text="Bereits erledigt!",
+                font_name="Roboto-Bold",
+                font_size='24sp',
+                pos_hint={'center_y': 0.5, 'center_y': 0.7}
+            )
+        
+            self.layout.add_widget(self.widget1)
+            self.layout.add_widget(self.widget2)
+            self.layout.add_widget(self.widget3)
             return
             
         try:
@@ -11084,12 +11145,17 @@ class PythonDashboard2(Screen):
     def trainingfunc(self, instance):
         self.manager.current = 'training_python_2'
 
+    def back(self, instance):
+        self.layout.remove_widget(self.widget1)
+        self.layout.remove_widget(self.widget2)
+        self.layout.remove_widget(self.widget3)
+
 # ERSTELLEN DES WEB DEVELOPER DASHBOARDS
 class WebDashboard(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         
-        layout = FloatLayout()
+        self.layout = FloatLayout()
         self.alle_buttons = {}
         
         # Erstellen der Objekte:
@@ -11219,28 +11285,55 @@ class WebDashboard(Screen):
             btn.bind(on_press=self.lektion_geklickt)
             
             self.alle_buttons[nummer] = btn
-            layout.add_widget(btn)
+            self.layout.add_widget(btn)
         
         # Adden der Objekte:
-        layout.add_widget(title_label)
-        layout.add_widget(card_menu_oben)
-        layout.add_widget(card_menu_unten)
-        layout.add_widget(lernen_button_menu)
-        layout.add_widget(profil_button_menu)
-        layout.add_widget(self.coins_display_button)
-        layout.add_widget(info_dev_button)
-        layout.add_widget(kurs_wechsel_btn)
-        layout.add_widget(üben_button_menu)
-        layout.add_widget(next_abschnitt_button)
+        self.layout.add_widget(title_label)
+        self.layout.add_widget(card_menu_oben)
+        self.layout.add_widget(card_menu_unten)
+        self.layout.add_widget(lernen_button_menu)
+        self.layout.add_widget(profil_button_menu)
+        self.layout.add_widget(self.coins_display_button)
+        self.layout.add_widget(info_dev_button)
+        self.layout.add_widget(kurs_wechsel_btn)
+        self.layout.add_widget(üben_button_menu)
+        self.layout.add_widget(next_abschnitt_button)
         
         # Ausführen:
-        self.add_widget(layout)
+        self.add_widget(self.layout)
     
     def lektion_geklickt(self, instance_des_buttons):
         nummer = instance_des_buttons.lektions_id
         status = instance_des_buttons.status
         
-        if status == "gesperrt" or status == "erledigt": # if status == "erledigt" or...
+        # erledigt und gesperrt
+        if status == "gesperrt": # if status == "erledigt" or...
+            return
+        elif status == "erledigt":
+            # hier kommt jetzt die neuen widgets:
+            self.widget1 = Button(
+                text="",
+                size_hint=(0.6, 0.6),
+                pos_hint={'center_x': 0.5, 'center_y': 0.5}
+            )
+                
+            self.widget2 = Button(
+                text="Zurück",
+                size_hint=(0.3, 0.1),
+                pos_hint={'center_x': 0.5, 'center_y': 0.35},
+                on_press=self.back
+            )
+                            
+            self.widget3 = Label(
+                text="Bereits erledigt!",
+                font_name="Roboto-Bold",
+                font_size='24sp',
+                pos_hint={'center_y': 0.5, 'center_y': 0.7}
+            )
+                
+            self.layout.add_widget(self.widget1)
+            self.layout.add_widget(self.widget2)
+            self.layout.add_widget(self.widget3)
             return
 
         try:    
@@ -11316,6 +11409,11 @@ class WebDashboard(Screen):
         
     def trainingfunc(self, instance):
         self.manager.current = 'training_web'
+
+    def back(self, instance):
+        self.layout.remove_widget(self.widget1)
+        self.layout.remove_widget(self.widget2)
+        self.layout.remove_widget(self.widget3)
 
 # ERSTELLEN DES KURSEWECHSELN SCREENS:
 class Kurse_Screen(Screen):

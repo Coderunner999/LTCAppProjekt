@@ -1153,7 +1153,25 @@ class PythonLektion1_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -1595,7 +1613,25 @@ class PythonLektion2_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -2039,7 +2075,25 @@ class PythonLektion3_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -2479,7 +2533,25 @@ class PythonLektion4_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -2923,7 +2995,25 @@ class PythonLektion5_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -3363,7 +3453,25 @@ class PythonLektion6_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
             
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -3803,7 +3911,25 @@ class PythonLektion7_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -4243,7 +4369,25 @@ class PythonLektion8_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -4687,7 +4831,25 @@ class PythonLektion9_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -5127,7 +5289,25 @@ class PythonLektion10_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -5563,7 +5743,25 @@ class PythonLektion11_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -5999,7 +6197,25 @@ class PythonLektion12_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -6443,7 +6659,25 @@ class PythonLektion13_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -6883,7 +7117,25 @@ class PythonLektion14_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -7323,7 +7575,25 @@ class PythonLektion15_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -7760,7 +8030,25 @@ class PythonLektion16_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -8204,7 +8492,25 @@ class PythonLektion17_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -8673,7 +8979,25 @@ class PythonLektion18_Screen7(Screen):
         self.coins_anzeige_label.text = f"Wegen Praxislektion hast du {self.lektions_coins} Münzen verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
+        #app_ordner = App.get_running_app().user_data_dir
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+        
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+                    
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -8724,7 +9048,12 @@ class PythonLektion18_Screen7(Screen):
 # =============================================================================================================================
 
 
-from web_lessons_abs1 import WebLektion1_Screen1, WebLektion1_Screen2, WebLektion1_Screen3, WebLektion1_Screen4, WebLektion1_Screen5, WebLektion1_Screen6
+from web_lessons_abs1 import (WebLektion1_Screen1,
+                              WebLektion1_Screen2,
+                              WebLektion1_Screen3,
+                              WebLektion1_Screen4,
+                              WebLektion1_Screen5,
+                              WebLektion1_Screen6)
 
 # =============================================================================================================================
 # WEB LEKTION 2: DIE LERN SCREENS

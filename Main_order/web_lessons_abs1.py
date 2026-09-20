@@ -17,6 +17,7 @@ from kivy.properties import ListProperty
 from kivy.graphics.texture import Texture
 from kivy.animation import Animation
 
+
 class FertigPulseButton(Button):
     # Kivy-Eigenschaft für das pulsierende Basis-Grün
     puls_farbe = ListProperty([0.12, 0.53, 0.22, 1])
@@ -532,50 +533,76 @@ class WebLektion1_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        app_ordner = App.get_running_app().user_data_dir
-        
-        # ---------------------------------------------------------------------------------------------------------------------
-        # XP SPEICHERN (Dein Original-Code)
-        # ---------------------------------------------------------------------------------------------------------------------
+        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
+        import os
+        from kivy.app import App
+        from kivy.utils import platform
+
+        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
+        try:
+            if platform == 'android':
+                from android.storage import app_storage_details # type: ignore
+                app_ordner = app_storage_details().files_dir
+            else:
+                app_ordner = os.path.dirname(os.path.abspath(__file__))
+            
+            if not app_ordner:
+                app_ordner = App.get_running_app().user_data_dir
+        except Exception as e:
+            print(f"Pfad-Fehler abgefangen: {e}")
+            app_ordner = "."
+
+        # 3. XP SPEICHERN MIT CRASH-SCHUTZ
         xp_datei = os.path.join(app_ordner, "xp.txt")
         aktuelle_xp = 0
         if os.path.exists(xp_datei):
-            with open(xp_datei, "r", encoding="utf-8") as datei:
-                try:
-                    aktuelle_xp = int(datei.read().strip())
-                except:
-                    aktuelle_xp = 0
+            try:
+                with open(xp_datei, "r", encoding="utf-8") as datei:
+                    inhalt = datei.read().strip()
+                    # Prüft, ob die Datei leer ist, um ValueError zu verhindern
+                    aktuelle_xp = int(inhalt) if inhalt else 0
+            except Exception as e:
+                print(f"Fehler beim XP-Lesen: {e}")
+                aktuelle_xp = 0
 
         gesamte_xp = aktuelle_xp + self.lektions_xp
-        with open(xp_datei, "w", encoding="utf-8") as datei:
-            datei.write(str(gesamte_xp))
+        try:
+            with open(xp_datei, "w", encoding="utf-8") as datei:
+                datei.write(str(gesamte_xp))
+        except Exception as e:
+            print(f"Fehler beim XP-Schreiben: {e}")
             
         print(f"XP erfolgreich aktualisiert! Gesamt: {gesamte_xp} XP")
 
-        # ---------------------------------------------------------------------------------------------------------------------
-        # NEU: MÜNZEN IM HINTERGRUND SPEICHERN (10 Münzen fix - JETZT AUCH FÜR WEB!)
-        # ---------------------------------------------------------------------------------------------------------------------
+        # 4. MÜNZEN SPEICHERN MIT CRASH-SCHUTZ
         coins_datei = os.path.join(app_ordner, "coins.txt")
         aktuelle_coins = 0
         if os.path.exists(coins_datei):
-            with open(coins_datei, "r", encoding="utf-8") as datei:
-                try:
-                    aktuelle_coins = int(datei.read().strip())
-                except:
-                    aktuelle_coins = 0
+            try:
+                with open(coins_datei, "r", encoding="utf-8") as datei:
+                    inhalt = datei.read().strip()
+                    aktuelle_coins = int(inhalt) if inhalt else 0
+            except Exception as e:
+                print(f"Fehler beim Münzen-Lesen: {e}")
+                aktuelle_coins = 0
 
-        gesamte_coins = aktuelle_coins + 10 # Unabhängig von Fehlern immer +10
-        with open(coins_datei, "w", encoding="utf-8") as datei:
-            datei.write(str(gesamte_coins))
+        gesamte_coins = aktuelle_coins + 10
+        try:
+            with open(coins_datei, "w", encoding="utf-8") as datei:
+                datei.write(str(gesamte_coins))
+        except Exception as e:
+            print(f"Fehler beim Münzen-Schreiben: {e}")
             
         print(f"Münzen erfolgreich im Hintergrund aktualisiert! Gesamt: {gesamte_coins}")
             
-        # ---------------------------------------------------------------------------------------------------------------------
-        # WEB FORTSCHRITT AKTUALISIEREN & WECHSELN
-        # ---------------------------------------------------------------------------------------------------------------------
-        web_dashboard = self.manager.get_screen('web_dashboard') # Holt das korrekte Web-Dashboard
-        web_dashboard.lektion_erfolgreich(1) # Übergibt die 1, da es Web-Lektion 1 ist
+        # 5. DASHBOARD AKTUALISIEREN & WECHSELN MIT ABSICHERUNG
+        try:
+            web_dashboard = self.manager.get_screen('web_dashboard')
+            web_dashboard.lektion_erfolgreich(1)
+        except Exception as e:
+            print(f"Dashboard-Wechsel fehlgeschlagen: {e}")
 
         self.lektions_xp = 0
-        self.manager.current = 'web_dashboard' # Wechselt zum Web-Dashboard
+        self.manager.current = 'web_dashboard'
+
 

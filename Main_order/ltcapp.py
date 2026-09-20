@@ -12490,19 +12490,27 @@ class Profil_Screen_Python(Screen):
         self.add_widget(layout)
 
     def on_enter(self, *args):
-        app = App.get_running_app()
-        xp_datei = os.path.join(app.user_data_dir, "xp.txt")
+      # 1. PFAD-ABGLEICH: Holt die XP aus dem exakt selben Ordner wie die Lektion!
+        from kivy.utils import platform
+        if platform == 'android':
+            from android.storage import app_storage_details  # type: ignore
+            app_ordner = app_storage_details().files_dir
+        else:
+            app = App.get_running_app()
+            app_ordner = app.user_data_dir
+              
+        xp_datei = os.path.join(app_ordner, "xp.txt")
         gesamt_xp = 0
-        
+                      
         # Prüfen, ob die Datei existiert und XP auslesen
         if os.path.exists(xp_datei):
             with open(xp_datei, "r", encoding="utf-8") as datei:
                 try:
                     gesamt_xp = int(datei.read().strip())
                 except:
-                    gesamt_xp = 0 # Falls die Datei leer oder fehlerhaft ist
-                    
-        # Label-Text live updaten
+                     gesamt_xp = 0 # Falls die Datei leer oder fehlerhaft ist
+                                  
+        # Label-Text live updaten (Nutzt deine originale Variable!)
         self.xp_label.text = f"XP: {gesamt_xp}"
 
     def zu_profil_wechseln(self, instance):
@@ -12631,10 +12639,18 @@ class Profil_Screen_Python_2(Screen):
         self.add_widget(layout)
 
     def on_enter(self, *args):
-        app = App.get_running_app()
-        xp_datei = os.path.join(app.user_data_dir, "xp.txt")
-        gesamt_xp = 0
+        # 1. PFAD-ABGLEICH: Holt die XP aus dem exakt selben Ordner wie die Lektion!
+        from kivy.utils import platform
+        if platform == 'android':
+            from android.storage import app_storage_details  # type: ignore
+            app_ordner = app_storage_details().files_dir
+        else:
+            app = App.get_running_app()
+            app_ordner = app.user_data_dir
         
+        xp_datei = os.path.join(app_ordner, "xp.txt")
+        gesamt_xp = 0
+                
         # Prüfen, ob die Datei existiert und XP auslesen
         if os.path.exists(xp_datei):
             with open(xp_datei, "r", encoding="utf-8") as datei:
@@ -12642,8 +12658,8 @@ class Profil_Screen_Python_2(Screen):
                     gesamt_xp = int(datei.read().strip())
                 except:
                     gesamt_xp = 0 # Falls die Datei leer oder fehlerhaft ist
-                    
-        # Label-Text live updaten
+                            
+        # Label-Text live updaten (Nutzt deine originale Variable!)
         self.xp_label.text = f"XP: {gesamt_xp}"
 
     def zu_profil_wechseln(self, instance):
@@ -13191,17 +13207,24 @@ class PythonDashboard(Screen):
         self.add_widget(self.layout)
 
     def on_enter(self, *args):
-        # 1. Münzen aktualisieren
-        app_ordner = App.get_running_app().user_data_dir
+        # Aktualisiert die Münzen live, wenn man das Web-Dashboard betritt
+        from kivy.utils import platform
+        if platform == 'android':
+            from android.storage import app_storage_details  # type: ignore
+            app_ordner = app_storage_details().files_dir
+        else:
+            app_ordner = App.get_running_app().user_data_dir
+                
+        # Ab hier läuft dein originaler Code für die Münzen unverändert weiter:
         coins_datei = os.path.join(app_ordner, "coins.txt")
-        münzen = 0
+        aktueller_münzstand = 0
         if os.path.exists(coins_datei):
-            try:
-                with open(coins_datei, "r", encoding="utf-8") as d:
-                    münzen = int(d.read().strip())
-            except:
-                pass
-        self.coins_display_button.text = f"{münzen} Münzen"
+            with open(coins_datei, "r", encoding="utf-8") as datei:
+                try: aktueller_münzstand = int(datei.read().strip())
+                except: aktueller_münzstand = 0
+        self.coins_display_button.text = f"{aktueller_münzstand} Münzen"
+                
+                
         
         # 2. Buttons live aktualisieren
         fortschritt_datei = os.path.join(app_ordner, "python_fortschritt.txt")
@@ -13486,17 +13509,22 @@ class PythonDashboard2(Screen):
         self.add_widget(self.layout)
 
     def on_enter(self, *args):
-        # 1. Münzen aktualisieren
-        app_ordner = App.get_running_app().user_data_dir
+        # Aktualisiert die Münzen live, wenn man das Web-Dashboard betritt
+        from kivy.utils import platform
+        if platform == 'android':
+            from android.storage import app_storage_details  # type: ignore
+            app_ordner = app_storage_details().files_dir
+        else:
+            app_ordner = App.get_running_app().user_data_dir
+        
+        # Ab hier läuft dein originaler Code für die Münzen unverändert weiter:
         coins_datei = os.path.join(app_ordner, "coins.txt")
-        münzen = 0
+        aktueller_münzstand = 0
         if os.path.exists(coins_datei):
-            try:
-                with open(coins_datei, "r", encoding="utf-8") as d:
-                    münzen = int(d.read().strip())
-            except:
-                pass
-        self.coins_display_button.text = f"{münzen} Münzen"
+            with open(coins_datei, "r", encoding="utf-8") as datei:
+                try: aktueller_münzstand = int(datei.read().strip())
+                except: aktueller_münzstand = 0
+        self.coins_display_button.text = f"{aktueller_münzstand} Münzen"
         
         # 2. Buttons live an den echten Fortschritt anpassen
         fortschritt_datei = os.path.join(app_ordner, "python_fortschritt.txt")

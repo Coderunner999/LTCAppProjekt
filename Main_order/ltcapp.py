@@ -1,6 +1,5 @@
 
 
-
 # ==============================================================================================================================
 # IMPORTIEREN DER NÖTIGEN PAKETE
 # ==============================================================================================================================
@@ -3489,7 +3488,7 @@ class PythonLektion7_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="text = '5' # Unser Wert.\n# Umwandeln in Ganze Zahl durch:\nzahl = int(text)\nprint(zahl) # 5", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -4107,7 +4106,7 @@ class PythonLektion8_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="name = 'Coder3000'\nprint(bool(name))",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -4369,7 +4368,7 @@ class PythonLektion9_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="entry = input()\nprint(entry) # Eingabe nochmal anzeigen", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -4551,7 +4550,7 @@ class PythonLektion9_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="input() = entry\nprint(input())",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -13183,7 +13182,7 @@ class PythonDashboard(Screen):
             return
         elif status == "erledigt":
             # hier kommt jetzt die neuen widgets:
-            self.widget1 = Button(
+            self.widget1 = WidgetButton(
                 text="",
                 size_hint=(0.6, 0.3),
                 background_color=(0.21, 0.26, 0.39, 1),
@@ -13192,7 +13191,7 @@ class PythonDashboard(Screen):
                        
             self.widget2 = Button(
                 text="Zurück",
-                size_hint=(0.3, 0.1),
+                size_hint=(0.4, 0.05),
                 pos_hint={'center_x': 0.5, 'center_y': 0.45},
                 on_press=self.back
             )
@@ -13486,7 +13485,7 @@ class PythonDashboard2(Screen):
                         
             self.widget2 = Button(
                 text="Zurück",
-                size_hint=(0.3, 0.1),
+                size_hint=(0.4, 0.05),
                 pos_hint={'center_x': 0.5, 'center_y': 0.45},
                 on_press=self.back
             )
@@ -13739,7 +13738,7 @@ class WebDashboard(Screen):
                 
             self.widget2 = Button(
                 text="Zurück",
-                size_hint=(0.3, 0.1),
+                size_hint=(0.4, 0.05),
                 pos_hint={'center_x': 0.5, 'center_y': 0.45},
                 on_press=self.back
             )

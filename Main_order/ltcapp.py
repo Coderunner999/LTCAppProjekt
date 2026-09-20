@@ -4812,7 +4812,7 @@ class PythonLektion10_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="# Erstellen von Number:\nnumber = 5", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -4994,7 +4994,7 @@ class PythonLektion10_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="# Die Aktualisierung:\ndata = 5.78",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -5252,7 +5252,7 @@ class PythonLektion11_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="wert = True\nif wert:\n    print('Thats True!')", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -5430,7 +5430,7 @@ class PythonLektion11_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="name = 'Jessica'\nif Jessica:\n    print('Whats the matter?')",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -5688,7 +5688,7 @@ class PythonLektion12_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="wert_1 = 5\nwert_2 = 5\nif wert_1 == wert_2:\n    print('Gleicher Inhalt!')", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -5866,7 +5866,7 @@ class PythonLektion12_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="person_1 = 'Jessica'\nperson_2 = 'Marko'\nif person_1:\n    print('Done')",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -6124,7 +6124,7 @@ class PythonLektion13_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="data_base_1 = 85\ndata_base_2 = 55\nif data_base_1 != data_base_2:\n    print('Ungleich!')", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -6306,7 +6306,7 @@ class PythonLektion13_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="glas_1 = 'Coffee'\nglas_2 = 'Beer'\nif glas_1 != glas_2:\n    print('Unterschiedliches')\n    print('Getränk!')",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -6568,7 +6568,7 @@ class PythonLektion14_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="our_text = 'Die Coderin'\nif our_text == 'Der Coder':\n    print('Der Coder?')\nelif our_text == 'Die Coderin':\n    print('Die Coderin?')", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -6750,7 +6750,7 @@ class PythonLektion14_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="student_1 = 'Anna'\nstudent_2 = 'Alice'\nif student_1 !=:\n    print('The live is not long.')\nelif student_2 == 'Dia':\n    print('I think the sky is red.')",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -7008,7 +7008,7 @@ class PythonLektion15_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="entry = input('Gib etwas ein: ')\nif entry == 'hi':\n    print('Hallo!')\nelif entry == 'moin':\n    print('Hi Deutscher! :)')\nelse:\n    print('Was?!')", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -7186,7 +7186,7 @@ class PythonLektion15_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="name = input('Wie heißt du? ')\nif name != 'Elon Musk':\n    print('Glaubwürdig!')\nelse:\n    print('Hmm...')",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -7448,7 +7448,7 @@ class PythonLektion16_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="python --version", # \n macht den Zeilenumbruch!
             lexer=PowerShellLexer(),
             style=get_style_by_name('monokai'),
@@ -7627,7 +7627,7 @@ class PythonLektion16_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="# JIPPI kein Buggy-Code heute!",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -8067,7 +8067,7 @@ class PythonLektion17_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="# Code ist jetzt mal unrelevant.",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -8449,7 +8449,7 @@ class PythonLektion18_Screen4(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="ls", # \n macht den Zeilenumbruch!
             lexer=PowerShellLexer(),
             style=get_style_by_name('monokai'),
@@ -8509,7 +8509,7 @@ class PythonLektion18_Screen5(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="get-process", # \n macht den Zeilenumbruch!
             lexer=PowerShellLexer(),
             style=get_style_by_name('monokai'),
@@ -8799,7 +8799,7 @@ class WebLektion1_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    Restlicher HTML Code...\n    Mehr Zeilen...\n</html>", # \n macht den Zeilenumbruch!
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -8977,7 +8977,7 @@ class WebLektion1_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="</html>\n<html>",        # Der Quiz-Code zweizeilig untereinander
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -9237,7 +9237,7 @@ class WebLektion2_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    <h1>Headline big</h1>\n    <h3>Headline middle</h3>\n    <h6>Headline small</h6>\n</html>", # \n macht den Zeilenumbruch!
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -9419,7 +9419,7 @@ class WebLektion2_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    <h1>Breaking News<h1>\n</html>",        # Der Quiz-Code zweizeilig untereinander
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -9683,7 +9683,7 @@ class WebLektion3_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    <h1>Paragraph is under me</h1>\n    <p>ICH BIN DER TEXT!!!</p>\n</html>", # \n macht den Zeilenumbruch!
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -9865,7 +9865,7 @@ class WebLektion3_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    <h1>Welcome to my Website!<h1>\n</html>",        # Der Quiz-Code zweizeilig untereinander
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -10126,7 +10126,7 @@ class WebLektion4_Screen2(Screen):
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    <img src='bild.jpg' alt='Ein schönes Bild'>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -10283,7 +10283,7 @@ class WebLektion4_Screen5(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
 
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    <img bild.jpg alt='Bild'>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -10511,7 +10511,7 @@ class WebLektion5_Screen2(Screen):
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    <body>\n        <h1>Meine Website</h1>\n        <p>Willkommen!</p>\n    </body>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -10668,7 +10668,7 @@ class WebLektion5_Screen5(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
 
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    <body>\n        <h1>Willkommen!</h1>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -10896,7 +10896,7 @@ class WebLektion6_Screen2(Screen):
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    <head>\n        <title>Meine Website</title>\n    </head>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -11053,7 +11053,7 @@ class WebLektion6_Screen5(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
 
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    <head>\n        <title>Meine Website</title>\n    <body>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -11281,8 +11281,8 @@ class WebLektion7_Screen2(Screen):
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
-        code_source_gesamt = CodeInput(
-            text="<html>\n    <a href='https://www.example.com'>\n        Website öffnen\n    </a>\n</html>",
+        code_source_gesamt = RoundedCodeInput(
+            text="<html>\n    <a href='https://www.example.com'>Website öffnen</a>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
             font_size=32,
@@ -11438,8 +11438,8 @@ class WebLektion7_Screen5(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
 
-        code_source_gesamt = CodeInput(
-            text="<html>\n    <a href='https://www.example.com'>\n        Website öffnen\n</html>",
+        code_source_gesamt = RoundedCodeInput(
+            text="<html>\n    <a href='https://www.example.com'>Website öffnen\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
             font_size=32,
@@ -11666,7 +11666,7 @@ class WebLektion8_Screen2(Screen):
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    <ul>\n        <li>HTML lernen</li>\n        <li>Websites bauen</li>\n    </ul>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -11823,8 +11823,8 @@ class WebLektion8_Screen5(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
 
-        code_source_gesamt = CodeInput(
-            text="<html>\n    <ul>\n        <li>HTML lernen</li>\n        <li>Websites bauen</li>\n</html>",
+        code_source_gesamt = RoundedCodeInput(
+            text="<html>\n    <ul>\n        <li>Hausübung machen</li>\n        <li>Für Prüfung Lernen</li>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
             font_size=32,
@@ -12051,7 +12051,7 @@ class WebLektion9_Screen2(Screen):
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    <ul>\n        <li>HTML lernen</li>\n        <li>Websites bauen</li>\n        <li>Code schreiben</li>\n    </ul>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -12208,7 +12208,7 @@ class WebLektion9_Screen5(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
 
-        code_source_gesamt = CodeInput(
+        code_source_gesamt = RoundedCodeInput(
             text="<html>\n    <ul>\n        <li>HTML lernen\n        <li>Websites bauen</li>\n    </ul>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),

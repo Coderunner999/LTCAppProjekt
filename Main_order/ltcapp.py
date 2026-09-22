@@ -1,5 +1,7 @@
 
 
+
+
 # ==============================================================================================================================
 # IMPORTIEREN DER NÖTIGEN PAKETE
 # ==============================================================================================================================
@@ -1153,25 +1155,7 @@ class PythonLektion1_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -1613,25 +1597,7 @@ class PythonLektion2_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -2075,25 +2041,7 @@ class PythonLektion3_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -2533,25 +2481,7 @@ class PythonLektion4_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -2995,25 +2925,7 @@ class PythonLektion5_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -3453,25 +3365,7 @@ class PythonLektion6_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
             
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -3596,7 +3490,7 @@ class PythonLektion7_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="text = '5' # Unser Wert.\n# Umwandeln in Ganze Zahl durch:\nzahl = int(text)\nprint(zahl) # 5", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -3911,25 +3805,7 @@ class PythonLektion7_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -4232,7 +4108,7 @@ class PythonLektion8_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="name = 'Coder3000'\nprint(bool(name))",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -4369,25 +4245,7 @@ class PythonLektion8_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -4512,7 +4370,7 @@ class PythonLektion9_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="entry = input()\nprint(entry) # Eingabe nochmal anzeigen", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -4694,7 +4552,7 @@ class PythonLektion9_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="input() = entry\nprint(input())",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -4831,25 +4689,7 @@ class PythonLektion9_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -4974,7 +4814,7 @@ class PythonLektion10_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="# Erstellen von Number:\nnumber = 5", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -5156,7 +4996,7 @@ class PythonLektion10_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="# Die Aktualisierung:\ndata = 5.78",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -5289,25 +5129,7 @@ class PythonLektion10_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -5432,7 +5254,7 @@ class PythonLektion11_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="wert = True\nif wert:\n    print('Thats True!')", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -5610,7 +5432,7 @@ class PythonLektion11_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="name = 'Jessica'\nif Jessica:\n    print('Whats the matter?')",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -5743,25 +5565,7 @@ class PythonLektion11_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -5886,7 +5690,7 @@ class PythonLektion12_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="wert_1 = 5\nwert_2 = 5\nif wert_1 == wert_2:\n    print('Gleicher Inhalt!')", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -6064,7 +5868,7 @@ class PythonLektion12_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="person_1 = 'Jessica'\nperson_2 = 'Marko'\nif person_1:\n    print('Done')",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -6197,25 +6001,7 @@ class PythonLektion12_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -6340,7 +6126,7 @@ class PythonLektion13_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="data_base_1 = 85\ndata_base_2 = 55\nif data_base_1 != data_base_2:\n    print('Ungleich!')", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -6522,7 +6308,7 @@ class PythonLektion13_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="glas_1 = 'Coffee'\nglas_2 = 'Beer'\nif glas_1 != glas_2:\n    print('Unterschiedliches')\n    print('Getränk!')",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -6659,25 +6445,7 @@ class PythonLektion13_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -6802,7 +6570,7 @@ class PythonLektion14_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="our_text = 'Die Coderin'\nif our_text == 'Der Coder':\n    print('Der Coder?')\nelif our_text == 'Die Coderin':\n    print('Die Coderin?')", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -6984,7 +6752,7 @@ class PythonLektion14_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="student_1 = 'Anna'\nstudent_2 = 'Alice'\nif student_1 !=:\n    print('The live is not long.')\nelif student_2 == 'Dia':\n    print('I think the sky is red.')",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -7117,25 +6885,7 @@ class PythonLektion14_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -7260,7 +7010,7 @@ class PythonLektion15_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="entry = input('Gib etwas ein: ')\nif entry == 'hi':\n    print('Hallo!')\nelif entry == 'moin':\n    print('Hi Deutscher! :)')\nelse:\n    print('Was?!')", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -7438,7 +7188,7 @@ class PythonLektion15_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="name = input('Wie heißt du? ')\nif name != 'Elon Musk':\n    print('Glaubwürdig!')\nelse:\n    print('Hmm...')",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -7575,25 +7325,7 @@ class PythonLektion15_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -7718,7 +7450,7 @@ class PythonLektion16_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="python --version", # \n macht den Zeilenumbruch!
             lexer=PowerShellLexer(),
             style=get_style_by_name('monokai'),
@@ -7897,7 +7629,7 @@ class PythonLektion16_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="# JIPPI kein Buggy-Code heute!",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -8030,25 +7762,7 @@ class PythonLektion16_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -8355,7 +8069,7 @@ class PythonLektion17_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="# Code ist jetzt mal unrelevant.",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -8492,25 +8206,7 @@ class PythonLektion17_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -8755,7 +8451,7 @@ class PythonLektion18_Screen4(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="ls", # \n macht den Zeilenumbruch!
             lexer=PowerShellLexer(),
             style=get_style_by_name('monokai'),
@@ -8815,7 +8511,7 @@ class PythonLektion18_Screen5(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="get-process", # \n macht den Zeilenumbruch!
             lexer=PowerShellLexer(),
             style=get_style_by_name('monokai'),
@@ -8979,25 +8675,7 @@ class PythonLektion18_Screen7(Screen):
         self.coins_anzeige_label.text = f"Wegen Praxislektion hast du {self.lektions_coins} Münzen verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
         
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
@@ -9047,13 +8725,439 @@ class PythonLektion18_Screen7(Screen):
 # WEB LEKTION 1: DIE LERN SCREENS
 # =============================================================================================================================
 
+class WebLektion1_Screen1(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        layout = FloatLayout()
 
-from web_lessons_abs1 import (WebLektion1_Screen1,
-                              WebLektion1_Screen2,
-                              WebLektion1_Screen3,
-                              WebLektion1_Screen4,
-                              WebLektion1_Screen5,
-                              WebLektion1_Screen6)
+        welcome_label = Label(
+            text="Willkommen im Web!",
+            font_size=80,
+            pos_hint={'center_x': 0.5, 'center_y': 0.85}
+        )
+        
+
+        erklährung_label1 = Label(
+            text="Starte mit HTML um deine eigenen Websites zu bauen!",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.7}
+        )
+
+        erklährung_label2 = Label(
+            text="Absolviere Lektionen und baue echte Kenntnisse auf!",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.65}
+        )
+
+        erklährung_label3 = Label(
+            text="Starten wir rein!",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.55}
+        )
+
+        weiter_button = Button(
+            text="Weiter",
+            font_size=40,
+            size_hint=(0.3, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.2}
+        )
+        weiter_button.bind(on_press=self.weiter)
+
+        layout.add_widget(welcome_label)
+        layout.add_widget(erklährung_label1)
+        layout.add_widget(erklährung_label2)
+        layout.add_widget(erklährung_label3)
+        layout.add_widget(weiter_button)
+
+        # Ausführen:
+        self.add_widget(layout)
+
+    def weiter(self, instance):
+        self.manager.current = 'web_l1_s2'
+
+class WebLektion1_Screen2(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        layout = FloatLayout()
+        
+        erklährung_label1 = Label(
+            text="Um in HTML zu coden, verwenden wir sogenannte Tags.",
+            font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.8}
+        )
+        
+        erklährung_label2 = Label(
+            text="Dabei gibt es öffnende Tags, und schließende Tags wie: <html>, </html>",
+            font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
+        )
+
+        erklährung_label3 = Label(
+            text="Der Code unserer Websites startet immer mit dem HTML-Tag.",
+            font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
+        )
+
+        erklährung_label4 = Label(
+            text="Schau dir das Grundgerüst einer HTML-Website an:",
+            font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
+        )
+
+        #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
+        code_source_gesamt = CodeInput(
+            text="<html>\n    Restlicher HTML Code...\n    Mehr Zeilen...\n</html>", # \n macht den Zeilenumbruch!
+            lexer=HtmlLexer(),
+            style=get_style_by_name('monokai'),
+            font_size=32,
+            size_hint=(0.6, 0.25),               # Höhe angepasst für 2 Zeilen
+            pos_hint={'center_x': 0.5, 'center_y': 0.4}, # Perfekt zentriert im Bereich
+            readonly=True,
+            use_bubble=True,
+            background_normal='',
+            background_color=(0, 0, 0, 0)
+        )
+
+        weiter_button = Button(
+            text="Weiter",
+            font_size=40,
+            size_hint=(0.3, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.2}
+        )
+        weiter_button.bind(on_press=self.weiter)
+
+        # Objekte hinzufügen
+        layout.add_widget(weiter_button)
+        layout.add_widget(erklährung_label1)
+        layout.add_widget(erklährung_label2)
+        layout.add_widget(erklährung_label3)
+        layout.add_widget(erklährung_label4)
+        layout.add_widget(code_source_gesamt) # Das kombinierte Widget hinzufügen
+
+        self.add_widget(layout)
+
+    def weiter(self, instance):
+        self.manager.current = 'web_l1_s3'
+
+class WebLektion1_Screen3(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        layout = FloatLayout()
+
+        frage1 = Label(
+            text="Das ist ein schließender Tag:",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.8}
+        )
+
+        self.option1 = Button(
+            text="<html>",
+            size_hint=(0.5, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.5}
+        )
+        self.option1.bind(on_press=self.antwort_falsch)
+
+        self.option2 = Button(
+            text="</button>",
+            size_hint=(0.5, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.35}
+        )
+        self.option2.bind(on_press=self.antwort_richtig)
+
+        layout.add_widget(frage1)
+        layout.add_widget(self.option1)
+        layout.add_widget(self.option2)
+
+        self.fehler_gemacht = False
+        
+        # Ausführen:
+        self.add_widget(layout)
+
+    def antwort_falsch(self, instance):
+        self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.fehler_gemacht = True
+
+    def antwort_richtig(self, instance):
+            # 1. Klick-Prüfung: Ist der Button noch nicht im edlen Marineblau?
+            if instance.background_color != [0.25, 0.55, 0.95, 1]:
+                self.option1.background_color = (1, 1, 1, 1)
+                if hasattr(self, 'option3'):
+                    self.option3.background_color = (1, 1, 1, 1)
+                
+                # Button wird beim 1. Klick marineblau gefärbt
+                instance.background_color = (0.25, 0.55, 0.95, 1)
+                
+                # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
+                if not self.fehler_gemacht:
+                    abschluss = self.manager.get_screen('web_l1_s6')
+                    abschluss.lektions_xp += 10
+                    
+                return  # Auf den zweiten Klick warten
+    
+            # 2. Klick: Farbe zurücksetzen und zum nächsten Screen springen
+            instance.background_color = (1, 1, 1, 1)
+            self.manager.current = 'web_l1_s4'
+
+class WebLektion1_Screen4(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        layout = FloatLayout()
+
+        frage = Label(
+            text="Was ist ein Tag in HTML?",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.8}
+        )
+
+        self.option1 = Button(
+            text="Eine Befehlsgruppe die etwas darstellt.",
+            size_hint=(0.5, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.5}
+        )
+        self.option1.bind(on_press=self.antwort_richtig)
+
+        self.option2 = Button(
+            text="Eine Art Befehl, wie in Javascript.",
+            size_hint=(0.5, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.35}
+        )
+        self.option2.bind(on_press=self.antwort_falsch_option2)
+
+        self.option3 = Button(
+            text="Ein Tag hat 24 Stunden.",
+            size_hint=(0.5, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.2}
+        )
+        self.option3.bind(on_press=self.antwort_falsch_option3)
+
+        # Adden der Objekte:
+        layout.add_widget(frage)
+        layout.add_widget(self.option1)
+        layout.add_widget(self.option2)
+        layout.add_widget(self.option3)
+
+        self.fehler_gemacht = False
+        
+        # Ausführen:
+        self.add_widget(layout)
+
+    def antwort_richtig(self, instance):
+                # 1. Klick-Prüfung: Ist der Button noch nicht im edlen Marineblau?
+                if instance.background_color != [0.25, 0.55, 0.95, 1]:
+                    self.option1.background_color = (1, 1, 1, 1)
+                    if hasattr(self, 'option3'):
+                        self.option3.background_color = (1, 1, 1, 1)
+                    
+                    # Button wird beim 1. Klick marineblau gefärbt
+                    instance.background_color = (0.25, 0.55, 0.95, 1)
+                    
+                    # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
+                    if not self.fehler_gemacht:
+                        abschluss = self.manager.get_screen('web_l1_s6')
+                        abschluss.lektions_xp += 10
+                        
+                    return  # Auf den zweiten Klick warten
+        
+                # 2. Klick: Farbe zurücksetzen und zum nächsten Screen springen
+                instance.background_color = (1, 1, 1, 1)
+                self.manager.current = 'web_l1_s5'
+
+    def antwort_falsch_option2(self, instance):
+        self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.fehler_gemacht = True
+
+    def antwort_falsch_option3(self, instance):
+        self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.fehler_gemacht = True
+
+class WebLektion1_Screen5(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        layout = FloatLayout()
+
+        # 1. Die Frage
+        frage = Label(
+            text="Finde den Fehler im Code!",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.8}
+        )
+
+        #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
+        code_source_gesamt = CodeInput(
+            text="</html>\n<html>",        # Der Quiz-Code zweizeilig untereinander
+            lexer=HtmlLexer(),
+            style=get_style_by_name('monokai'),
+            font_size=32,
+            size_hint=(0.6, 0.25),               # Exakt die gleichen Maße wie auf Screen 2
+            pos_hint={'center_x': 0.5, 'center_y': 0.5}, # Perfekt zentriert an derselben Stelle
+            readonly=True,
+            use_bubble=True,
+            background_normal='',
+            background_color=(0, 0, 0, 0)
+        )
+
+        # Deine originalen Optionen (Abstände für die Buttons)
+        self.option1 = Button(
+            text="Ein HTML-Tag existiert nicht.",
+            size_hint=(0.6, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.32}
+        )
+        self.option1.bind(on_press=self.antwort_falsch_option1)
+        
+        self.option2 = Button(
+            text="Die Tags sind verwechselt.",
+            size_hint=(0.6, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.20}
+        )
+        self.option2.bind(on_press=self.antwort_richtig)
+        
+        self.option3 = Button(
+            text="Das ist ungültige Syntax.",
+            size_hint=(0.6, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.08}
+        )
+        self.option3.bind(on_press=self.antwort_falsch_option3)
+
+        # Adden der Objekte:
+        layout.add_widget(frage)
+        layout.add_widget(code_source_gesamt)    # Das identische Editor-Widget
+        layout.add_widget(self.option1)
+        layout.add_widget(self.option2)
+        layout.add_widget(self.option3)
+        
+        self.fehler_gemacht = False
+        
+        # Ausführen:
+        self.add_widget(layout)
+    
+    def antwort_richtig(self, instance):
+            # 1. Klick-Prüfung: Ist der Button noch nicht im edlen Marineblau?
+            if instance.background_color != [0.25, 0.55, 0.95, 1]:
+                self.option1.background_color = (1, 1, 1, 1)
+                if hasattr(self, 'option3'):
+                    self.option3.background_color = (1, 1, 1, 1)
+                
+                # Button wird beim 1. Klick marineblau gefärbt
+                instance.background_color = (0.25, 0.55, 0.95, 1)
+                
+                # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
+                if not self.fehler_gemacht:
+                    abschluss = self.manager.get_screen('web_l1_s6')
+                    abschluss.lektions_xp += 10
+                    
+                return  # Auf den zweiten Klick warten
+    
+            # 2. Klick: Farbe zurücksetzen und zum nächsten Screen springen
+            instance.background_color = (1, 1, 1, 1)
+            self.manager.current = 'web_l1_s6'
+
+    def antwort_falsch_option1(self, instance):
+        self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.fehler_gemacht = True
+
+    def antwort_falsch_option3(self, instance):
+        self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.fehler_gemacht = True
+
+class WebLektion1_Screen6(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        layout = FloatLayout()
+
+        erfolg_label1 = Label(
+            text="Lektion abgeschlossen!",
+            font_size=80,
+            font_name="Roboto-Bold",
+            pos_hint={'center_x': 0.5, 'center_y': 0.9}
+        )
+
+        motivation = Label(
+            text="Du bist deinen Zielen einen schritt näher!",
+            font_size=40,
+            pos_hint={'center_x': 0.5, 'center_y': 0.5}
+        )
+
+        self.xp_anzeige_label = Label(
+            text="",
+            font_size=45,
+            pos_hint={'center_x': 0.5, 'center_y': 0.45}
+        )
+
+        grafik = Image(
+            source='AbzeichenLTCnew.png',
+            size_hint=(0.4, 0.4),
+            pos_hint={'center_x': 0.5, 'center_y': 0.7}
+        )
+
+        # Der finale Fertig-Button
+        fertig_button = FertigPulseButton(
+            text="Fertig",
+            font_size=40,
+            size_hint=(0.3, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.2},
+        )
+        fertig_button.bind(on_press=self.lektion_beenden)
+
+        # Adden der Objekte:
+        layout.add_widget(erfolg_label1)
+        layout.add_widget(fertig_button)
+        layout.add_widget(motivation)
+        layout.add_widget(self.xp_anzeige_label)
+        layout.add_widget(grafik)
+
+        # Startet bei 0 und nimmt die Punkte der Quiz-Screens auf
+        self.lektions_xp = 0
+
+        # Ausführen:
+        self.add_widget(layout)
+    
+    # *args hinzugefügt für stabile Kivy-Event-Verarbeitung
+    def on_pre_enter(self, *args):
+        self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
+        
+    def lektion_beenden(self, instance):
+        app_ordner = App.get_running_app().user_data_dir
+        
+        # ---------------------------------------------------------------------------------------------------------------------
+        # XP SPEICHERN (Dein Original-Code)
+        # ---------------------------------------------------------------------------------------------------------------------
+        xp_datei = os.path.join(app_ordner, "xp.txt")
+        aktuelle_xp = 0
+        if os.path.exists(xp_datei):
+            with open(xp_datei, "r", encoding="utf-8") as datei:
+                try:
+                    aktuelle_xp = int(datei.read().strip())
+                except:
+                    aktuelle_xp = 0
+
+        gesamte_xp = aktuelle_xp + self.lektions_xp
+        with open(xp_datei, "w", encoding="utf-8") as datei:
+            datei.write(str(gesamte_xp))
+            
+        print(f"XP erfolgreich aktualisiert! Gesamt: {gesamte_xp} XP")
+
+        # ---------------------------------------------------------------------------------------------------------------------
+        # NEU: MÜNZEN IM HINTERGRUND SPEICHERN (10 Münzen fix - JETZT AUCH FÜR WEB!)
+        # ---------------------------------------------------------------------------------------------------------------------
+        coins_datei = os.path.join(app_ordner, "coins.txt")
+        aktuelle_coins = 0
+        if os.path.exists(coins_datei):
+            with open(coins_datei, "r", encoding="utf-8") as datei:
+                try:
+                    aktuelle_coins = int(datei.read().strip())
+                except:
+                    aktuelle_coins = 0
+
+        gesamte_coins = aktuelle_coins + 10 # Unabhängig von Fehlern immer +10
+        with open(coins_datei, "w", encoding="utf-8") as datei:
+            datei.write(str(gesamte_coins))
+            
+        print(f"Münzen erfolgreich im Hintergrund aktualisiert! Gesamt: {gesamte_coins}")
+            
+        # ---------------------------------------------------------------------------------------------------------------------
+        # WEB FORTSCHRITT AKTUALISIEREN & WECHSELN
+        # ---------------------------------------------------------------------------------------------------------------------
+        web_dashboard = self.manager.get_screen('web_dashboard') # Holt das korrekte Web-Dashboard
+        web_dashboard.lektion_erfolgreich(1) # Übergibt die 1, da es Web-Lektion 1 ist
+
+        self.lektions_xp = 0
+        self.manager.current = 'web_dashboard' # Wechselt zum Web-Dashboard
 
 # =============================================================================================================================
 # WEB LEKTION 2: DIE LERN SCREENS
@@ -9135,7 +9239,7 @@ class WebLektion2_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="<html>\n    <h1>Headline big</h1>\n    <h3>Headline middle</h3>\n    <h6>Headline small</h6>\n</html>", # \n macht den Zeilenumbruch!
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -9317,7 +9421,7 @@ class WebLektion2_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="<html>\n    <h1>Breaking News<h1>\n</html>",        # Der Quiz-Code zweizeilig untereinander
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -9454,25 +9558,8 @@ class WebLektion2_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
+        app_ordner = App.get_running_app().user_data_dir
         
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
         # ---------------------------------------------------------------------------------------------------------------------
@@ -9598,7 +9685,7 @@ class WebLektion3_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="<html>\n    <h1>Paragraph is under me</h1>\n    <p>ICH BIN DER TEXT!!!</p>\n</html>", # \n macht den Zeilenumbruch!
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -9780,7 +9867,7 @@ class WebLektion3_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="<html>\n    <h1>Welcome to my Website!<h1>\n</html>",        # Der Quiz-Code zweizeilig untereinander
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -9917,26 +10004,8 @@ class WebLektion3_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
         
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
+        app_ordner = App.get_running_app().user_data_dir
         
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
-
         # ---------------------------------------------------------------------------------------------------------------------
         # XP SPEICHERN (Dein Original-Code)
         # ---------------------------------------------------------------------------------------------------------------------
@@ -10059,7 +10128,7 @@ class WebLektion4_Screen2(Screen):
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="<html>\n    <img src='bild.jpg' alt='Ein schönes Bild'>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -10216,7 +10285,7 @@ class WebLektion4_Screen5(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
 
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="<html>\n    <img bild.jpg alt='Bild'>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -10333,25 +10402,7 @@ class WebLektion4_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
 
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
 
         xp_datei = os.path.join(app_ordner, "xp.txt")
         aktuelle_xp = 0
@@ -10462,7 +10513,7 @@ class WebLektion5_Screen2(Screen):
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="<html>\n    <body>\n        <h1>Meine Website</h1>\n        <p>Willkommen!</p>\n    </body>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -10619,7 +10670,7 @@ class WebLektion5_Screen5(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
 
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="<html>\n    <body>\n        <h1>Willkommen!</h1>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -10736,25 +10787,7 @@ class WebLektion5_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
 
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
 
         xp_datei = os.path.join(app_ordner, "xp.txt")
         aktuelle_xp = 0
@@ -10865,7 +10898,7 @@ class WebLektion6_Screen2(Screen):
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="<html>\n    <head>\n        <title>Meine Website</title>\n    </head>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -11022,7 +11055,7 @@ class WebLektion6_Screen5(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
 
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="<html>\n    <head>\n        <title>Meine Website</title>\n    <body>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -11139,25 +11172,7 @@ class WebLektion6_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
 
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
 
         xp_datei = os.path.join(app_ordner, "xp.txt")
         aktuelle_xp = 0
@@ -11268,8 +11283,8 @@ class WebLektion7_Screen2(Screen):
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
-        code_source_gesamt = RoundedCodeInput(
-            text="<html>\n    <a href='https://www.example.com'>Website öffnen</a>\n</html>",
+        code_source_gesamt = CodeInput(
+            text="<html>\n    <a href='https://www.example.com'>\n        Website öffnen\n    </a>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
             font_size=32,
@@ -11425,8 +11440,8 @@ class WebLektion7_Screen5(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
 
-        code_source_gesamt = RoundedCodeInput(
-            text="<html>\n    <a href='https://www.example.com'>Website öffnen\n</html>",
+        code_source_gesamt = CodeInput(
+            text="<html>\n    <a href='https://www.example.com'>\n        Website öffnen\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
             font_size=32,
@@ -11542,25 +11557,7 @@ class WebLektion7_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
 
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
 
         xp_datei = os.path.join(app_ordner, "xp.txt")
         aktuelle_xp = 0
@@ -11671,7 +11668,7 @@ class WebLektion8_Screen2(Screen):
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="<html>\n    <ul>\n        <li>HTML lernen</li>\n        <li>Websites bauen</li>\n    </ul>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -11828,8 +11825,8 @@ class WebLektion8_Screen5(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
 
-        code_source_gesamt = RoundedCodeInput(
-            text="<html>\n    <ul>\n        <li>Hausübung machen</li>\n        <li>Für Prüfung Lernen</li>\n</html>",
+        code_source_gesamt = CodeInput(
+            text="<html>\n    <ul>\n        <li>HTML lernen</li>\n        <li>Websites bauen</li>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
             font_size=32,
@@ -11945,25 +11942,7 @@ class WebLektion8_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
 
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
 
         xp_datei = os.path.join(app_ordner, "xp.txt")
         aktuelle_xp = 0
@@ -12074,7 +12053,7 @@ class WebLektion9_Screen2(Screen):
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="<html>\n    <ul>\n        <li>HTML lernen</li>\n        <li>Websites bauen</li>\n        <li>Code schreiben</li>\n    </ul>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -12231,7 +12210,7 @@ class WebLektion9_Screen5(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
 
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="<html>\n    <ul>\n        <li>HTML lernen\n        <li>Websites bauen</li>\n    </ul>\n</html>",
             lexer=HtmlLexer(),
             style=get_style_by_name('monokai'),
@@ -12348,25 +12327,7 @@ class WebLektion9_Screen6(Screen):
         self.xp_anzeige_label.text = f"Du hast {self.lektions_xp} XP verdient!"
 
     def lektion_beenden(self, instance):
-        #app_ordner = App.get_running_app().user_data_dir
-        # 1. IMPORTS DIREKT IN DER FUNKTION (Verhindert Namensraum-Fehler auf Android)
-        import os
-        from kivy.app import App
-        from kivy.utils import platform
-        
-        # 2. ABSOLUT SICHERE PFAD-ERMITTLUNG
-        try:
-            if platform == 'android':
-                from android.storage import app_storage_details # type: ignore
-                app_ordner = app_storage_details().files_dir
-            else:
-                app_ordner = os.path.dirname(os.path.abspath(__file__))
-                    
-            if not app_ordner:
-                app_ordner = App.get_running_app().user_data_dir
-        except Exception as e:
-            print(f"Pfad-Fehler abgefangen: {e}")
-            app_ordner = "."
+        app_ordner = App.get_running_app().user_data_dir
 
         xp_datei = os.path.join(app_ordner, "xp.txt")
         aktuelle_xp = 0
@@ -12490,27 +12451,19 @@ class Profil_Screen_Python(Screen):
         self.add_widget(layout)
 
     def on_enter(self, *args):
-      # 1. PFAD-ABGLEICH: Holt die XP aus dem exakt selben Ordner wie die Lektion!
-        from kivy.utils import platform
-        if platform == 'android':
-            from android.storage import app_storage_details  # type: ignore
-            app_ordner = app_storage_details().files_dir
-        else:
-            app = App.get_running_app()
-            app_ordner = app.user_data_dir
-              
-        xp_datei = os.path.join(app_ordner, "xp.txt")
+        app = App.get_running_app()
+        xp_datei = os.path.join(app.user_data_dir, "xp.txt")
         gesamt_xp = 0
-                      
+        
         # Prüfen, ob die Datei existiert und XP auslesen
         if os.path.exists(xp_datei):
             with open(xp_datei, "r", encoding="utf-8") as datei:
                 try:
                     gesamt_xp = int(datei.read().strip())
                 except:
-                     gesamt_xp = 0 # Falls die Datei leer oder fehlerhaft ist
-                                  
-        # Label-Text live updaten (Nutzt deine originale Variable!)
+                    gesamt_xp = 0 # Falls die Datei leer oder fehlerhaft ist
+                    
+        # Label-Text live updaten
         self.xp_label.text = f"XP: {gesamt_xp}"
 
     def zu_profil_wechseln(self, instance):
@@ -12639,18 +12592,10 @@ class Profil_Screen_Python_2(Screen):
         self.add_widget(layout)
 
     def on_enter(self, *args):
-        # 1. PFAD-ABGLEICH: Holt die XP aus dem exakt selben Ordner wie die Lektion!
-        from kivy.utils import platform
-        if platform == 'android':
-            from android.storage import app_storage_details  # type: ignore
-            app_ordner = app_storage_details().files_dir
-        else:
-            app = App.get_running_app()
-            app_ordner = app.user_data_dir
-        
-        xp_datei = os.path.join(app_ordner, "xp.txt")
+        app = App.get_running_app()
+        xp_datei = os.path.join(app.user_data_dir, "xp.txt")
         gesamt_xp = 0
-                
+        
         # Prüfen, ob die Datei existiert und XP auslesen
         if os.path.exists(xp_datei):
             with open(xp_datei, "r", encoding="utf-8") as datei:
@@ -12658,8 +12603,8 @@ class Profil_Screen_Python_2(Screen):
                     gesamt_xp = int(datei.read().strip())
                 except:
                     gesamt_xp = 0 # Falls die Datei leer oder fehlerhaft ist
-                            
-        # Label-Text live updaten (Nutzt deine originale Variable!)
+                    
+        # Label-Text live updaten
         self.xp_label.text = f"XP: {gesamt_xp}"
 
     def zu_profil_wechseln(self, instance):
@@ -12783,16 +12728,8 @@ class Profil_Screen_Web(Screen):
         self.add_widget(layout)
 
     def on_enter(self, *args):
-        # 1. PFAD-ABGLEICH: Holt die XP aus dem exakt selben Ordner wie die Lektion!
-        from kivy.utils import platform
-        if platform == 'android':
-            from android.storage import app_storage_details  # type: ignore
-            app_ordner = app_storage_details().files_dir
-        else:
-            app = App.get_running_app()
-            app_ordner = app.user_data_dir
-
-        xp_datei = os.path.join(app_ordner, "xp.txt")
+        app = App.get_running_app()
+        xp_datei = os.path.join(app.user_data_dir, "xp.txt")
         gesamt_xp = 0
         
         # Prüfen, ob die Datei existiert und XP auslesen
@@ -12803,7 +12740,7 @@ class Profil_Screen_Web(Screen):
                 except:
                     gesamt_xp = 0 # Falls die Datei leer oder fehlerhaft ist
                     
-        # Label-Text live updaten (Nutzt deine originale Variable!)
+        # Label-Text live updaten
         self.xp_label.text = f"XP: {gesamt_xp}"
 
     def zu_profil_wechseln(self, instance):
@@ -13207,24 +13144,17 @@ class PythonDashboard(Screen):
         self.add_widget(self.layout)
 
     def on_enter(self, *args):
-        # Aktualisiert die Münzen live, wenn man das Web-Dashboard betritt
-        from kivy.utils import platform
-        if platform == 'android':
-            from android.storage import app_storage_details  # type: ignore
-            app_ordner = app_storage_details().files_dir
-        else:
-            app_ordner = App.get_running_app().user_data_dir
-                
-        # Ab hier läuft dein originaler Code für die Münzen unverändert weiter:
+        # 1. Münzen aktualisieren
+        app_ordner = App.get_running_app().user_data_dir
         coins_datei = os.path.join(app_ordner, "coins.txt")
-        aktueller_münzstand = 0
+        münzen = 0
         if os.path.exists(coins_datei):
-            with open(coins_datei, "r", encoding="utf-8") as datei:
-                try: aktueller_münzstand = int(datei.read().strip())
-                except: aktueller_münzstand = 0
-        self.coins_display_button.text = f"{aktueller_münzstand} Münzen"
-                
-                
+            try:
+                with open(coins_datei, "r", encoding="utf-8") as d:
+                    münzen = int(d.read().strip())
+            except:
+                pass
+        self.coins_display_button.text = f"{münzen} Münzen"
         
         # 2. Buttons live aktualisieren
         fortschritt_datei = os.path.join(app_ordner, "python_fortschritt.txt")
@@ -13254,7 +13184,7 @@ class PythonDashboard(Screen):
             return
         elif status == "erledigt":
             # hier kommt jetzt die neuen widgets:
-            self.widget1 = WidgetButton(
+            self.widget1 = Button(
                 text="",
                 size_hint=(0.6, 0.3),
                 background_color=(0.21, 0.26, 0.39, 1),
@@ -13263,7 +13193,7 @@ class PythonDashboard(Screen):
                        
             self.widget2 = Button(
                 text="Zurück",
-                size_hint=(0.4, 0.05),
+                size_hint=(0.3, 0.1),
                 pos_hint={'center_x': 0.5, 'center_y': 0.45},
                 on_press=self.back
             )
@@ -13509,22 +13439,17 @@ class PythonDashboard2(Screen):
         self.add_widget(self.layout)
 
     def on_enter(self, *args):
-        # Aktualisiert die Münzen live, wenn man das Web-Dashboard betritt
-        from kivy.utils import platform
-        if platform == 'android':
-            from android.storage import app_storage_details  # type: ignore
-            app_ordner = app_storage_details().files_dir
-        else:
-            app_ordner = App.get_running_app().user_data_dir
-        
-        # Ab hier läuft dein originaler Code für die Münzen unverändert weiter:
+        # 1. Münzen aktualisieren
+        app_ordner = App.get_running_app().user_data_dir
         coins_datei = os.path.join(app_ordner, "coins.txt")
-        aktueller_münzstand = 0
+        münzen = 0
         if os.path.exists(coins_datei):
-            with open(coins_datei, "r", encoding="utf-8") as datei:
-                try: aktueller_münzstand = int(datei.read().strip())
-                except: aktueller_münzstand = 0
-        self.coins_display_button.text = f"{aktueller_münzstand} Münzen"
+            try:
+                with open(coins_datei, "r", encoding="utf-8") as d:
+                    münzen = int(d.read().strip())
+            except:
+                pass
+        self.coins_display_button.text = f"{münzen} Münzen"
         
         # 2. Buttons live an den echten Fortschritt anpassen
         fortschritt_datei = os.path.join(app_ordner, "python_fortschritt.txt")
@@ -13562,7 +13487,7 @@ class PythonDashboard2(Screen):
                         
             self.widget2 = Button(
                 text="Zurück",
-                size_hint=(0.4, 0.05),
+                size_hint=(0.3, 0.1),
                 pos_hint={'center_x': 0.5, 'center_y': 0.45},
                 on_press=self.back
             )
@@ -13815,7 +13740,7 @@ class WebDashboard(Screen):
                 
             self.widget2 = Button(
                 text="Zurück",
-                size_hint=(0.4, 0.05),
+                size_hint=(0.3, 0.1),
                 pos_hint={'center_x': 0.5, 'center_y': 0.45},
                 on_press=self.back
             )
@@ -13879,14 +13804,7 @@ class WebDashboard(Screen):
 
     def on_enter(self, *args):
         # Aktualisiert die Münzen live, wenn man das Web-Dashboard betritt
-        from kivy.utils import platform
-        if platform == 'android':
-            from android.storage import app_storage_details  # type: ignore
-            app_ordner = app_storage_details().files_dir
-        else:
-            app_ordner = App.get_running_app().user_data_dir
-
-        # Ab hier läuft dein originaler Code für die Münzen unverändert weiter:
+        app_ordner = App.get_running_app().user_data_dir
         coins_datei = os.path.join(app_ordner, "coins.txt")
         aktueller_münzstand = 0
         if os.path.exists(coins_datei):

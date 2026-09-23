@@ -338,7 +338,7 @@ class WidgetButton(Button):
             dp(15)
         )
 
-class RoundedCodeInput(CodeInput):
+class CodeInput(CodeInput):
     def __init__(self, **kwargs):
         # Wir erzwingen hier in der Klasse direkt, dass size_hint_y immer None ist!
         kwargs['size_hint_y'] = None
@@ -835,7 +835,7 @@ class PythonLektion1_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="number = 14\ngreet = 'Hallo'", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -1022,7 +1022,7 @@ class PythonLektion1_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="a = 6,7\nb = 'hi, guys'",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -1281,7 +1281,7 @@ class PythonLektion2_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="number = 1\nnumber = 3", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -1464,7 +1464,7 @@ class PythonLektion2_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="status = 'offline'\nstatus = online",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -1722,7 +1722,7 @@ class PythonLektion3_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="num_1 = 15\nnum_2 = 17\nsolution = num_1 + num_2", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -1904,7 +1904,7 @@ class PythonLektion3_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="user = 130\ninstalls = 160\ntotal = user + installs",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -2166,7 +2166,7 @@ class PythonLektion4_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="print('Hello World!')", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -2348,7 +2348,7 @@ class PythonLektion4_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="print('3..')\nPrint('2...')\nprint('1...')",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -2606,7 +2606,7 @@ class PythonLektion5_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="name = 'Karl'\nprint(name)", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -2788,7 +2788,7 @@ class PythonLektion5_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="alter = 16\nprint(alter)",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -3050,7 +3050,7 @@ class PythonLektion6_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="name = 'Selcia' # Ein String\ndata = True # Ein Boolean\nnumber = 67 # Ein Integer\nex_n = 12.5 # Ein Float", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -3228,7 +3228,7 @@ class PythonLektion6_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="name = Todd\nprint(name)",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -3672,7 +3672,7 @@ class PythonLektion7_Screen5(Screen):
         )
 
         #  GENAU DER SELBE CODE-EDITOR WIE AUF SCREEN 2
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="name_text = 'Sepp'\nname_status = bool(name_text)",        # Der Quiz-Code zweizeilig untereinander
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),
@@ -3930,7 +3930,7 @@ class PythonLektion8_Screen2(Screen):
         )
 
         #  BEIDE VARIABLEN IN EINEM EINZIGEN, ZWEIZEILIGEN CODE-EDITOR
-        code_source_gesamt = RoundedCodeInput(
+        code_source_gesamt = CodeInput(
             text="number = 4.5\nprint(bool(number))\n# Ein Befehl IM anderen drin!", # \n macht den Zeilenumbruch!
             lexer=Python3Lexer(),
             style=get_style_by_name('monokai'),

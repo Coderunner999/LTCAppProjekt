@@ -1,0 +1,64 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #001f3f, #2b3e50, #1c2833, #34495e);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #7f8c8d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero {
+  border: 2px solid white;
+  padding: 40px;
+  border-radius: 10px;
+  margin-left: 50px;
+  text-align: left;
+  margin-top: 3%;
+}
+
+.bsp1 {
+  border: 2px solid white;
+  padding: 40px;
+  border-radius: 10px;
+  margin-left: 50px;
+  text-align: left;
+  margin-top: 30%;
+  margin-bottom: 10%;
+}
+
+.br {
+  margin-left: 50px;
+}
+
+.hero button:hover {
+  background-color: #95a5a6;
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
+
+h3 {
+  margin-left: 140px;
+  text-align: left;
+}

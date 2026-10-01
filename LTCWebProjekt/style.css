@@ -62,3 +62,21 @@ h3 {
   margin-left: 140px;
   text-align: left;
 }
+
+.hero-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 3% 50px 0;
+}
+
+.hero-row .hero {
+  margin: 0;
+}
+
+.hero-row img {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  margin-left: 200px;
+}

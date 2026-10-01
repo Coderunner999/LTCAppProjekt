@@ -1,6 +1,14 @@
 
 
-const texts = ["Lerne Programmieren", "Lerne Python", "Lerne Full-Stack", "Lerne Back-End", "Lerne Front-End", "Lerne VS Code", "Lerne Git"];
+const texts = ["Lerne Programmieren",
+               "Lerne Python",
+               "Lerne Full-Stack",
+               "Lerne Back-End",
+               "Lerne Front-End",
+               "Lerne VS Code",
+               "Lerne Git",
+               "Lerne KI-Systeme"];
+
 let count = 0, index = 0, currentText = "", letter = "";
 
 (function type() {

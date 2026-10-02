@@ -48,6 +48,36 @@ body {
   margin-bottom: 10%;
 }
 
+.bsp2 {
+  border: 2px solid white;
+  padding: 40px;
+  border-radius: 10px;
+  margin-left: 50px;
+  text-align: left;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.bsp3 {
+  border: 2px solid white;
+  padding: 40px;
+  border-radius: 10px;
+  margin-left: 50px;
+  text-align: left;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.bsp4 {
+  border: 2px solid white;
+  padding: 40px;
+  border-radius: 10px;
+  margin-left: 50px;
+  text-align: left;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
 .br {
   margin-left: 50px;
 }
@@ -79,4 +109,8 @@ h3 {
   height: 500px;
   object-fit: contain;
   margin-left: 200px;
+}
+
+a {
+    color: #94a3b8 !important;
 }

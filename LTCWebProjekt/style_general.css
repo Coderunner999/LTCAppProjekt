@@ -12,3 +12,12 @@ body {
   align-items: flex-start;
   flex-direction: column;
 }
+
+.dashboard_header {
+  border: 2px solid white;
+  padding: 40px;
+  border-radius: 10px;
+  margin-left: 50px;
+  text-align: left;
+  margin-top: 3%;
+}

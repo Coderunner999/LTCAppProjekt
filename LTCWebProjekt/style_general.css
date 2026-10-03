@@ -24,9 +24,13 @@ body {
   border: 2px solid white;
   padding: 40px;
   border-radius: 10px;
-  margin-left: 25%;
+  align-self: center;
   text-align: center;
   margin-top: 3%;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
 }
 
 .good-button1 {

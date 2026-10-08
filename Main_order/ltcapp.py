@@ -1565,7 +1565,7 @@ class PythonLektion2_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -2009,7 +2009,7 @@ class PythonLektion3_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -2449,7 +2449,7 @@ class PythonLektion4_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -2893,7 +2893,7 @@ class PythonLektion5_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -3333,7 +3333,7 @@ class PythonLektion6_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -3773,7 +3773,7 @@ class PythonLektion7_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -4213,7 +4213,7 @@ class PythonLektion8_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -4657,7 +4657,7 @@ class PythonLektion9_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -5097,7 +5097,7 @@ class PythonLektion10_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -5533,7 +5533,7 @@ class PythonLektion11_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -5969,7 +5969,7 @@ class PythonLektion12_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -6413,7 +6413,7 @@ class PythonLektion13_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -6853,7 +6853,7 @@ class PythonLektion14_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -7293,7 +7293,7 @@ class PythonLektion15_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -7730,7 +7730,7 @@ class PythonLektion16_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -8174,7 +8174,7 @@ class PythonLektion17_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -8638,7 +8638,7 @@ class PythonLektion18_Screen7(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -9080,7 +9080,7 @@ class WebLektion1_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -9526,7 +9526,7 @@ class WebLektion2_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -9972,7 +9972,7 @@ class WebLektion3_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -10376,7 +10376,7 @@ class WebLektion4_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -10761,7 +10761,7 @@ class WebLektion5_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -11146,7 +11146,7 @@ class WebLektion6_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -11531,7 +11531,7 @@ class WebLektion7_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -11916,7 +11916,7 @@ class WebLektion8_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -12301,7 +12301,7 @@ class WebLektion9_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )

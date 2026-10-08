@@ -1123,7 +1123,7 @@ class PythonLektion1_Screen6(Screen):
         )
 
         grafik = Image(
-            source='AbzeichenLTCnew.png',
+            source='LTC_Maskottchen.png',
             size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )

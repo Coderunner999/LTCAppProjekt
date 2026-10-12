@@ -13184,7 +13184,7 @@ class PythonDashboard(Screen):
             return
         elif status == "erledigt":
             # hier kommt jetzt die neuen widgets:
-            self.widget1 = Button(
+            self.widget1 = WidgetButton(
                 text="",
                 size_hint=(0.6, 0.3),
                 background_color=(0.21, 0.26, 0.39, 1),

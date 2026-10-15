@@ -6,6 +6,7 @@ from kivy.clock import Clock
 from kivy.core.window import Window
 from kivy.properties import NumericProperty
 from kivy.uix.label import Label
+from kivy.uix.button import Button
 
 # Fenstergröße festlegen
 Window.size = (600, 800)
@@ -109,7 +110,7 @@ class Player(Widget):
             )
 
 
-class GameWidget(Widget):
+class GameMain(Widget):
     score = NumericProperty(0)
 
     def __init__(self, **kwargs):
@@ -127,7 +128,7 @@ class GameWidget(Widget):
             font_size=24, 
             bold=True,
             color=(0, 0.9, 1, 1),
-            pos=(30, Window.height - 70)
+            pos=(300, Window.height - 40),
         )
         self.add_widget(self.score_label)
         
@@ -195,11 +196,10 @@ class GameWidget(Widget):
             halign="center"
         )
         self.add_widget(game_over_label)
-
-
+        
 class RetroAsteroidApp(App):
     def build(self):
-        return GameWidget()
+        return GameMain()
 
 if __name__ == "__main__":
     RetroAsteroidApp().run()

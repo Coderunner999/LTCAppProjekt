@@ -1,0 +1,29 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>LTC AI Coding Tutor</title>
+    <link rel="stylesheet" href="coding_tutor_mobile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="chat-header">
+      <h2>LTC AI Coding Tutor</h2>
+      <h4>Lerne mit unserem AI Tutor!</h4>
+      <button class="new-chat-btn" onclick="resetChat()">Neuer Chat</button>
+    </div>
+
+    <div class="chat-content"></div>
+
+    <div class="user-input">
+      <input id="request" placeholder="Tippe hier..." />
+      <button onclick="getAnswer()">Message</button>
+    </div>
+
+    <script src="coding_tutor_mobile.js"></script>
+  </body>
+</html>

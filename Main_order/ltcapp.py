@@ -29,6 +29,7 @@ from kivy.animation import Animation
 from kivy.properties import ListProperty
 from kivy.graphics.texture import Texture
 from kivy.graphics import Line
+import webbrowser
 
 
 # ==============================================================================================================================
@@ -12365,6 +12366,280 @@ class WebLektion9_Screen6(Screen):
 # ERSTELLEN DER SCREENS FÜR DIE MENÜLEISTE
 # =============================================================================================================================
 
+class AITutor_Screen_Web(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.layout = FloatLayout()
+
+        start_chat = Button(
+            text="Starte den AI Coding Tutor",
+            size_hint=(0.5, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.3},
+            on_press=lambda x: webbrowser.open("https://ltctutor-mobile.netlify.app")
+        )
+        self.layout.add_widget(start_chat)
+        ad_label = Label(
+           text="Frage, Lerne, und Übe mit dem AI Coding Tutor!",
+           font_size='14sp',
+           pos_hint={'center_x': 0.5, 'center_y': 0.5}
+        )
+        self.layout.add_widget(ad_label)
+
+        headline_label = Label(
+            text="AI Coding Tutor",
+            font_size='24sp',
+            font_name='Roboto-Bold',
+            pos_hint={'center_x': 0.5, 'center_y': 0.9}
+        )
+        self.layout.add_widget(headline_label)
+        ai_grafik = Image(
+            source='AI_Image.png',
+            size_hint=(0.3, 0.3),
+            pos_hint={'center_x': 0.5, 'center_y': 0.7}
+        )
+        self.layout.add_widget(ai_grafik)
+        
+        # Menüleiste:
+        card_menu = Button(
+            text="",
+            size_hint=(1.0, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.05}
+        )
+                
+        lernen_button_menu = Button(
+            text="Lernen",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.125, 'center_y': 0.05}
+        )
+                        
+        ai_tutor_button_menu = Button(
+            text="AI Tutor",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.625, 'center_y': 0.05},
+        )
+                
+        profil_button_menu = Button(
+            text="Profil",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.875, 'center_y': 0.05}
+        )
+                
+        profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+                
+        üben_button_menu = Button(
+            text="Training",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.375, 'center_y': 0.05},
+            on_press=self.trainingfunc
+        )
+                
+        profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
+
+        self.layout.add_widget(card_menu)
+        self.layout.add_widget(lernen_button_menu)
+        self.layout.add_widget(ai_tutor_button_menu)
+        self.layout.add_widget(profil_button_menu)
+        self.layout.add_widget(üben_button_menu)
+
+        self.add_widget(self.layout)
+
+    def zu_profil_wechseln(self, instance):
+        self.manager.current = 'profil_screen_web'
+
+    def zu_lernen_wechseln(self, instance):
+        self.manager.current = 'web_dashboard'
+
+    def trainingfunc(self, instance):
+        self.manager.current = 'training_web'
+
+class AITutor_Screen_Python_2(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.layout = FloatLayout()
+
+        start_chat = Button(
+            text="Starte den AI Coding Tutor",
+            size_hint=(0.5, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.3},
+            on_press=lambda x: webbrowser.open("https://ltctutor-mobile.netlify.app")
+        )
+        self.layout.add_widget(start_chat)
+        ad_label = Label(
+            text="Frage, Lerne, und Übe mit dem AI Coding Tutor!",
+            font_size='14sp',
+            pos_hint={'center_x': 0.5, 'center_y': 0.5}
+        )
+        self.layout.add_widget(ad_label)
+        
+        headline_label = Label(
+            text="AI Coding Tutor",
+            font_size='24sp',
+            font_name='Roboto-Bold',
+            pos_hint={'center_x': 0.5, 'center_y': 0.9}
+        )
+        self.layout.add_widget(headline_label)
+        ai_grafik = Image(
+            source='AI_Image.png',
+            size_hint=(0.3, 0.3),
+            pos_hint={'center_x': 0.5, 'center_y': 0.7}
+        )
+        self.layout.add_widget(ai_grafik)
+
+
+        # Menüleiste:
+        card_menu = Button(
+            text="",
+            size_hint=(1.0, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.05}
+        )
+                
+        lernen_button_menu = Button(
+            text="Lernen",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.125, 'center_y': 0.05}
+        )
+                        
+        ai_tutor_button_menu = Button(
+            text="AI Tutor",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.625, 'center_y': 0.05},
+        )
+                
+        profil_button_menu = Button(
+            text="Profil",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.875, 'center_y': 0.05}
+        )
+                
+        profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+                
+        üben_button_menu = Button(
+            text="Training",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.375, 'center_y': 0.05},
+            on_press=self.trainingfunc
+        )
+                
+        profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
+
+        self.layout.add_widget(card_menu)
+        self.layout.add_widget(lernen_button_menu)
+        self.layout.add_widget(ai_tutor_button_menu)
+        self.layout.add_widget(profil_button_menu)
+        self.layout.add_widget(üben_button_menu)
+
+        self.add_widget(self.layout)
+
+    def zu_profil_wechseln(self, instance):
+        self.manager.current = 'profil_screen_2'
+
+    def zu_lernen_wechseln(self, instance):
+        self.manager.current = 'python_dashboard_2'
+
+    def trainingfunc(self, instance):
+        self.manager.current = 'training_python_2'
+
+class AITutor_Screen_Python(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.layout = FloatLayout()
+
+        start_chat = Button(
+            text="Starte den AI Coding Tutor",
+            size_hint=(0.5, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.3},
+            on_press=lambda x: webbrowser.open("https://ltctutor-mobile.netlify.app")
+        )
+        self.layout.add_widget(start_chat)
+        ad_label = Label(
+            text="Frage, Lerne, und Übe mit dem AI Coding Tutor!",
+            font_size='14sp',
+            pos_hint={'center_x': 0.5, 'center_y': 0.5}
+        )
+        self.layout.add_widget(ad_label)
+        
+        headline_label = Label(
+            text="AI Coding Tutor",
+            font_size='24sp',
+            font_name='Roboto-Bold',
+            pos_hint={'center_x': 0.5, 'center_y': 0.9}
+        )
+        self.layout.add_widget(headline_label)
+        ai_grafik = Image(
+            source='AI_Image.png',
+            size_hint=(0.3, 0.3),
+            pos_hint={'center_x': 0.5, 'center_y': 0.7}
+        )
+        self.layout.add_widget(ai_grafik)
+
+        # Menüleiste:
+        card_menu = Button(
+            text="",
+            size_hint=(1.0, 0.1),
+            pos_hint={'center_x': 0.5, 'center_y': 0.05}
+        )
+                
+        lernen_button_menu = Button(
+            text="Lernen",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.125, 'center_y': 0.05}
+        )
+                        
+        ai_tutor_button_menu = Button(
+            text="AI Tutor",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.625, 'center_y': 0.05},
+        )
+                
+        profil_button_menu = Button(
+            text="Profil",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.875, 'center_y': 0.05}
+        )
+                
+        profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+                
+        üben_button_menu = Button(
+            text="Training",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.375, 'center_y': 0.05},
+            on_press=self.trainingfunc
+        )
+                
+        profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
+
+        self.layout.add_widget(card_menu)
+        self.layout.add_widget(lernen_button_menu)
+        self.layout.add_widget(ai_tutor_button_menu)
+        self.layout.add_widget(profil_button_menu)
+        self.layout.add_widget(üben_button_menu)
+
+        self.add_widget(self.layout)
+
+    def zu_profil_wechseln(self, instance):
+        self.manager.current = 'profil_screen'
+
+    def zu_lernen_wechseln(self, instance):
+        self.manager.current = 'python_dashboard'
+
+    def trainingfunc(self, instance):
+        self.manager.current = 'training_python'
+
 class Profil_Screen_Python(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -12404,28 +12679,39 @@ class Profil_Screen_Python(Screen):
         lernen_button_menu = Button(
             text="Lernen",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.16, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.125, 'center_y': 0.05}
         )
-        
-        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
-
-        üben_button_menu = Button(
-            text="Training",
+                
+        ai_tutor_button_menu = Button(
+            text="AI Tutor",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.5, 'center_y': 0.05},
-            on_press=self.trainingfunc
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.625, 'center_y': 0.05},
+            on_press=self.zu_ai_wechseln
         )
         
         profil_button_menu = Button(
             text="Profil",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.84, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.875, 'center_y': 0.05}
         )
-
+        
         profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+        
+        üben_button_menu = Button(
+            text="Training",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.375, 'center_y': 0.05},
+            on_press=self.trainingfunc
+        )
+        
+        profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
+
+
 
         reset_button = Button(
             text="Reset",
@@ -12446,6 +12732,7 @@ class Profil_Screen_Python(Screen):
         layout.add_widget(self.xp_label)
         layout.add_widget(reset_button)
         layout.add_widget(üben_button_menu)
+        layout.add_widget(ai_tutor_button_menu)
 
         # Ausführen:
         self.add_widget(layout)
@@ -12503,6 +12790,9 @@ class Profil_Screen_Python(Screen):
         print("Fortschritt und XP erfolgreich gelöscht!")
         self.manager.current = 'einführung1'
 
+    def zu_ai_wechseln(self, instance):
+        self.manager.current = 'ai_tutor_python'
+
     def trainingfunc(self, instance):
         self.manager.current = 'training_python'
 
@@ -12545,28 +12835,39 @@ class Profil_Screen_Python_2(Screen):
         lernen_button_menu = Button(
             text="Lernen",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.16, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.125, 'center_y': 0.05}
         )
-
-        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
+                
+        ai_tutor_button_menu = Button(
+            text="AI Tutor",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.625, 'center_y': 0.05},
+            on_press=self.zu_ai_wechseln
+        )
+        
+        profil_button_menu = Button(
+            text="Profil",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.875, 'center_y': 0.05}
+        )
+        
+        profil_button_menu.bind(on_press=self.zu_profil_wechseln)
         
         üben_button_menu = Button(
             text="Training",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.5, 'center_y': 0.05},
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.375, 'center_y': 0.05},
             on_press=self.trainingfunc
         )
 
-        profil_button_menu = Button(
-            text="Profil",
-            font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.84, 'center_y': 0.05}
-        )
-
         profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
+
+
 
         reset_button = Button(
             text="Reset",
@@ -12587,6 +12888,7 @@ class Profil_Screen_Python_2(Screen):
         layout.add_widget(self.xp_label)
         layout.add_widget(reset_button)
         layout.add_widget(üben_button_menu)
+        layout.add_widget(ai_tutor_button_menu)
 
         # Ausführen:
         self.add_widget(layout)
@@ -12647,6 +12949,9 @@ class Profil_Screen_Python_2(Screen):
     def trainingfunc(self, instance):
         self.manager.current = 'training_python_2'
 
+    def zu_ai_wechseln(self, instance):
+        self.manager.current = 'ai_tutor_python_2'
+
 class Profil_Screen_Web(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -12684,18 +12989,36 @@ class Profil_Screen_Web(Screen):
         lernen_button_menu = Button(
             text="Lernen",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.16, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.125, 'center_y': 0.05}
         )
-        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
+                
+        ai_tutor_button_menu = Button(
+            text="AI Tutor",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.625, 'center_y': 0.05},
+            on_press=self.zu_ai_wechseln
+        )
         
         profil_button_menu = Button(
             text="Profil",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.84, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.875, 'center_y': 0.05}
         )
+        
         profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+        
+        üben_button_menu = Button(
+            text="Training",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.375, 'center_y': 0.05},
+            on_press=self.trainingfunc
+        )
+
+        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
 
         reset_button = Button(
             text="Reset",
@@ -12706,13 +13029,6 @@ class Profil_Screen_Web(Screen):
         )
         reset_button.bind(on_press=self.fortschritt_zuruecksetzen)
 
-        üben_button_menu = Button(
-            text="Training",
-            font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.5, 'center_y': 0.05},
-            on_press=self.trainingfunc
-        )
 
         # Adden der Objekte:
         layout.add_widget(card_menu)
@@ -12723,6 +13039,7 @@ class Profil_Screen_Web(Screen):
         layout.add_widget(self.xp_label)
         layout.add_widget(reset_button)
         layout.add_widget(üben_button_menu)
+        layout.add_widget(ai_tutor_button_menu)
 
         # Ausführen:
         self.add_widget(layout)
@@ -12780,6 +13097,9 @@ class Profil_Screen_Web(Screen):
         print("Fortschritt und XP erfolgreich gelöscht!")
         self.manager.current = 'einführung1'
 
+    def zu_ai_wechseln(self, instance):
+        self.manager.current = 'ai_tutor_web'
+
     def trainingfunc(self, instance):
         self.manager.current = 'training_web'
 
@@ -12805,28 +13125,37 @@ class Training_Screen_Python(Screen):
         lernen_button_menu = Button(
             text="Lernen",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.16, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.125, 'center_y': 0.05}
         )
-        
-        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
                 
-        üben_button_menu = Button(
-            text="Training",
+        ai_tutor_button_menu = Button(
+            text="AI Tutor",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.5, 'center_y': 0.05},
-            on_press=self.trainingfunc
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.625, 'center_y': 0.05},
+            on_press=self.zu_ai_wechseln
         )
         
         profil_button_menu = Button(
             text="Profil",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.84, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.875, 'center_y': 0.05}
         )
         
         profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+        
+        üben_button_menu = Button(
+            text="Training",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.375, 'center_y': 0.05},
+            on_press=self.trainingfunc
+        )
+        
+        profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
         
         bald_verfügbar = Label(
             text="Training ist bald verfügbar!",
@@ -12834,12 +13163,15 @@ class Training_Screen_Python(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.5}
         )
 
+
+
         layout.add_widget(title)
         layout.add_widget(card_menu)
         layout.add_widget(lernen_button_menu)
         layout.add_widget(profil_button_menu)
         layout.add_widget(üben_button_menu)
         layout.add_widget(bald_verfügbar)
+        layout.add_widget(ai_tutor_button_menu)
         self.add_widget(layout)
 
     def trainingfunc(self, instance):
@@ -12851,7 +13183,10 @@ class Training_Screen_Python(Screen):
 
     def zu_lernen_wechseln(self, instance):
         self.manager.current = 'python_dashboard'
-    
+
+    def zu_ai_wechseln(self, instance):
+        self.manager.current = 'ai_tutor_python'
+
 class Training_Screen_Python_2(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -12874,28 +13209,36 @@ class Training_Screen_Python_2(Screen):
         lernen_button_menu = Button(
             text="Lernen",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.16, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.125, 'center_y': 0.05}
         )
                 
-        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
-                        
-        üben_button_menu = Button(
-            text="Training",
+        ai_tutor_button_menu = Button(
+            text="AI Tutor",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.5, 'center_y': 0.05},
-            on_press=self.trainingfunc
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.625, 'center_y': 0.05},
+            on_press=self.zu_ai_wechseln
         )
-                
+        
         profil_button_menu = Button(
             text="Profil",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.84, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.875, 'center_y': 0.05}
         )
-                
+        
         profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+        
+        üben_button_menu = Button(
+            text="Training",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.375, 'center_y': 0.05},
+            on_press=self.trainingfunc
+        )
+
+        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
         
         bald_verfügbar = Label(
             text="Training ist bald verfügbar!",
@@ -12903,13 +13246,15 @@ class Training_Screen_Python_2(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.5}
         )
 
+        
+
         layout.add_widget(title)
         layout.add_widget(card_menu)
         layout.add_widget(lernen_button_menu)
         layout.add_widget(profil_button_menu)
         layout.add_widget(üben_button_menu)
         layout.add_widget(bald_verfügbar)
-        
+        layout.add_widget(ai_tutor_button_menu)
         self.add_widget(layout)
 
     def trainingfunc(self, instance):
@@ -12917,6 +13262,9 @@ class Training_Screen_Python_2(Screen):
 
     def zu_profil_wechseln(self, instance):
         self.manager.current = 'profil_screen_2'
+
+    def zu_ai_wechseln(self, instance):
+        self.manager.current = 'ai_tutor_python_2'
 
     def zu_lernen_wechseln(self, instance):
         self.manager.current = 'python_dashboard_2'
@@ -12943,28 +13291,36 @@ class Training_Screen_Web(Screen):
         lernen_button_menu = Button(
             text="Lernen",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.16, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.125, 'center_y': 0.05}
         )
-                        
-        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
-                                
-        üben_button_menu = Button(
-            text="Training",
+               
+        ai_tutor_button_menu = Button(
+            text="AI Tutor",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.5, 'center_y': 0.05},
-            on_press=self.trainingfunc
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.625, 'center_y': 0.05},
+            on_press=self.zu_ai_wechseln
         )
-                        
+       
         profil_button_menu = Button(
             text="Profil",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.84, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.875, 'center_y': 0.05}
         )
-                        
+       
         profil_button_menu.bind(on_press=self.zu_profil_wechseln)
+       
+        üben_button_menu = Button(
+            text="Training",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.375, 'center_y': 0.05},
+            on_press=self.trainingfunc
+        )
+
+        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
 
         bald_verfügbar = Label(
             text="Training ist bald verfügbar!",
@@ -12972,13 +13328,14 @@ class Training_Screen_Web(Screen):
             pos_hint={'center_x': 0.5, 'center_y': 0.5}
         )
                 
+
         layout.add_widget(title)
         layout.add_widget(card_menu)
         layout.add_widget(lernen_button_menu)
         layout.add_widget(profil_button_menu)
         layout.add_widget(üben_button_menu)
+        layout.add_widget(ai_tutor_button_menu)
         layout.add_widget(bald_verfügbar)
-        
         self.add_widget(layout)
 
     def trainingfunc(self, instance):
@@ -12989,6 +13346,9 @@ class Training_Screen_Web(Screen):
 
     def zu_lernen_wechseln(self, instance):
         self.manager.current = 'web_dashboard'
+
+    def zu_ai_wechseln(self, instance):
+        self.manager.current = 'ai_tutor_web'
         
 # =============================================================================================================================
 # ERSTELLEN DER DASHBOARDS DER PFADE
@@ -13048,26 +13408,36 @@ class PythonDashboard(Screen):
         lernen_button_menu = Button(
             text="Lernen",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.16, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.125, 'center_y': 0.05}
         )
         
+        ai_tutor_button_menu = Button(
+            text="AI Tutor",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.625, 'center_y': 0.05},
+            on_press=self.zu_ai_wechseln
+        )
+
         profil_button_menu = Button(
             text="Profil",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.84, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.875, 'center_y': 0.05}
         )
 
-        profil_button_menu.bind(on_press=self.zu_profil_wechseln)
 
         üben_button_menu = Button(
             text="Training",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.5, 'center_y': 0.05},
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.375, 'center_y': 0.05},
             on_press=self.trainingfunc
         )
+
+        üben_button_menu.bind(on_press=self.trainingfunc)
+        profil_button_menu.bind(on_press=self.zu_profil_wechseln)
 
 
         next_abschnitt_button = Button(
@@ -13139,6 +13509,7 @@ class PythonDashboard(Screen):
         self.layout.add_widget(next_abschnitt_button)
         self.layout.add_widget(info_dev_button)
         self.layout.add_widget(üben_button_menu)
+        self.layout.add_widget(ai_tutor_button_menu)
         
         # Ausführen:
         self.add_widget(self.layout)
@@ -13285,6 +13656,9 @@ class PythonDashboard(Screen):
     def trainingfunc(self, instance):
         self.manager.current = 'training_python'
 
+    def zu_ai_wechseln(self, instance):
+        self.manager.current = 'ai_tutor_python'
+
     def back(self, instance):
         self.layout.remove_widget(self.widget1)
         self.layout.remove_widget(self.widget2)
@@ -13342,25 +13716,36 @@ class PythonDashboard2(Screen):
         lernen_button_menu = Button(
             text="Lernen",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.16, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.125, 'center_y': 0.05}
+        )
+                
+        ai_tutor_button_menu = Button(
+            text="AI Tutor",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.625, 'center_y': 0.05},
+            on_press=self.zu_ai_wechseln
         )
         
         profil_button_menu = Button(
             text="Profil",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.84, 'center_y': 0.05},
-            on_press=self.zu_profil_wechseln
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.875, 'center_y': 0.05}
         )
-
+        
+        
         üben_button_menu = Button(
             text="Training",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.5, 'center_y': 0.05},
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.375, 'center_y': 0.05},
             on_press=self.trainingfunc
         )
+
+        üben_button_menu.bind(on_press=self.trainingfunc)
+        profil_button_menu.bind(on_press=self.zu_profil_wechseln)
         
         prev_abschnitt_button = Button(
             text="Zurück",
@@ -13436,6 +13821,7 @@ class PythonDashboard2(Screen):
         self.layout.add_widget(info_dev_button)
         self.layout.add_widget(üben_button_menu)
         self.layout.add_widget(next_abschnitt_button)
+        self.layout.add_widget(ai_tutor_button_menu)
         self.add_widget(self.layout)
 
     def on_enter(self, *args):
@@ -13565,6 +13951,9 @@ class PythonDashboard2(Screen):
     def trainingfunc(self, instance):
         self.manager.current = 'training_python_2'
 
+    def zu_ai_wechseln(self, instance):
+        self.manager.current = 'ai_tutor_python_2'
+
     def back(self, instance):
         self.layout.remove_widget(self.widget1)
         self.layout.remove_widget(self.widget2)
@@ -13627,27 +14016,36 @@ class WebDashboard(Screen):
         lernen_button_menu = Button(
             text="Lernen",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.16, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.125, 'center_y': 0.05}
         )
-        lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
+                
+        ai_tutor_button_menu = Button(
+            text="AI Tutor",
+            font_name='Roboto-Bold',
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.625, 'center_y': 0.05},
+            on_press=self.zu_ai_wechseln
+        )
         
         profil_button_menu = Button(
             text="Profil",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.84, 'center_y': 0.05}
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.875, 'center_y': 0.05}
         )
-        # WICHTIG: Leitet zum Web-Profil weiter (das bauen wir in Schritt 3!)
-        profil_button_menu.bind(on_press=self.zu_web_profil_wechseln)
-
+        
+        
         üben_button_menu = Button(
             text="Training",
             font_name='Roboto-Bold',
-            size_hint=(0.33, 0.1),
-            pos_hint={'center_x': 0.5, 'center_y': 0.05},
+            size_hint=(0.25, 0.1),
+            pos_hint={'center_x': 0.375, 'center_y': 0.05},
             on_press=self.trainingfunc
         )
+
+        üben_button_menu.bind(on_press=self.trainingfunc)
+        profil_button_menu.bind(on_press=self.zu_web_profil_wechseln)
 
         info_dev_button = Button(
             text="INFO",
@@ -13718,6 +14116,7 @@ class WebDashboard(Screen):
         self.layout.add_widget(kurs_wechsel_btn)
         self.layout.add_widget(üben_button_menu)
         self.layout.add_widget(next_abschnitt_button)
+        self.layout.add_widget(ai_tutor_button_menu)
         
         # Ausführen:
         self.add_widget(self.layout)
@@ -13827,7 +14226,10 @@ class WebDashboard(Screen):
 
     def infofunction(self, instance):
         self.manager.current = 'Info_Screen_web1'
-        
+
+    def zu_ai_wechseln(self, instance):
+        self.manager.current = 'ai_tutor_web'
+
     def trainingfunc(self, instance):
         self.manager.current = 'training_web'
 
@@ -14425,6 +14827,9 @@ class LTC(App):
         sm.add_widget(WebLektion9_Screen4(name='web_l9_s4'))
         sm.add_widget(WebLektion9_Screen5(name='web_l9_s5'))
         sm.add_widget(WebLektion9_Screen6(name='web_l9_s6'))
+        sm.add_widget(AITutor_Screen_Python(name='ai_tutor_python'))
+        sm.add_widget(AITutor_Screen_Web(name='ai_tutor_web'))
+        sm.add_widget(AITutor_Screen_Python_2(name='ai_tutor_python_2'))
 
         # Pfade für Auto-Skip definieren
         pfad_datei = os.path.join(self.user_data_dir, "pfad.txt")

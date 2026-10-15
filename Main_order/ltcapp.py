@@ -12394,7 +12394,7 @@ class AITutor_Screen_Web(Screen):
         self.layout.add_widget(headline_label)
         ai_grafik = Image(
             source='AI_Image.png',
-            size_hint=(0.3, 0.3),
+            size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
         self.layout.add_widget(ai_grafik)
@@ -12485,7 +12485,7 @@ class AITutor_Screen_Python_2(Screen):
         self.layout.add_widget(headline_label)
         ai_grafik = Image(
             source='AI_Image.png',
-            size_hint=(0.3, 0.3),
+            size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
         self.layout.add_widget(ai_grafik)
@@ -12577,7 +12577,7 @@ class AITutor_Screen_Python(Screen):
         self.layout.add_widget(headline_label)
         ai_grafik = Image(
             source='AI_Image.png',
-            size_hint=(0.3, 0.3),
+            size_hint=(0.4, 0.4),
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
         self.layout.add_widget(ai_grafik)

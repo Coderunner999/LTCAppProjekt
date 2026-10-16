@@ -36,6 +36,7 @@ import webbrowser
 # HINTERGRUNDFARBE DER APP
 # ==============================================================================================================================
 Window.clearcolor = (0.1, 0.12, 0.15, 1)
+# background_color = (0.72, 0.72, 0.72, 1)  # Farbe für Task-active
 
 # ==============================================================================================================================
 # RUNDE BUTTONS ERSTELLEN
@@ -12418,6 +12419,7 @@ class AITutor_Screen_Web(Screen):
             font_name='Roboto-Bold',
             size_hint=(0.25, 0.1),
             pos_hint={'center_x': 0.625, 'center_y': 0.05},
+            background_color = (0.72, 0.72, 0.72, 1)
         )
                 
         profil_button_menu = Button(
@@ -12510,6 +12512,7 @@ class AITutor_Screen_Python_2(Screen):
             font_name='Roboto-Bold',
             size_hint=(0.25, 0.1),
             pos_hint={'center_x': 0.625, 'center_y': 0.05},
+            background_color = (0.72, 0.72, 0.72, 1)
         )
                 
         profil_button_menu = Button(
@@ -12601,6 +12604,7 @@ class AITutor_Screen_Python(Screen):
             font_name='Roboto-Bold',
             size_hint=(0.25, 0.1),
             pos_hint={'center_x': 0.625, 'center_y': 0.05},
+            background_color = (0.72, 0.72, 0.72, 1)
         )
                 
         profil_button_menu = Button(
@@ -12695,7 +12699,8 @@ class Profil_Screen_Python(Screen):
             text="Profil",
             font_name='Roboto-Bold',
             size_hint=(0.25, 0.1),
-            pos_hint={'center_x': 0.875, 'center_y': 0.05}
+            pos_hint={'center_x': 0.875, 'center_y': 0.05},
+            background_color = (0.72, 0.72, 0.72, 1)
         )
         
         profil_button_menu.bind(on_press=self.zu_profil_wechseln)
@@ -12851,7 +12856,8 @@ class Profil_Screen_Python_2(Screen):
             text="Profil",
             font_name='Roboto-Bold',
             size_hint=(0.25, 0.1),
-            pos_hint={'center_x': 0.875, 'center_y': 0.05}
+            pos_hint={'center_x': 0.875, 'center_y': 0.05},
+            background_color = (0.72, 0.72, 0.72, 1)
         )
         
         profil_button_menu.bind(on_press=self.zu_profil_wechseln)
@@ -13005,7 +13011,8 @@ class Profil_Screen_Web(Screen):
             text="Profil",
             font_name='Roboto-Bold',
             size_hint=(0.25, 0.1),
-            pos_hint={'center_x': 0.875, 'center_y': 0.05}
+            pos_hint={'center_x': 0.875, 'center_y': 0.05},
+            background_color = (0.72, 0.72, 0.72, 1)
         )
         
         profil_button_menu.bind(on_press=self.zu_profil_wechseln)
@@ -13151,7 +13158,8 @@ class Training_Screen_Python(Screen):
             font_name='Roboto-Bold',
             size_hint=(0.25, 0.1),
             pos_hint={'center_x': 0.375, 'center_y': 0.05},
-            on_press=self.trainingfunc
+            on_press=self.trainingfunc,
+            background_color = (0.72, 0.72, 0.72, 1)
         )
         
         profil_button_menu.bind(on_press=self.zu_profil_wechseln)
@@ -13235,7 +13243,8 @@ class Training_Screen_Python_2(Screen):
             font_name='Roboto-Bold',
             size_hint=(0.25, 0.1),
             pos_hint={'center_x': 0.375, 'center_y': 0.05},
-            on_press=self.trainingfunc
+            on_press=self.trainingfunc,
+            background_color = (0.72, 0.72, 0.72, 1)
         )
 
         lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
@@ -13317,7 +13326,8 @@ class Training_Screen_Web(Screen):
             font_name='Roboto-Bold',
             size_hint=(0.25, 0.1),
             pos_hint={'center_x': 0.375, 'center_y': 0.05},
-            on_press=self.trainingfunc
+            on_press=self.trainingfunc,
+            background_color = (0.72, 0.72, 0.72, 1)
         )
 
         lernen_button_menu.bind(on_press=self.zu_lernen_wechseln)
@@ -13409,7 +13419,11 @@ class PythonDashboard(Screen):
             text="Lernen",
             font_name='Roboto-Bold',
             size_hint=(0.25, 0.1),
-            pos_hint={'center_x': 0.125, 'center_y': 0.05}
+            pos_hint={'center_x': 0.125, 'center_y': 0.05},
+            background_color = (0.72, 0.72, 0.72, 1)  # Helles Aschgrau
+
+
+
         )
         
         ai_tutor_button_menu = Button(
@@ -13717,7 +13731,8 @@ class PythonDashboard2(Screen):
             text="Lernen",
             font_name='Roboto-Bold',
             size_hint=(0.25, 0.1),
-            pos_hint={'center_x': 0.125, 'center_y': 0.05}
+            pos_hint={'center_x': 0.125, 'center_y': 0.05},
+            background_color = (0.72, 0.72, 0.72, 1)
         )
                 
         ai_tutor_button_menu = Button(
@@ -14017,7 +14032,8 @@ class WebDashboard(Screen):
             text="Lernen",
             font_name='Roboto-Bold',
             size_hint=(0.25, 0.1),
-            pos_hint={'center_x': 0.125, 'center_y': 0.05}
+            pos_hint={'center_x': 0.125, 'center_y': 0.05},
+            background_color = (0.72, 0.72, 0.72, 1)
         )
                 
         ai_tutor_button_menu = Button(

@@ -100,7 +100,7 @@ def create_certificate():
     pdf.cell(190, 10, txt="This certification provides:", ln=True, align="C")
     
     # ---- 6. AUFZÄHLUNGEN (BULLET POINTS IN GRAU) ----
-    pdf.ln(8)
+    pdf.ln(9)
     points = [
         "Core Python programming concepts",
         "UI-programming skills with Python",
@@ -110,7 +110,8 @@ def create_certificate():
         "Exception-handling with Python",
         "AI Prompting with LLMs",
         "Application packaging and deployment",
-        "Working with a Console and an IDE"
+        "Working with a Console and an IDE",
+        "Experience of asynchrome programming"
     ]
     
     pdf.set_font("Helvetica", "", size=12)

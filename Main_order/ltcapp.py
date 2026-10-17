@@ -817,7 +817,7 @@ class PythonLektion1_Screen2(Screen):
 
         # Deine originalen Erklärungen
         erklährung_label1 = Label(
-            text="Variablen kennst du aus der Mathematik, dort sind sie",
+            text="Variablen kennst du aus der Mathematik. Dort sind sie",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
         
@@ -827,7 +827,7 @@ class PythonLektion1_Screen2(Screen):
         )
 
         erklährung_label3 = Label(
-            text="Mit Variablen können wir belibige Dinge im Code speichern",
+            text="Mit Variablen können wir beliebige Dinge im Code speichern,",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
@@ -879,13 +879,13 @@ class PythonLektion1_Screen3(Screen):
         layout = FloatLayout()
 
         frage1 = Label(
-            text="Welcher Code erstellt eine Variable namens schedule,",
+            text="Welcher Code erstellt eine Variable namens schedule",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
 
         frage2 = Label(
-            text="und weißt ihr den Wert 3 zu?",
+            text="und weist ihr den Wert 3 zu?",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
@@ -965,7 +965,7 @@ class PythonLektion1_Screen4(Screen):
         self.option2.bind(on_press=self.antwort_falsch_option2)
 
         self.option3 = Button(
-            text="Keine ist richtig.",
+            text="Keine Antwort ist richtig.",
             size_hint=(0.5, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.2}
         )
@@ -1225,7 +1225,7 @@ class PythonLektion2_Screen1(Screen):
         )
 
         erklährung_label2 = Label(
-            text="Diesen Vorgang nennen wir auch AKTUALISIEREN",
+            text="Diesen Vorgang nennen wir auch Aktualisieren.",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
@@ -1324,7 +1324,7 @@ class PythonLektion2_Screen3(Screen):
         layout = FloatLayout()
 
         frage1 = Label(
-            text="Durch was aktualisieren wir Variablen?",
+            text="Wodurch aktualisieren wir Variablen?",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
@@ -1709,17 +1709,17 @@ class PythonLektion3_Screen2(Screen):
         )
         
         erklährung_label2 = Label(
-            text="können wir selbstverständlicherweise auch mit diesen Zahlen rechnen.",
+            text="können wir selbstverständlich auch mit diesen Zahlen rechnen.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
         erklährung_label3 = Label(
-            text="Dazu definieren wir mindestens 2 Variablen, mit jeweils 2 Zahlen.",
+            text="Dazu definieren wir mindestens zwei Variablen mit jeweils zwei Zahlen.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
         erklährung_label4 = Label(
-            text="Anschließend rechnet eine dritte Variable das Ergebnis der andren aus!",
+            text="Anschließend berechnet eine dritte Variable das Ergebnis der anderen Variablen!",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
@@ -1770,14 +1770,14 @@ class PythonLektion3_Screen3(Screen):
         )
 
         self.option1 = Button(
-            text="Zufälliger generierung.",
+            text="Zufällige Generierung.",
             size_hint=(0.5, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.5}
         )
         self.option1.bind(on_press=self.antwort_falsch)
 
         self.option2 = Button(
-            text="Ein dritten (solution) Variable.",
+            text="Eine dritte Variable (solution).",
             size_hint=(0.5, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.35}
         )
@@ -2148,17 +2148,17 @@ class PythonLektion4_Screen2(Screen):
         layout = FloatLayout()
         
         erklährung_label1 = Label(
-            text="Wir haben bereits gelernt Texte und Zahlen zu speichern usw.",
+            text="Wir haben bereits gelernt, Texte und Zahlen zu speichern usw.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
         
         erklährung_label2 = Label(
-            text="Wir wissen aber noch nicht wie wir Texte am Screen anzeigen!",
+            text="Wir wissen aber noch nicht, wie wir Texte auf dem Bildschirm anzeigen!",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
         erklährung_label3 = Label(
-            text="Dazu verwenden wir den sogenannten print() Befehl.",
+            text="Dazu verwenden wir den sogenannten print()-Befehl.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
@@ -2551,7 +2551,7 @@ class PythonLektion5_Screen1(Screen):
         )
 
         erklährung_label2 = Label(
-            text="Was ist wenn wir aber Variablen (ihren Inhalt) anzeigen wollen?",
+            text="Was ist, wenn wir Variablen (ihren Inhalt) anzeigen wollen?",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
@@ -2648,7 +2648,7 @@ class PythonLektion5_Screen3(Screen):
         layout = FloatLayout()
 
         frage1 = Label(
-            text="Beim anzeigen von Variablen lassen wir die ... weg:",
+            text="Beim Anzeigen von Variablen lassen wir die ... weg:",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
@@ -2805,7 +2805,7 @@ class PythonLektion5_Screen5(Screen):
 
         # Deine originalen Optionen (Abstände für die Buttons)
         self.option1 = Button(
-            text="Der Code ist nicht Python!",
+            text="Das ist kein Python-Code!",
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.32}
         )
@@ -2989,13 +2989,13 @@ class PythonLektion6_Screen1(Screen):
         
 
         erklährung_label1 = Label(
-            text="Du hast bereits gesehen das es verschiedene Werte gibt:",
+            text="Du hast bereits gesehen, dass es verschiedene Werte gibt:",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
         erklährung_label2 = Label(
-            text="Zahlen, und Texte. Aber was ist das genau und wie läuft es?",
+            text="Zahlen und Texte. Aber was genau ist das, und wie funktioniert es?",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
@@ -3042,7 +3042,7 @@ class PythonLektion6_Screen2(Screen):
         )
 
         erklährung_label3 = Label(
-            text="String = Text, Integer = Ganze Zahl, Float = Dezi.Zahl, Boolean = Richtig/Falsch",
+            text="String = Text, Integer = ganze Zahl, Float = Dezimalzahl, Boolean = Richtig/Falsch",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
@@ -3477,12 +3477,12 @@ class PythonLektion7_Screen2(Screen):
         )
         
         erklährung_label2 = Label(
-            text="Das Wort (Abteil) am Anfang sagt uns zu was es werden soll.",
+            text="Das Wort am Anfang sagt uns, zu welchem Typ der Wert umgewandelt werden soll.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
         erklährung_label3 = Label(
-            text="Der Wert in den Klammern ist das WAS umgewandelt werden soll!",
+            text="Der Wert in den Klammern ist das, was umgewandelt werden soll!",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
@@ -3532,7 +3532,7 @@ class PythonLektion7_Screen3(Screen):
         layout = FloatLayout()
 
         frage1 = Label(
-            text="Dieser Befehl wandelt den Wert in den Klammern zu einer Dezimalzahl um:",
+            text="Dieser Befehl wandelt den Wert in den Klammern in eine Dezimalzahl um:",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
@@ -3591,7 +3591,7 @@ class PythonLektion7_Screen4(Screen):
         layout = FloatLayout()
 
         frage = Label(
-            text="Wo ist der zu umwandelde Wert?",
+            text="Wo ist der umzuwandelnde Wert?",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
@@ -3689,7 +3689,7 @@ class PythonLektion7_Screen5(Screen):
 
         # Deine originalen Optionen (Abstände für die Buttons)
         self.option1 = Button(
-            text="Kein String zu Boolean!",
+            text="Ein String lässt sich nicht in einen Boolean umwandeln!",
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.32}
         )
@@ -3869,7 +3869,7 @@ class PythonLektion8_Screen1(Screen):
         
 
         erklährung_label1 = Label(
-            text="Wir wissen wie wir einfache Typen umwandeln, gut.",
+            text="Wir wissen, wie wir einfache Typen umwandeln. Gut.",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -3922,7 +3922,7 @@ class PythonLektion8_Screen2(Screen):
         )
 
         erklährung_label3 = Label(
-            text="in einer einzigen brillianten Zeile tun!",
+            text="in einer einzigen brillanten Zeile tun!",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
@@ -4125,7 +4125,7 @@ class PythonLektion8_Screen5(Screen):
 
         # Deine originalen Optionen (Abstände für die Buttons)
         self.option1 = Button(
-            text="Kein String zu Boolean!",
+            text="Ein String lässt sich nicht in einen Boolean umwandeln!",
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.32}
         )
@@ -4357,7 +4357,7 @@ class PythonLektion9_Screen2(Screen):
         )
         
         erklährung_label2 = Label(
-            text="Um die Nutzereingabe zu speichern schreiben wir alles",
+            text="Um die Nutzereingabe zu speichern, schreiben wir alles",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
@@ -4367,7 +4367,7 @@ class PythonLektion9_Screen2(Screen):
         )
 
         erklährung_label4 = Label(
-            text="nacher wollen wir die Nutzereingabe wieder printen.",
+            text="Nachher wollen wir die Nutzereingabe wieder ausgeben.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
@@ -4412,7 +4412,7 @@ class PythonLektion9_Screen3(Screen):
         layout = FloatLayout()
 
         frage1 = Label(
-            text="Dieser Befhl erstellt Eingaben:",
+            text="Dieser Befehl ermöglicht Eingaben:",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
@@ -4569,7 +4569,7 @@ class PythonLektion9_Screen5(Screen):
 
         # Deine originalen Optionen (Abstände für die Buttons)
         self.option1 = Button(
-            text="Ein Script Kiddie!",
+            text="Ein Skript-Kiddie!",
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.32}
         )
@@ -4647,7 +4647,7 @@ class PythonLektion9_Screen6(Screen):
         )
 
         motivation = Label(
-            text="Super, ersten Abschnitt hast du fertig!",
+            text="Super, den ersten Abschnitt hast du fertig!",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.5}
         )
@@ -4759,7 +4759,7 @@ class PythonLektion10_Screen1(Screen):
         )
 
         erklährung_label2 = Label(
-            text="Kommentieren wir in mit #. Das ist für die Wartung wichtig!",
+            text="kommentieren wir ihn mit #. Das ist für die Wartung wichtig!",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
@@ -4796,17 +4796,17 @@ class PythonLektion10_Screen2(Screen):
         layout = FloatLayout()
         
         erklährung_label1 = Label(
-            text="Nach jeden # kommt der dazugehörige Code.",
+            text="Nach jedem # kommt der dazugehörige Code.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
         
         erklährung_label2 = Label(
-            text="Danach lassen wir eine Zeile frei, und es kommt",
+            text="Danach lassen wir eine Zeile frei und es kommt",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
         erklährung_label3 = Label(
-            text="ein weiterer # und wieder Code, usw.",
+            text="ein weiteres # und wieder Code usw.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
@@ -5199,13 +5199,13 @@ class PythonLektion11_Screen1(Screen):
         )
 
         erklährung_label2 = Label(
-            text="Dazu benötigen sie Bedingungen (If Statement)",
+            text="Dazu benötigen sie Bedingungen (if-Anweisungen).",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
         erklährung_label3 = Label(
-            text="Lerne neues!",
+            text="Lerne etwas Neues!",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.55}
         )
@@ -5672,17 +5672,17 @@ class PythonLektion12_Screen2(Screen):
         layout = FloatLayout()
         
         erklährung_label1 = Label(
-            text="Mit == können wir in einem if prüfen ob zwei Werte",
+            text="Mit == können wir in einem if prüfen, ob zwei Werte",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
         
         erklährung_label2 = Label(
-            text="den gleischen Inhalt besitzen. Wenn das stimmt, das",
+            text="den gleichen Inhalt besitzen. Wenn das Ergebnis",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
         erklährung_label3 = Label(
-            text="Ergebnis also True ist, wird der if-Block ausgeführt.",
+            text="also True ist, wird der if-Block ausgeführt.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
@@ -5732,7 +5732,7 @@ class PythonLektion12_Screen3(Screen):
         layout = FloatLayout()
 
         frage1 = Label(
-            text="Der Operator == prüft ob ...",
+            text="Der ==-Operator prüft, ob ...",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
@@ -5791,7 +5791,7 @@ class PythonLektion12_Screen4(Screen):
         layout = FloatLayout()
 
         frage = Label(
-            text="Was die Bedingung ergeben, damit es ausgeführt wird?",
+            text="Was muss die Bedingung ergeben, damit der Code ausgeführt wird?",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
@@ -6065,7 +6065,7 @@ class PythonLektion13_Screen1(Screen):
         
 
         erklährung_label1 = Label(
-            text="Um mit einem if zu überprüfen ob zwei Werte",
+            text="Um mit einem if zu überprüfen, ob zwei Werte",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -6113,7 +6113,7 @@ class PythonLektion13_Screen2(Screen):
         )
         
         erklährung_label2 = Label(
-            text="on zwei Werte unterschiedlich sind. Ist das Ergebnis True,",
+            text="ob zwei Werte unterschiedlich sind. Ist das Ergebnis True,",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
@@ -6168,7 +6168,7 @@ class PythonLektion13_Screen3(Screen):
         layout = FloatLayout()
 
         frage1 = Label(
-            text="Was prüft der != Operator?",
+            text="Was prüft der !=-Operator?",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
@@ -6332,7 +6332,7 @@ class PythonLektion13_Screen5(Screen):
         self.option1.bind(on_press=self.antwort_richtig)
         
         self.option2 = Button(
-            text="SyntaxFehler.",
+            text="Syntaxfehler.",
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.20}
         )
@@ -6552,22 +6552,22 @@ class PythonLektion14_Screen2(Screen):
         layout = FloatLayout()
         
         erklährung_label1 = Label(
-            text="den klassichen elif-Befehl. Er wird unten nach if angehängt.",
+            text="den klassischen elif-Befehl. Er wird unten nach if angehängt.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
         
         erklährung_label2 = Label(
-            text="Es ist als würde man sagen: Ist if False, versuche noch elif.",
+            text="Es ist, als würde man sagen: Ist if False, versuche es noch mit elif.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
         erklährung_label3 = Label(
-            text="Wir können so viele elif schreiben wir wir wollen, Python probiert",
+            text="Wir können so viele elif-Blöcke schreiben, wie wir wollen. Python prüft",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
         erklährung_label4 = Label(
-            text="jeden elif-Block nacheinander aus. Sieh's dir an:",
+            text="jeden elif-Block nacheinander. Sieh es dir an:",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
@@ -6625,7 +6625,7 @@ class PythonLektion14_Screen3(Screen):
         self.option1.bind(on_press=self.antwort_falsch)
 
         self.option2 = Button(
-            text="Soviele wie wir wollen",
+            text="So viele, wie wir wollen.",
             size_hint=(0.5, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.35}
         )
@@ -6684,14 +6684,14 @@ class PythonLektion14_Screen4(Screen):
         self.option1.bind(on_press=self.antwort_falsch_option1)
 
         self.option2 = Button(
-            text="Den elif, dann erst if.",
+            text="Zuerst das elif, danach das if.",
             size_hint=(0.5, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.35}
         )
         self.option2.bind(on_press=self.antwort_falsch_option2)
 
         self.option3 = Button(
-            text="Den if, dass erst elif.",
+            text="Zuerst das if, danach das elif.",
             size_hint=(0.5, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.2}
         )
@@ -6949,13 +6949,13 @@ class PythonLektion15_Screen1(Screen):
         
 
         erklährung_label1 = Label(
-            text="Was wenn wir bei einem if-Block etwas besonderes tun wollen",
+            text="Was, wenn wir bei einem if-Block etwas Besonderes tun wollen,",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
         erklährung_label2 = Label(
-            text="was nur passiert wenn alle Bedingungen False sind?",
+            text="das nur passiert, wenn alle Bedingungen False sind?",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
@@ -6992,22 +6992,22 @@ class PythonLektion15_Screen2(Screen):
         layout = FloatLayout()
         
         erklährung_label1 = Label(
-            text="Um eine Ausweichmöglichkeit, wenn der if und alle elifs",
+            text="Wenn if und alle elif-Bedingungen False sind,",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
         
         erklährung_label2 = Label(
-            text="False sind, zu programmieren, verwenden wir else.",
+            text="verwenden wir else als Ausweichmöglichkeit.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
         erklährung_label3 = Label(
-            text="Else wird nur ausgeführt wenn alles davor komplett False ist.",
+            text="else wird nur ausgeführt, wenn alles davor False ist.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
         erklährung_label4 = Label(
-            text="Der Else ist immer komplett unten angehängt! Schau:",
+            text="else steht immer ganz unten! Schau:",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
@@ -7052,7 +7052,7 @@ class PythonLektion15_Screen3(Screen):
         layout = FloatLayout()
 
         frage1 = Label(
-            text="Wo ist der else immer?",
+            text="Wo steht else immer?",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
@@ -7395,7 +7395,7 @@ class PythonLektion16_Screen1(Screen):
         )
 
         erklährung_label2 = Label(
-            text="Die Konsole ist das wichtigste Tool denn je!",
+            text="Die Konsole ist das wichtigste Tool überhaupt!",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
@@ -7432,7 +7432,7 @@ class PythonLektion16_Screen2(Screen):
         layout = FloatLayout()
         
         erklährung_label1 = Label(
-            text="Im Terminal (App auf Windows) können wir Befehle eingeben",
+            text="Im Terminal (einer App unter Windows) können wir Befehle eingeben",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
         
@@ -7447,7 +7447,7 @@ class PythonLektion16_Screen2(Screen):
         )
 
         erklährung_label4 = Label(
-            text="und alle print() werden dort angezeigt. Schau dir einen Befehl an:",
+            text="und alle print()-Ausgaben werden dort angezeigt. Schau dir einen Befehl an:",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
@@ -7505,7 +7505,7 @@ class PythonLektion16_Screen3(Screen):
         self.option1.bind(on_press=self.antwort_falsch)
 
         self.option2 = Button(
-            text="Eine Befehlseingabe/Programmausgabe",
+            text="Eine Eingabe für Befehle oder eine Programmausgabe.",
             size_hint=(0.5, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.35}
         )
@@ -7646,7 +7646,7 @@ class PythonLektion16_Screen5(Screen):
 
         # Deine originalen Optionen (Abstände für die Buttons)
         self.option1 = Button(
-            text="Die Terminal ist wichtig.",
+            text="Das Terminal ist wichtig.",
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.32}
         )
@@ -7826,7 +7826,7 @@ class PythonLektion17_Screen1(Screen):
         
 
         erklährung_label1 = Label(
-            text="Wie dir viellciht schon aufgefallen ist, hat dieses",
+            text="Wie dir vielleicht schon aufgefallen ist, hat dieses",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -7869,7 +7869,7 @@ class PythonLektion17_Screen2(Screen):
         layout = FloatLayout()
         
         erklährung_label1 = Label(
-            text="Das Terminal, Konsole, oder auch Shell genannt, ist fast",
+            text="Das Terminal, auch Konsole oder Shell genannt, ist fast",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
         
@@ -7879,12 +7879,12 @@ class PythonLektion17_Screen2(Screen):
         )
 
         erklährung_label3 = Label(
-            text="Programmier-Editoren, im Betriebsystem, oder auch im Internet.",
+            text="Programmier-Editoren, im Betriebssystem oder auch im Internet.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
         erklährung_label4 = Label(
-            text="Dort ist es meistens ein Bereich, oder eine ganze eigene App.",
+            text="Dort ist es meistens ein Bereich oder eine eigene App.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
@@ -7929,7 +7929,7 @@ class PythonLektion17_Screen3(Screen):
         layout = FloatLayout()
 
         frage1 = Label(
-            text="Als was ist das Terminal eingebaut?",
+            text="Worin ist das Terminal eingebaut?",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
@@ -8086,14 +8086,14 @@ class PythonLektion17_Screen5(Screen):
 
         # Deine originalen Optionen (Abstände für die Buttons)
         self.option1 = Button(
-            text="Die Konsole nennt man auch: Dev-Tools.",
+            text="Die Konsole nennt man auch Dev-Tools.",
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.32}
         )
         self.option1.bind(on_press=self.antwort_falsch_option1)
         
         self.option2 = Button(
-            text="Anwedungsbereich? Lesen.",
+            text="Anwendungsbereich? Lies weiter.",
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.20}
         )
@@ -8313,12 +8313,12 @@ class PythonLektion18_Screen2(Screen):
         layout = FloatLayout()
         
         erklährung_label1 = Label(
-            text="Jetzt wo du deinen Windows-Computer eingeschaltet hast, werden",
+            text="Jetzt, wo du deinen Windows-Computer eingeschaltet hast, werden",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
         
         erklährung_label2 = Label(
-            text="wir das Terminal (Konsole, Shell) auf dem Betriebsystem Windows",
+            text="wir das Terminal (Konsole, Shell) auf dem Betriebssystem Windows",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
@@ -8328,7 +8328,7 @@ class PythonLektion18_Screen2(Screen):
         )
 
         erklährung_label4 = Label(
-            text="Pass gut auf, und befolge den Anweisungen genau, viel Spaß!",
+            text="Pass gut auf und befolge die Anweisungen genau. Viel Spaß!",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
@@ -8433,22 +8433,22 @@ class PythonLektion18_Screen4(Screen):
         layout = FloatLayout()
         
         erklährung_label1 = Label(
-            text="Am Anfang des Eingabefeldes siehst du z.b deinen Benutzernamen auf Windows.",
+            text="Am Anfang des Eingabefeldes siehst du z. B. deinen Benutzernamen unter Windows.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
         
         erklährung_label2 = Label(
-            text="Du möchtest hier nun sicher einen Befehl eingeben, damit du die Macht siehst nicht?",
+            text="Du möchtest hier nun sicher einen Befehl eingeben, damit du die Möglichkeiten siehst, oder?",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
         erklährung_label3 = Label(
-            text="Um uns z.b alle Ordner auf Windows anzeigen zu lassen, gib den unteren Befehl ein:",
+            text="Um uns z. B. alle Ordner unter Windows anzeigen zu lassen, gib den unten stehenden Befehl ein:",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
         erklährung_label4 = Label(
-            text="Nun werden sie dir alle vom Terminal aufgelistet, cool oder?",
+            text="Nun listet dir das Terminal alle auf. Cool, oder?",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.65}
         )
 
@@ -8503,7 +8503,7 @@ class PythonLektion18_Screen5(Screen):
         )
 
         erklährung_label3 = Label(
-            text="Dann gib den wieder den unteren Befehl ein.",
+            text="Dann gib wieder den unten stehenden Befehl ein.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
@@ -8558,12 +8558,12 @@ class PythonLektion18_Screen6(Screen):
         )
         
         erklährung_label2 = Label(
-            text="deine ersten befehle durchgeführt. Gut gemacht! Das schafft nicht jeder.",
+            text="deine ersten Befehle ausgeführt. Gut gemacht! Das schafft nicht jeder.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
         erklährung_label3 = Label(
-            text="Du kannst jetzt stolz, das Terminal rechts oben, durch das X schließen, und den",
+            text="Du kannst jetzt stolz das Terminal über das X rechts oben schließen und den",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
@@ -8740,7 +8740,7 @@ class WebLektion1_Screen1(Screen):
         
 
         erklährung_label1 = Label(
-            text="Starte mit HTML um deine eigenen Websites zu bauen!",
+            text="Starte mit HTML, um deine eigenen Websites zu bauen!",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
@@ -8788,7 +8788,7 @@ class WebLektion1_Screen2(Screen):
         )
         
         erklährung_label2 = Label(
-            text="Dabei gibt es öffnende Tags, und schließende Tags wie: <html>, </html>",
+            text="Dabei gibt es öffnende und schließende Tags wie <html> und </html>.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
@@ -8908,14 +8908,14 @@ class WebLektion1_Screen4(Screen):
         )
 
         self.option1 = Button(
-            text="Eine Befehlsgruppe die etwas darstellt.",
+            text="Eine Befehlsgruppe, die etwas darstellt.",
             size_hint=(0.5, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.5}
         )
         self.option1.bind(on_press=self.antwort_richtig)
 
         self.option2 = Button(
-            text="Eine Art Befehl, wie in Javascript.",
+            text="Eine Art Befehl wie in JavaScript.",
             size_hint=(0.5, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.35}
         )
@@ -8996,7 +8996,7 @@ class WebLektion1_Screen5(Screen):
 
         # Deine originalen Optionen (Abstände für die Buttons)
         self.option1 = Button(
-            text="Ein HTML-Tag existiert nicht.",
+            text="Das HTML-Tag existiert nicht.",
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.32}
         )
@@ -9070,7 +9070,7 @@ class WebLektion1_Screen6(Screen):
         )
 
         motivation = Label(
-            text="Du bist deinen Zielen einen schritt näher!",
+            text="Du bist deinen Zielen einen Schritt näher!",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.5}
         )
@@ -9226,12 +9226,12 @@ class WebLektion2_Screen2(Screen):
         )
         
         erklährung_label2 = Label(
-            text="H3, H4, H5, oder H6 Tag. H6 ist die kleinste Überschrift,",
+            text="H3-, H4-, H5- oder H6-Tag. H6 ist die kleinste Überschrift,",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
         erklährung_label3 = Label(
-            text="Und H1 ist die allergrößte. Die anderen sind Zwischengrößen.",
+            text="und H1 ist die größte. Die anderen sind Zwischengrößen.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
@@ -9672,12 +9672,12 @@ class WebLektion3_Screen2(Screen):
         )
         
         erklährung_label2 = Label(
-            text="anderes, als ein weiterer Tag mit dem wir Text anzeigen.",
+            text="anderes als ein weiterer Tag, mit dem wir Text anzeigen.",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.75}
         )
 
         erklährung_label3 = Label(
-            text="Der Paragraph verwendet dazu den P-Tag. Du denkst dir schon wie",
+            text="Der Paragraph verwendet dazu den P-Tag. Du denkst dir schon, wie",
             font_size=40, pos_hint={'center_x': 0.5, 'center_y': 0.7}
         )
 
@@ -9786,7 +9786,7 @@ class WebLektion3_Screen4(Screen):
         layout = FloatLayout()
 
         frage = Label(
-            text="Ein Paragraph ist eigentlich ein?",
+            text="Was ist ein Paragraph eigentlich?",
             font_size=40,
             pos_hint={'center_x': 0.5, 'center_y': 0.8}
         )
@@ -10315,7 +10315,7 @@ class WebLektion4_Screen5(Screen):
         self.option2.bind(on_press=self.antwort_richtig)
 
         self.option3 = Button(
-            text="Der HTML-Tag existiert nicht.",
+            text="Das HTML-Tag existiert nicht.",
             size_hint=(0.6, 0.1),
             pos_hint={'center_x': 0.5, 'center_y': 0.08}
         )
@@ -12380,7 +12380,7 @@ class AITutor_Screen_Web(Screen):
         )
         self.layout.add_widget(start_chat)
         ad_label = Label(
-           text="Frage, Lerne, und Übe mit dem AI Coding Tutor!",
+           text="Frage, lerne und übe mit dem AI Coding Tutor!",
            font_size='14sp',
            pos_hint={'center_x': 0.5, 'center_y': 0.5}
         )
@@ -12472,7 +12472,7 @@ class AITutor_Screen_Python_2(Screen):
         )
         self.layout.add_widget(start_chat)
         ad_label = Label(
-            text="Frage, Lerne, und Übe mit dem AI Coding Tutor!",
+            text="Frage, lerne und übe mit dem AI Coding Tutor!",
             font_size='14sp',
             pos_hint={'center_x': 0.5, 'center_y': 0.5}
         )
@@ -12565,7 +12565,7 @@ class AITutor_Screen_Python(Screen):
         )
         self.layout.add_widget(start_chat)
         ad_label = Label(
-            text="Frage, Lerne, und Übe mit dem AI Coding Tutor!",
+            text="Frage, lerne und übe mit dem AI Coding Tutor!",
             font_size='14sp',
             pos_hint={'center_x': 0.5, 'center_y': 0.5}
         )
@@ -14878,4 +14878,3 @@ class LTC(App):
     
 if __name__ == '__main__':
     LTC().run()
-

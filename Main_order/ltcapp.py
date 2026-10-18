@@ -9180,6 +9180,8 @@ class WebLektion1_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -9191,6 +9193,8 @@ class WebLektion1_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -9255,6 +9259,8 @@ class WebLektion1_Screen4(Screen):
                     
                     # Button wird beim 1. Klick marineblau gefärbt
                     instance.background_color = (0.25, 0.55, 0.95, 1)
+                    self.true_answer = SoundLoader.load('true_answer.mp3')
+                    self.true_answer.play()
                     
                     # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                     if not self.fehler_gemacht:
@@ -9269,10 +9275,14 @@ class WebLektion1_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion1_Screen5(Screen):
@@ -9344,6 +9354,8 @@ class WebLektion1_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -9358,10 +9370,14 @@ class WebLektion1_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion1_Screen6(Screen):
@@ -9618,6 +9634,8 @@ class WebLektion2_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -9629,6 +9647,8 @@ class WebLektion2_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -9693,6 +9713,8 @@ class WebLektion2_Screen4(Screen):
                     
                     # Button wird beim 1. Klick marineblau gefärbt
                     instance.background_color = (0.25, 0.55, 0.95, 1)
+                    self.true_answer = SoundLoader.load('true_answer.mp3')
+                    self.true_answer.play()
                     
                     # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                     if not self.fehler_gemacht:
@@ -9707,14 +9729,20 @@ class WebLektion2_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion2_Screen5(Screen):
@@ -9786,6 +9814,8 @@ class WebLektion2_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -9800,14 +9830,20 @@ class WebLektion2_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion2_Screen6(Screen):
@@ -10064,6 +10100,8 @@ class WebLektion3_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -10075,6 +10113,8 @@ class WebLektion3_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -10139,6 +10179,8 @@ class WebLektion3_Screen4(Screen):
                     
                     # Button wird beim 1. Klick marineblau gefärbt
                     instance.background_color = (0.25, 0.55, 0.95, 1)
+                    self.true_answer = SoundLoader.load('true_answer.mp3')
+                    self.true_answer.play()
                     
                     # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                     if not self.fehler_gemacht:
@@ -10153,14 +10195,20 @@ class WebLektion3_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion3_Screen5(Screen):
@@ -10232,6 +10280,8 @@ class WebLektion3_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -10246,14 +10296,20 @@ class WebLektion3_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion3_Screen6(Screen):
@@ -10504,12 +10560,16 @@ class WebLektion4_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
             if instance.background_color != [0.25, 0.55, 0.95, 1]:
                 self.option1.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l4_s6')
@@ -10565,6 +10625,8 @@ class WebLektion4_Screen4(Screen):
                 self.option1.background_color = (1, 1, 1, 1)
                 self.option3.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l4_s6')
@@ -10577,10 +10639,14 @@ class WebLektion4_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion4_Screen5(Screen):
@@ -10642,6 +10708,8 @@ class WebLektion4_Screen5(Screen):
                 self.option1.background_color = (1, 1, 1, 1)
                 self.option3.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l4_s6')
@@ -10654,10 +10722,14 @@ class WebLektion4_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion4_Screen6(Screen):
@@ -10889,12 +10961,16 @@ class WebLektion5_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
             if instance.background_color != [0.25, 0.55, 0.95, 1]:
                 self.option1.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l5_s6')
@@ -10950,6 +11026,8 @@ class WebLektion5_Screen4(Screen):
                 self.option2.background_color = (1, 1, 1, 1)
                 self.option3.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l5_s6')
@@ -10962,10 +11040,14 @@ class WebLektion5_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion5_Screen5(Screen):
@@ -11027,6 +11109,8 @@ class WebLektion5_Screen5(Screen):
                 self.option2.background_color = (1, 1, 1, 1)
                 self.option3.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l5_s6')
@@ -11039,10 +11123,14 @@ class WebLektion5_Screen5(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion5_Screen6(Screen):
@@ -11274,12 +11362,16 @@ class WebLektion6_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
             if instance.background_color != [0.25, 0.55, 0.95, 1]:
                 self.option2.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l6_s6')
@@ -11335,6 +11427,8 @@ class WebLektion6_Screen4(Screen):
                 self.option2.background_color = (1, 1, 1, 1)
                 self.option3.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l6_s6')
@@ -11347,10 +11441,14 @@ class WebLektion6_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion6_Screen5(Screen):
@@ -11412,6 +11510,8 @@ class WebLektion6_Screen5(Screen):
                 self.option2.background_color = (1, 1, 1, 1)
                 self.option3.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l6_s6')
@@ -11424,10 +11524,14 @@ class WebLektion6_Screen5(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion6_Screen6(Screen):
@@ -11659,12 +11763,16 @@ class WebLektion7_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
             if instance.background_color != [0.25, 0.55, 0.95, 1]:
                 self.option1.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l7_s6')
@@ -11720,6 +11828,8 @@ class WebLektion7_Screen4(Screen):
                 self.option2.background_color = (1, 1, 1, 1)
                 self.option3.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l7_s6')
@@ -11732,10 +11842,14 @@ class WebLektion7_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion7_Screen5(Screen):
@@ -11797,6 +11911,8 @@ class WebLektion7_Screen5(Screen):
                 self.option1.background_color = (1, 1, 1, 1)
                 self.option2.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l7_s6')
@@ -11809,10 +11925,14 @@ class WebLektion7_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion7_Screen6(Screen):
@@ -12044,12 +12164,16 @@ class WebLektion8_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
             if instance.background_color != [0.25, 0.55, 0.95, 1]:
                 self.option2.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l8_s6')
@@ -12105,6 +12229,8 @@ class WebLektion8_Screen4(Screen):
                 self.option2.background_color = (1, 1, 1, 1)
                 self.option3.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l8_s6')
@@ -12117,10 +12243,14 @@ class WebLektion8_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion8_Screen5(Screen):
@@ -12182,6 +12312,8 @@ class WebLektion8_Screen5(Screen):
                 self.option2.background_color = (1, 1, 1, 1)
                 self.option3.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l8_s6')
@@ -12194,10 +12326,14 @@ class WebLektion8_Screen5(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion8_Screen6(Screen):
@@ -12429,12 +12565,16 @@ class WebLektion9_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
             if instance.background_color != [0.25, 0.55, 0.95, 1]:
                 self.option1.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l9_s6')
@@ -12490,6 +12630,8 @@ class WebLektion9_Screen4(Screen):
                 self.option2.background_color = (1, 1, 1, 1)
                 self.option3.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l9_s6')
@@ -12502,10 +12644,14 @@ class WebLektion9_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion9_Screen5(Screen):
@@ -12567,6 +12713,8 @@ class WebLektion9_Screen5(Screen):
                 self.option1.background_color = (1, 1, 1, 1)
                 self.option3.background_color = (1, 1, 1, 1)
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
 
                 if not self.fehler_gemacht:
                     abschluss = self.manager.get_screen('web_l9_s6')
@@ -12579,10 +12727,14 @@ class WebLektion9_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class WebLektion9_Screen6(Screen):

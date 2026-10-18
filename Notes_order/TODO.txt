@@ -1,2 +1,6 @@
 
-TODO für nächstes mal: type: ignore
+TODO für nächstes mal: Wichtig: Ich habe die Sounds in den Python Lektionen von
+Python 1 - Python 9 korrekt hinzugefügt, beid en Web-Lessons udn bei den restlichen Python
+lessons müssen sie ncoh hinzugefügt werden.
+Es muss noch in projektordner in ubuntu kopiert werden die sounds!
+und builden!

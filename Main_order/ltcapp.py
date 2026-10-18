@@ -30,6 +30,7 @@ from kivy.properties import ListProperty
 from kivy.graphics.texture import Texture
 from kivy.graphics import Line
 import webbrowser
+from kivy.core.audio import SoundLoader
 
 
 # ==============================================================================================================================
@@ -916,6 +917,8 @@ class PythonLektion1_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.sound_wrong = SoundLoader.load('false_answer.mp3')
+        self.sound_wrong.play()
         self.fehler_gemacht = True  # Korrigiert: Fehler wird registriert
 
     def antwort_richtig(self, instance):
@@ -927,6 +930,8 @@ class PythonLektion1_Screen3(Screen):
             
             # Button wird beim 1. Klick marineblau gefärbt
             instance.background_color = (0.25, 0.55, 0.95, 1)
+            self.sound_true = SoundLoader.load('true_answer.mp3')
+            self.sound_true.play()
             
             # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
             if not self.fehler_gemacht:
@@ -991,6 +996,8 @@ class PythonLektion1_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.sound_true = SoundLoader.load('true_answer.mp3')
+                self.sound_true.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -1005,6 +1012,8 @@ class PythonLektion1_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
@@ -1080,6 +1089,8 @@ class PythonLektion1_Screen5(Screen):
                
                # Button wird beim 1. Klick marineblau gefärbt
                instance.background_color = (0.25, 0.55, 0.95, 1)
+               self.sound_true = SoundLoader.load('true_answer.mp3')
+               self.sound_true.play()
                
                # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                if not self.fehler_gemacht:
@@ -1094,10 +1105,13 @@ class PythonLektion1_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.sound_false = SoundLoader.load('false_answer.mp3')
+        self.sound_false.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.sound_false.play()
         self.fehler_gemacht = True
 
 class PythonLektion1_Screen6(Screen):
@@ -1354,6 +1368,8 @@ class PythonLektion2_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.sound_false = SoundLoader.load('false_answer.mp3')
+        self.sound_false.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -1365,6 +1381,8 @@ class PythonLektion2_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.sound_true = SoundLoader.load('true_answer.mp3')
+                self.sound_true.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -1429,6 +1447,8 @@ class PythonLektion2_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.sound_true = SoundLoader.load('true_answer.mp3')
+                self.sound_true.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -1443,14 +1463,20 @@ class PythonLektion2_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
     
 class PythonLektion2_Screen5(Screen):
@@ -1522,6 +1548,8 @@ class PythonLektion2_Screen5(Screen):
                     
                     # Button wird beim 1. Klick marineblau gefärbt
                     instance.background_color = (0.25, 0.55, 0.95, 1)
+                    self.true_answer = SoundLoader.load('true_answer.mp3')
+                    self.true_answer.play()
                     
                     # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                     if not self.fehler_gemacht:
@@ -1536,10 +1564,14 @@ class PythonLektion2_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion2_Screen6(Screen):
@@ -1794,6 +1826,8 @@ class PythonLektion3_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -1805,6 +1839,8 @@ class PythonLektion3_Screen3(Screen):
                     
                     # Button wird beim 1. Klick marineblau gefärbt
                     instance.background_color = (0.25, 0.55, 0.95, 1)
+                    self.true_answer = SoundLoader.load('true_answer.mp3')
+                    self.true_answer.play()
                     
                     # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                     if not self.fehler_gemacht:
@@ -1869,6 +1905,9 @@ class PythonLektion3_Screen4(Screen):
                     
                     # Button wird beim 1. Klick marineblau gefärbt
                     instance.background_color = (0.25, 0.55, 0.95, 1)
+                    self.true_answer = SoundLoader.load('true_answer.mp3')
+                    self.true_answer.play()
+
                     
                     # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                     if not self.fehler_gemacht:
@@ -1883,14 +1922,20 @@ class PythonLektion3_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion3_Screen5(Screen):
@@ -1962,6 +2007,8 @@ class PythonLektion3_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -1976,14 +2023,20 @@ class PythonLektion3_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion3_Screen6(Screen):
@@ -2238,6 +2291,8 @@ class PythonLektion4_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -2249,6 +2304,8 @@ class PythonLektion4_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -2313,6 +2370,8 @@ class PythonLektion4_Screen4(Screen):
                     
                     # Button wird beim 1. Klick marineblau gefärbt
                     instance.background_color = (0.25, 0.55, 0.95, 1)
+                    self.true_answer = SoundLoader.load('true_answer.mp3')
+                    self.true_answer.play()
                     
                     # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                     if not self.fehler_gemacht:
@@ -2327,14 +2386,20 @@ class PythonLektion4_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion4_Screen5(Screen):
@@ -2406,6 +2471,8 @@ class PythonLektion4_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -2420,10 +2487,14 @@ class PythonLektion4_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion4_Screen6(Screen):
@@ -2678,6 +2749,8 @@ class PythonLektion5_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -2689,6 +2762,8 @@ class PythonLektion5_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -2753,6 +2828,8 @@ class PythonLektion5_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -2767,14 +2844,20 @@ class PythonLektion5_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion5_Screen5(Screen):
@@ -2846,6 +2929,8 @@ class PythonLektion5_Screen5(Screen):
                     
                     # Button wird beim 1. Klick marineblau gefärbt
                     instance.background_color = (0.25, 0.55, 0.95, 1)
+                    self.true_answer = SoundLoader.load('true_answer.mp3')
+                    self.true_answer.play()
                     
                     # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                     if not self.fehler_gemacht:
@@ -2860,14 +2945,20 @@ class PythonLektion5_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
     
 class PythonLektion5_Screen6(Screen):
@@ -3122,6 +3213,8 @@ class PythonLektion6_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -3133,6 +3226,8 @@ class PythonLektion6_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -3197,6 +3292,8 @@ class PythonLektion6_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -3211,10 +3308,14 @@ class PythonLektion6_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion6_Screen5(Screen):
@@ -3286,6 +3387,8 @@ class PythonLektion6_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -3300,14 +3403,20 @@ class PythonLektion6_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion6_Screen6(Screen):
@@ -3562,6 +3671,8 @@ class PythonLektion7_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -3573,6 +3684,8 @@ class PythonLektion7_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -3637,6 +3750,8 @@ class PythonLektion7_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -3651,14 +3766,20 @@ class PythonLektion7_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion7_Screen5(Screen):
@@ -3730,6 +3851,8 @@ class PythonLektion7_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -3744,10 +3867,14 @@ class PythonLektion7_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion7_Screen6(Screen):
@@ -4002,6 +4129,8 @@ class PythonLektion8_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -4013,6 +4142,8 @@ class PythonLektion8_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -4077,6 +4208,8 @@ class PythonLektion8_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -4091,10 +4224,14 @@ class PythonLektion8_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion8_Screen5(Screen):
@@ -4166,6 +4303,8 @@ class PythonLektion8_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -4180,14 +4319,20 @@ class PythonLektion8_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion8_Screen6(Screen):
@@ -4442,6 +4587,8 @@ class PythonLektion9_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -4453,6 +4600,8 @@ class PythonLektion9_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -4517,6 +4666,8 @@ class PythonLektion9_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -4531,14 +4682,20 @@ class PythonLektion9_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion9_Screen5(Screen):
@@ -4610,6 +4767,8 @@ class PythonLektion9_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -4624,14 +4783,20 @@ class PythonLektion9_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion9_Screen6(Screen):
@@ -4886,6 +5051,8 @@ class PythonLektion10_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -4897,6 +5064,8 @@ class PythonLektion10_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -4961,6 +5130,8 @@ class PythonLektion10_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -4975,14 +5146,20 @@ class PythonLektion10_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion10_Screen5(Screen):
@@ -5054,6 +5231,8 @@ class PythonLektion10_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -5068,10 +5247,14 @@ class PythonLektion10_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion10_Screen6(Screen):
@@ -5326,6 +5509,8 @@ class PythonLektion11_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -5337,6 +5522,8 @@ class PythonLektion11_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -5401,6 +5588,8 @@ class PythonLektion11_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -5415,10 +5604,14 @@ class PythonLektion11_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion11_Screen5(Screen):
@@ -5490,6 +5683,8 @@ class PythonLektion11_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -5504,10 +5699,14 @@ class PythonLektion11_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion11_Screen6(Screen):
@@ -5762,6 +5961,8 @@ class PythonLektion12_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -5773,6 +5974,8 @@ class PythonLektion12_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -5837,6 +6040,8 @@ class PythonLektion12_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -5851,10 +6056,14 @@ class PythonLektion12_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion12_Screen5(Screen):
@@ -5926,6 +6135,8 @@ class PythonLektion12_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -5940,10 +6151,14 @@ class PythonLektion12_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion12_Screen6(Screen):
@@ -6198,6 +6413,8 @@ class PythonLektion13_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -6209,6 +6426,8 @@ class PythonLektion13_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -6273,6 +6492,8 @@ class PythonLektion13_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -6287,14 +6508,20 @@ class PythonLektion13_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion13_Screen5(Screen):
@@ -6366,6 +6593,8 @@ class PythonLektion13_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -6380,14 +6609,20 @@ class PythonLektion13_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion13_Screen6(Screen):
@@ -6642,6 +6877,8 @@ class PythonLektion14_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -6653,6 +6890,8 @@ class PythonLektion14_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -6717,6 +6956,8 @@ class PythonLektion14_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -6731,14 +6972,20 @@ class PythonLektion14_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion14_Screen5(Screen):
@@ -6810,6 +7057,8 @@ class PythonLektion14_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -6824,10 +7073,14 @@ class PythonLektion14_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion14_Screen6(Screen):
@@ -7082,6 +7335,8 @@ class PythonLektion15_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -7093,6 +7348,8 @@ class PythonLektion15_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -7157,6 +7414,8 @@ class PythonLektion15_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -7171,10 +7430,14 @@ class PythonLektion15_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion15_Screen5(Screen):
@@ -7246,6 +7509,8 @@ class PythonLektion15_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -7260,14 +7525,20 @@ class PythonLektion15_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
     
 class PythonLektion15_Screen6(Screen):
@@ -7522,6 +7793,8 @@ class PythonLektion16_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -7533,6 +7806,8 @@ class PythonLektion16_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -7598,6 +7873,8 @@ class PythonLektion16_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -7612,10 +7889,14 @@ class PythonLektion16_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion16_Screen5(Screen):
@@ -7687,6 +7968,8 @@ class PythonLektion16_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -7701,10 +7984,14 @@ class PythonLektion16_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion16_Screen6(Screen):
@@ -7959,6 +8246,8 @@ class PythonLektion17_Screen3(Screen):
 
     def antwort_falsch(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_richtig(self, instance):
@@ -7970,6 +8259,8 @@ class PythonLektion17_Screen3(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -8034,6 +8325,8 @@ class PythonLektion17_Screen4(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -8048,14 +8341,20 @@ class PythonLektion17_Screen4(Screen):
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion17_Screen5(Screen):
@@ -8127,6 +8426,8 @@ class PythonLektion17_Screen5(Screen):
                 
                 # Button wird beim 1. Klick marineblau gefärbt
                 instance.background_color = (0.25, 0.55, 0.95, 1)
+                self.true_answer = SoundLoader.load('true_answer.mp3')
+                self.true_answer.play()
                 
                 # Korrigiert: 10 XP dazurechnen, wenn direkt beim 1. Mal richtig geklickt wurde
                 if not self.fehler_gemacht:
@@ -8141,14 +8442,20 @@ class PythonLektion17_Screen5(Screen):
 
     def antwort_falsch_option1(self, instance):
         self.option1.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option3(self, instance):
         self.option3.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
     def antwort_falsch_option2(self, instance):
         self.option2.background_color = (0.9, 0.3, 0.3, 1)
+        self.false_answer = SoundLoader.load('false_answer.mp3')
+        self.false_answer.play()
         self.fehler_gemacht = True
 
 class PythonLektion17_Screen6(Screen):

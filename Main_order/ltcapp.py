@@ -38,6 +38,7 @@ from kivy.core.audio import SoundLoader
 # ==============================================================================================================================
 Window.clearcolor = (0.1, 0.12, 0.15, 1)
 # background_color = (0.72, 0.72, 0.72, 1)  # Farbe für Task-active
+MAX_SCHLUESSEL_PRO_TAG = 3
 
 # ==============================================================================================================================
 # RUNDE BUTTONS ERSTELLEN
@@ -13901,6 +13902,17 @@ class PythonDashboard(Screen):
         )
 
 
+        self.keys_display_button = Button(
+            text=f"{MAX_SCHLUESSEL_PRO_TAG} Schlüssel",
+            font_size=36,
+            font_name="Roboto-Bold",
+            size_hint=(0.18, 0.07),
+            pos_hint={'center_x': 0.5, 'center_y': 0.95},
+            background_normal='',
+            background_color=(0.75, 0.77, 0.80, 1), # Ein klares, edles Silber
+            disabled_color=(1, 1, 1, 1)
+        )
+
         üben_button_menu = Button(
             text="Training",
             font_name='Roboto-Bold',
@@ -13983,11 +13995,45 @@ class PythonDashboard(Screen):
         self.layout.add_widget(info_dev_button)
         self.layout.add_widget(üben_button_menu)
         self.layout.add_widget(ai_tutor_button_menu)
+        self.layout.add_widget(self.keys_display_button)
         
         # Ausführen:
         self.add_widget(self.layout)
 
     def on_enter(self, *args):
+
+        from datetime import datetime
+        
+        app_ordner = App.get_running_app().user_data_dir
+        keys_datei = os.path.join(app_ordner, "keys.txt")
+        
+        heute_str = datetime.now().strftime("%Y-%m-%d") # Format: 2026-10-20
+        schluessel = MAX_SCHLUESSEL_PRO_TAG
+        
+        if os.path.exists(keys_datei):
+            try:
+                with open(keys_datei, "r", encoding="utf-8") as d:
+                    inhalt = d.read().strip().split(",")
+                    gespeicherter_tag = inhalt[0]
+                    gespeicherte_anzahl = int(inhalt[1])
+                    
+                    if gespeicherter_tag == heute_str:
+                        # Selber Tag: Übernehme den gespeicherten Wert
+                        schluessel = gespeicherte_anzahl
+                    else:
+                        # Ein neuer Tag hat begonnen (Mitternacht vorbei): Zurücksetzen!
+                        schluessel = 3
+                        with open(keys_datei, "w", encoding="utf-8") as w:
+                            w.write(f"{heute_str},{schluessel}")
+            except:
+                pass
+        else:
+            # Datei existiert noch nie: Initial anlegen
+            with open(keys_datei, "w", encoding="utf-8") as w:
+                w.write(f"{heute_str},{schluessel}")
+                
+        self.keys_display_button.text = f"{schluessel} Schlüssel"
+
         # 1. Münzen aktualisieren
         app_ordner = App.get_running_app().user_data_dir
         coins_datei = os.path.join(app_ordner, "coins.txt")
@@ -14055,6 +14101,63 @@ class PythonDashboard(Screen):
             return
 
         
+        # =====================================================================
+        # 3. HIER NEU: Schlüssel-Check für alle aktiven Lektionen
+        # =====================================================================
+        from datetime import datetime
+        app_ordner = App.get_running_app().user_data_dir
+        keys_datei = os.path.join(app_ordner, "keys.txt")
+        heute_str = datetime.now().strftime("%Y-%m-%d")
+        
+        schluessel = 3
+        if os.path.exists(keys_datei):
+            try:
+                with open(keys_datei, "r", encoding="utf-8") as d:
+                    # Liest die Anzahl hinter dem Komma aus (z.B. "2026-10-20,2")
+                    schluessel = int(d.read().strip().split(",")[1])
+            except:
+                pass
+        
+        if schluessel <= 0:
+            # Keine Schlüssel mehr -> Pop-up anzeigen und die Lektion NICHT starten
+            self.widget1 = WidgetButton(
+                text="",
+                size_hint=(0.6, 0.3),
+                background_color=(0.39, 0.21, 0.21, 1), # Rötlich für Fehler
+                pos_hint={'center_x': 0.5, 'center_y': 0.5}
+            )
+                       
+            self.widget2 = Button(
+                text="Schließen",
+                size_hint=(0.3, 0.1),
+                pos_hint={'center_x': 0.5, 'center_y': 0.45},
+                on_press=self.back
+            )
+                                   
+            self.widget3 = Label(
+                text="Keine Schlüssel mehr! Morgen gibt es neue.",
+                font_name="Roboto-Bold",
+                font_size='20sp',
+                pos_hint={'center_x': 0.5, 'center_y': 0.6}
+            )
+                       
+            self.layout.add_widget(self.widget1)
+            self.layout.add_widget(self.widget2)
+            self.layout.add_widget(self.widget3)
+            return # Bricht die Funktion hier ab! Der try-Block unten wird nicht erreicht.
+            
+        else:
+            # Genug Schlüssel da -> Einen abziehen und die keys.txt überschreiben
+            schluessel -= 1
+            try:
+                with open(keys_datei, "w", encoding="utf-8") as w:
+                    w.write(f"{heute_str},{schluessel}")
+            except:
+                pass
+            # Anzeige oben in der Mitte sofort live updaten
+            self.keys_display_button.text = f"{schluessel} Schlüssel"
+        # =====================================================================
+
             
         #  Ab hier wird der Code überwacht
         try:
@@ -14210,6 +14313,18 @@ class PythonDashboard2(Screen):
         )
         
         
+        self.keys_display_button = Button(
+            text=f"{MAX_SCHLUESSEL_PRO_TAG} Schlüssel",
+            font_size=36,
+            font_name="Roboto-Bold",
+            size_hint=(0.18, 0.07),
+            pos_hint={'center_x': 0.5, 'center_y': 0.95},
+            background_normal='',
+            background_color=(0.75, 0.77, 0.80, 1), # Ein klares, edles Silber
+            disabled_color=(1, 1, 1, 1)
+        )
+
+
         üben_button_menu = Button(
             text="Training",
             font_name='Roboto-Bold',
@@ -14296,9 +14411,43 @@ class PythonDashboard2(Screen):
         self.layout.add_widget(üben_button_menu)
         self.layout.add_widget(next_abschnitt_button)
         self.layout.add_widget(ai_tutor_button_menu)
+        self.layout.add_widget(self.keys_display_button)
         self.add_widget(self.layout)
 
     def on_enter(self, *args):
+
+        from datetime import datetime
+        
+        app_ordner = App.get_running_app().user_data_dir
+        keys_datei = os.path.join(app_ordner, "keys.txt")
+        
+        heute_str = datetime.now().strftime("%Y-%m-%d") # Format: 2026-10-20
+        schluessel = MAX_SCHLUESSEL_PRO_TAG
+        
+        if os.path.exists(keys_datei):
+            try:
+                with open(keys_datei, "r", encoding="utf-8") as d:
+                    inhalt = d.read().strip().split(",")
+                    gespeicherter_tag = inhalt[0]
+                    gespeicherte_anzahl = int(inhalt[1])
+                    
+                    if gespeicherter_tag == heute_str:
+                        # Selber Tag: Übernehme den gespeicherten Wert
+                        schluessel = gespeicherte_anzahl
+                    else:
+                        # Ein neuer Tag hat begonnen (Mitternacht vorbei): Zurücksetzen!
+                        schluessel = 3
+                        with open(keys_datei, "w", encoding="utf-8") as w:
+                            w.write(f"{heute_str},{schluessel}")
+            except:
+                pass
+        else:
+            # Datei existiert noch nie: Initial anlegen
+            with open(keys_datei, "w", encoding="utf-8") as w:
+                w.write(f"{heute_str},{schluessel}")
+                
+        self.keys_display_button.text = f"{schluessel} Schlüssel"
+
         # 1. Münzen aktualisieren
         app_ordner = App.get_running_app().user_data_dir
         coins_datei = os.path.join(app_ordner, "coins.txt")
@@ -14363,6 +14512,38 @@ class PythonDashboard2(Screen):
             self.layout.add_widget(self.widget2)
             self.layout.add_widget(self.widget3)
             return
+
+        # =====================================================================
+        # ÜBERGREIFENDER SCHLÜSSEL-CHECK
+        # =====================================================================
+        from datetime import datetime
+        app_ordner = App.get_running_app().user_data_dir
+        keys_datei = os.path.join(app_ordner, "keys.txt")
+        heute_str = datetime.now().strftime("%Y-%m-%d")
+        
+        schluessel = 3
+        if os.path.exists(keys_datei):
+            try:
+                with open(keys_datei, "r", encoding="utf-8") as d:
+                    schluessel = int(d.read().strip().split(",")[1])
+            except: pass
+        
+        if schluessel <= 0:
+            self.widget1 = WidgetButton(text="", size_hint=(0.6, 0.3), background_color=(0.39, 0.21, 0.21, 1), pos_hint={'center_x': 0.5, 'center_y': 0.5})
+            self.widget2 = Button(text="Schließen", size_hint=(0.3, 0.1), pos_hint={'center_x': 0.5, 'center_y': 0.45}, on_press=self.back)
+            self.widget3 = Label(text="Keine Schlüssel mehr! Morgen gibt es neue.", font_name="Roboto-Bold", font_size='20sp', pos_hint={'center_x': 0.5, 'center_y': 0.6})
+            self.layout.add_widget(self.widget1)
+            self.layout.add_widget(self.widget2)
+            self.layout.add_widget(self.widget3)
+            return
+        else:
+            schluessel -= 1
+            try:
+                with open(keys_datei, "w", encoding="utf-8") as w:
+                    w.write(f"{heute_str},{schluessel}")
+            except: pass
+            self.keys_display_button.text = f"{schluessel} Schlüssel"
+        # =====================================================================
             
         try:
             if nummer == 10:
@@ -14511,6 +14692,18 @@ class WebDashboard(Screen):
         )
         
         
+        self.keys_display_button = Button(
+            text=f"{MAX_SCHLUESSEL_PRO_TAG} Schlüssel",
+            font_size=36,
+            font_name="Roboto-Bold",
+            size_hint=(0.18, 0.07),
+            pos_hint={'center_x': 0.5, 'center_y': 0.95},
+            background_normal='',
+            background_color=(0.75, 0.77, 0.80, 1), # Ein klares, edles Silber
+            disabled_color=(1, 1, 1, 1)
+        )
+
+
         üben_button_menu = Button(
             text="Training",
             font_name='Roboto-Bold',
@@ -14592,6 +14785,8 @@ class WebDashboard(Screen):
         self.layout.add_widget(üben_button_menu)
         self.layout.add_widget(next_abschnitt_button)
         self.layout.add_widget(ai_tutor_button_menu)
+        self.layout.add_widget(self.keys_display_button)
+
         
         # Ausführen:
         self.add_widget(self.layout)
@@ -14630,6 +14825,39 @@ class WebDashboard(Screen):
             self.layout.add_widget(self.widget2)
             self.layout.add_widget(self.widget3)
             return
+
+        # =====================================================================
+        # ÜBERGREIFENDER SCHLÜSSEL-CHECK
+        # =====================================================================
+        from datetime import datetime
+        app_ordner = App.get_running_app().user_data_dir
+        keys_datei = os.path.join(app_ordner, "keys.txt")
+        heute_str = datetime.now().strftime("%Y-%m-%d")
+        
+        schluessel = 3
+        if os.path.exists(keys_datei):
+            try:
+                with open(keys_datei, "r", encoding="utf-8") as d:
+                    schluessel = int(d.read().strip().split(",")[1])
+            except: pass
+        
+        if schluessel <= 0:
+            self.widget1 = WidgetButton(text="", size_hint=(0.6, 0.3), background_color=(0.39, 0.21, 0.21, 1), pos_hint={'center_x': 0.5, 'center_y': 0.5})
+            self.widget2 = Button(text="Schließen", size_hint=(0.3, 0.1), pos_hint={'center_x': 0.5, 'center_y': 0.45}, on_press=self.back)
+            self.widget3 = Label(text="Keine Schlüssel mehr! Morgen gibt es neue.", font_name="Roboto-Bold", font_size='20sp', pos_hint={'center_x': 0.5, 'center_y': 0.6})
+            self.layout.add_widget(self.widget1)
+            self.layout.add_widget(self.widget2)
+            self.layout.add_widget(self.widget3)
+            return
+        else:
+            schluessel -= 1
+            try:
+                with open(keys_datei, "w", encoding="utf-8") as w:
+                    w.write(f"{heute_str},{schluessel}")
+            except: pass
+            self.keys_display_button.text = f"{schluessel} Schlüssel"
+        # =====================================================================
+
 
         try:    
             if nummer == 1:
@@ -14677,6 +14905,40 @@ class WebDashboard(Screen):
 
 
     def on_enter(self, *args):
+
+        from datetime import datetime
+        
+        app_ordner = App.get_running_app().user_data_dir
+        keys_datei = os.path.join(app_ordner, "keys.txt")
+        
+        heute_str = datetime.now().strftime("%Y-%m-%d") # Format: 2026-10-20
+        schluessel = MAX_SCHLUESSEL_PRO_TAG
+        
+        if os.path.exists(keys_datei):
+            try:
+                with open(keys_datei, "r", encoding="utf-8") as d:
+                    inhalt = d.read().strip().split(",")
+                    gespeicherter_tag = inhalt[0]
+                    gespeicherte_anzahl = int(inhalt[1])
+                    
+                    if gespeicherter_tag == heute_str:
+                        # Selber Tag: Übernehme den gespeicherten Wert
+                        schluessel = gespeicherte_anzahl
+                    else:
+                        # Ein neuer Tag hat begonnen (Mitternacht vorbei): Zurücksetzen!
+                        schluessel = 3
+                        with open(keys_datei, "w", encoding="utf-8") as w:
+                            w.write(f"{heute_str},{schluessel}")
+            except:
+                pass
+        else:
+            # Datei existiert noch nie: Initial anlegen
+            with open(keys_datei, "w", encoding="utf-8") as w:
+                w.write(f"{heute_str},{schluessel}")
+                
+        self.keys_display_button.text = f"{schluessel} Schlüssel"
+
+
         # Aktualisiert die Münzen live, wenn man das Web-Dashboard betritt
         app_ordner = App.get_running_app().user_data_dir
         coins_datei = os.path.join(app_ordner, "coins.txt")
